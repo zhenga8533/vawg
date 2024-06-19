@@ -1,3 +1,5 @@
+import styles from "./Button.module.css";
+
 interface Props {
   children: string;
   type?:
@@ -15,7 +17,11 @@ interface Props {
 
 const Button = ({ children, onClick, type }: Props) => {
   return (
-    <button type="button" className={`btn btn-${type}`} onClick={onClick}>
+    <button
+      type="button"
+      className={`${styles.btn} btn-${type}`}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
