@@ -1,4 +1,4 @@
-import { MouseEvent } from "react";
+import { useState } from "react";
 
 function ListGroup() {
   const items = [
@@ -8,13 +8,14 @@ function ListGroup() {
     "A fourth item",
     "And a fifth one",
   ];
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const getActive = (index: number) => {
+    return index === selectedIndex ? "active" : "";
+  };
 
   const getEmpty = () => {
     return items.length === 0 && <p>No items found</p>;
-  };
-
-  const handleClick = (event: MouseEvent) => {
-    alert(`Clicked on ${event.target}`);
   };
 
   return (
@@ -22,8 +23,14 @@ function ListGroup() {
       <h1>List</h1>
       {getEmpty()}
       <ul className="list-group">
-        {items.map((item) => (
-          <li className="list-group-item" key={item} onClick={handleClick}>
+        {items.map((item, index) => (
+          <li
+            className={`list-group-item ${getActive(index)}`}
+            key={item}
+            onClick={() => {
+              setSelectedIndex(index);
+            }}
+          >
             {item}
           </li>
         ))}
