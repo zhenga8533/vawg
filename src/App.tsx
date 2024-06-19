@@ -1,4 +1,5 @@
 import Alert from "./components/Alert";
+import Button from "./components/Button";
 
 function App() {
   return (
@@ -6,6 +7,11 @@ function App() {
       <Alert>
         Hello, <span>World</span>!
       </Alert>
+      <Button
+        children="Hello, World!"
+        type="danger"
+        onClick={() => console.log("Hello, World!")}
+      />
     </div>
   );
 }
