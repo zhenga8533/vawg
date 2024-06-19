@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-interface ListGroupProps {
+interface Props {
   items: string[];
   heading: string;
 }
 
-function ListGroup({ items, heading }: ListGroupProps) {
+function ListGroup({ items, heading }: Props) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const getActive = (index: number) => {
