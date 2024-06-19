@@ -1,13 +1,11 @@
 import { useState } from "react";
 
-function ListGroup() {
-  const items = [
-    "An item",
-    "A second item",
-    "A third item",
-    "A fourth item",
-    "And a fifth one",
-  ];
+interface ListGroupProps {
+  items: string[];
+  heading: string;
+}
+
+function ListGroup({ items, heading }: ListGroupProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const getActive = (index: number) => {
@@ -20,7 +18,7 @@ function ListGroup() {
 
   return (
     <>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       {getEmpty()}
       <ul className="list-group">
         {items.map((item, index) => (
