@@ -1,3 +1,4 @@
+import { BsArrowThroughHeartFill } from "react-icons/bs";
 import ListGroup from "./components/ListGroup";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   return (
     <div>
       <div>
+        <BsArrowThroughHeartFill color="red" size="40" />
         <ListGroup heading="Items" items={items} />
       </div>
     </div>
