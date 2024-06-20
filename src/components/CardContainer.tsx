@@ -7,7 +7,7 @@ interface CardContainerProps {
 
 const CardContainer = ({ children }: CardContainerProps) => {
   return (
-    <Box width={300} borderRadius={10} overflow="hidden">
+    <Box width={300} borderRadius={10} overflow="hidden" display="flex">
       {children}
     </Box>
   );
