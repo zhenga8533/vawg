@@ -5,9 +5,10 @@ import SkeletonListItem from "./SkeletonListItem";
 
 interface GenreListProps {
   onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({ onSelectGenre }: GenreListProps) => {
+const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
   const { data, loading } = useGenres();
   const skeletons = Array.from({ length: 16 }, (_, i) => (
     <SkeletonListItem key={i} />
@@ -31,9 +32,13 @@ const GenreList = ({ onSelectGenre }: GenreListProps) => {
               borderRadius={8}
             />
             <Button
+              fontWeight={selectedGenre?.id === genre.id ? "bold" : "normal"}
               fontSize="lg"
-              variant="link"
               onClick={() => onSelectGenre(genre)}
+              textColor={
+                selectedGenre?.id === genre.id ? "blue.500" : "default"
+              }
+              variant="link"
             >
               {getName(genre.name)}
             </Button>
