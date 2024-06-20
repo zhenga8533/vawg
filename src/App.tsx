@@ -1,7 +1,11 @@
-import Like from "./components/Like";
+import Form from "./components/Form";
 
 function App() {
-  return <Like />;
+  return (
+    <div className="container">
+      <Form />
+    </div>
+  );
 }
 
 export default App;
