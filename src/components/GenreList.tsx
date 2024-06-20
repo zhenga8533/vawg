@@ -1,13 +1,31 @@
+import { HStack, Image, List, ListItem, Text } from "@chakra-ui/react";
 import useGenres from "../hooks/useGenres";
+import cropImageURL from "../services/image-url";
 
 const GenreList = () => {
   const { data } = useGenres();
+
+  const getName = (name: string) => {
+    if (name === "Massively Multiplayer") return "MMO";
+    return name;
+  };
+
   return (
-    <ul>
+    <List>
       {data.map((genre) => (
-        <li key={genre.id}>{genre.name}</li>
+        <ListItem key={genre.id} paddingY={2}>
+          <HStack>
+            <Image
+              src={cropImageURL(genre.image_background)}
+              alt={genre.name}
+              boxSize="32px"
+              borderRadius={8}
+            />
+            <Text fontSize="lg">{getName(genre.name)}</Text>
+          </HStack>
+        </ListItem>
       ))}
-    </ul>
+    </List>
   );
 };
 
