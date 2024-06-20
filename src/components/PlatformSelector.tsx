@@ -28,9 +28,7 @@ const PlatformSelector = ({
             }
             key={platform.id}
             onClick={() => onSelectPlatform(platform)}
-            textColor={
-              selectedPlatform?.id === platform.id ? "blue.500" : "default"
-            }
+            textColor={selectedPlatform?.id === platform.id ? "blue.500" : ""}
           >
             {platform.name}
           </MenuItem>
