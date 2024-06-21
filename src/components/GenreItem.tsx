@@ -16,7 +16,7 @@ const GenreItem = ({
   selectedGenre,
 }: GenreItemProps) => {
   return (
-    <ListItem key={genre?.id ?? 0} paddingY={2}>
+    <ListItem paddingY={2}>
       <HStack>
         <Image
           alt={genre?.name ?? "Any Genre"}

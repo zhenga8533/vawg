@@ -27,6 +27,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
           <GenreItem
             genre={null}
             image={anyGenre}
+            key={0}
             onSelectGenre={onSelectGenre}
             selectedGenre={selectedGenre}
           />
@@ -35,6 +36,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
           <GenreItem
             genre={genre}
             image={cropImageURL(genre.image_background)}
+            key={genre.id}
             onSelectGenre={onSelectGenre}
             selectedGenre={selectedGenre}
           />
