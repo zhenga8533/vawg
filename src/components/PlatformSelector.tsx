@@ -5,7 +5,7 @@ import { Platform } from "../hooks/useGames";
 
 interface PlatformSelectorProps {
   selectedPlatform: Platform | null;
-  onSelectPlatform: (platform: Platform) => void;
+  onSelectPlatform: (platform: Platform | null) => void;
 }
 
 const PlatformSelector = ({
@@ -14,6 +14,16 @@ const PlatformSelector = ({
 }: PlatformSelectorProps) => {
   const { data, error } = usePlatforms();
 
+  const getStyle = (platform: Platform | null) => {
+    if (selectedPlatform?.id === platform?.id) {
+      return {
+        fontWeight: "bold",
+        textColor: "blue.500",
+      };
+    }
+    return {};
+  };
+
   if (error) return null;
   return (
     <Menu>
@@ -21,14 +31,18 @@ const PlatformSelector = ({
         {selectedPlatform ? selectedPlatform.name : "Platforms"}
       </MenuButton>
       <MenuList>
+        <MenuItem
+          {...getStyle(null)}
+          key={0}
+          onClick={() => onSelectPlatform(null)}
+        >
+          Any Platform
+        </MenuItem>
         {data.map((platform) => (
           <MenuItem
-            fontWeight={
-              selectedPlatform?.id === platform.id ? "bold" : "normal"
-            }
+            {...getStyle(platform)}
             key={platform.id}
             onClick={() => onSelectPlatform(platform)}
-            textColor={selectedPlatform?.id === platform.id ? "blue.500" : ""}
           >
             {platform.name}
           </MenuItem>
