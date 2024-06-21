@@ -8,9 +8,11 @@ import SortSelector from "./components/SortSelector";
 import { Genre } from "./hooks/useGenres";
 import { Platform } from "./hooks/useGames";
 import GameHeading from "./components/GameHeading";
+import Pagination from "./components/Pagination";
 
 export interface GameQuery {
   genre: Genre | null;
+  page: number;
   platform: Platform | null;
   searchText: string;
   sortOrder: string;
@@ -50,25 +52,37 @@ function App() {
       <GridItem area="main">
         <Box marginLeft={10}>
           <GameHeading gameQuery={gameQuery} />
-          <HStack spacing={4}>
-            <PlatformSelector
-              onSelectPlatform={(platform) =>
-                setGameQuery({ ...gameQuery, platform })
-              }
-              selectedPlatform={gameQuery.platform}
-            />
-            <SortSelector
-              onReverseOrder={(sortOrder) =>
-                setGameQuery({ ...gameQuery, sortOrder })
-              }
-              onSelectOrder={(sortOrder) =>
-                setGameQuery({ ...gameQuery, sortOrder })
-              }
-              sortOrder={gameQuery.sortOrder}
+          <HStack justifyContent="space-between" marginRight={10}>
+            <HStack spacing={4}>
+              <PlatformSelector
+                onSelectPlatform={(platform) =>
+                  setGameQuery({ ...gameQuery, platform })
+                }
+                selectedPlatform={gameQuery.platform}
+              />
+              <SortSelector
+                onReverseOrder={(sortOrder) =>
+                  setGameQuery({ ...gameQuery, sortOrder })
+                }
+                onSelectOrder={(sortOrder) =>
+                  setGameQuery({ ...gameQuery, sortOrder })
+                }
+                sortOrder={gameQuery.sortOrder}
+              />
+            </HStack>
+            <Pagination
+              onPageChange={(page) => setGameQuery({ ...gameQuery, page })}
+              page={gameQuery.page}
             />
           </HStack>
         </Box>
         <GameGrid gameQuery={gameQuery} />
+        <HStack marginBottom={10} justifyContent="center">
+          <Pagination
+            onPageChange={(page) => setGameQuery({ ...gameQuery, page })}
+            page={gameQuery.page}
+          />
+        </HStack>
       </GridItem>
     </Grid>
   );

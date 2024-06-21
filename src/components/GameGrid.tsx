@@ -11,7 +11,7 @@ interface GameGridProps {
 
 const GameGrid = ({ gameQuery }: GameGridProps) => {
   const { data, error, loading } = useGames(gameQuery);
-  const skeletons = Array.from({ length: 12 }, (_, i) => (
+  const skeletons = Array.from({ length: 20 }, (_, i) => (
     <CardContainer key={i}>
       <SkeletonCard />
     </CardContainer>
