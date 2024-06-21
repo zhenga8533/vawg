@@ -19,7 +19,11 @@ const GameGrid = ({ gameQuery }: GameGridProps) => {
 
   return (
     <>
-      {error && <Text color="red">{error}</Text>}
+      {error && (
+        <Text color="red" marginTop={3} textAlign="center">
+          {error}
+        </Text>
+      )}
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
         spacing={3}
