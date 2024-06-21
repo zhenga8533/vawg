@@ -48,6 +48,9 @@ function App() {
             selectedPlatform={gameQuery.platform}
           />
           <SortSelector
+            onReverseOrder={(sortOrder) =>
+              setGameQuery({ ...gameQuery, sortOrder })
+            }
             onSelectOrder={(sortOrder) =>
               setGameQuery({ ...gameQuery, sortOrder })
             }

@@ -1,13 +1,28 @@
-import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import {
+  Button,
+  Checkbox,
+  Menu,
+  MenuButton,
+  MenuDivider,
+  MenuItem,
+  MenuList,
+} from "@chakra-ui/react";
+import { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
 
 interface SortSelectorProps {
+  onReverseOrder: (order: string) => void;
   onSelectOrder: (order: string) => void;
   sortOrder: string;
 }
 
-const SortSelector = ({ onSelectOrder, sortOrder }: SortSelectorProps) => {
-  const sortOrders = [
+const SortSelector = ({
+  onReverseOrder,
+  onSelectOrder,
+  sortOrder,
+}: SortSelectorProps) => {
+  const [reverse, setReverse] = useState(false);
+  const [sortOrders, setSortOrders] = useState([
     { label: "Relevance", value: "" },
     { label: "Name", value: "name" },
     { label: "Released", value: "-released" },
@@ -16,11 +31,24 @@ const SortSelector = ({ onSelectOrder, sortOrder }: SortSelectorProps) => {
     { label: "Updated", value: "-updated" },
     { label: "Rating", value: "-rating" },
     { label: "Metacritic", value: "-metacritic" },
-  ];
+  ]);
 
   const sortOrderLabel = sortOrders.find(
     (order) => order.value === sortOrder
   )?.label;
+
+  const reverseOrder = () => {
+    const reverseValue = (value: string) =>
+      value?.startsWith("-") ? value.slice(1) : `-${value || ""}`;
+
+    setReverse(!reverse);
+    setSortOrders(
+      sortOrders.map((order) => {
+        return { label: order.label, value: reverseValue(order.value) };
+      })
+    );
+    onReverseOrder(reverseValue(sortOrder));
+  };
 
   return (
     <Menu>
@@ -38,6 +66,14 @@ const SortSelector = ({ onSelectOrder, sortOrder }: SortSelectorProps) => {
             {order.label}
           </MenuItem>
         ))}
+        <MenuDivider />
+        <Checkbox
+          isChecked={reverse}
+          marginLeft={2}
+          onChange={() => reverseOrder()}
+        >
+          Reverse
+        </Checkbox>
       </MenuList>
     </Menu>
   );
