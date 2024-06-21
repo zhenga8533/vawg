@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
+import getStyle from "../services/select-style";
 
 interface SortSelectorProps {
   onReverseOrder: (order: string) => void;
@@ -58,10 +59,9 @@ const SortSelector = ({
       <MenuList>
         {sortOrders.map((order) => (
           <MenuItem
-            fontWeight={sortOrder === order.value ? "bold" : "normal"}
+            {...getStyle(order.value, sortOrder)}
             key={order.value}
             onClick={() => onSelectOrder(order.value)}
-            color={sortOrder === order.value ? "blue.500" : ""}
           >
             {order.label}
           </MenuItem>

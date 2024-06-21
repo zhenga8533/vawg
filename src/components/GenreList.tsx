@@ -1,10 +1,12 @@
-import { Button, HStack, Image, List, ListItem } from "@chakra-ui/react";
+import { List } from "@chakra-ui/react";
 import useGenres, { Genre } from "../hooks/useGenres";
 import cropImageURL from "../services/image-url";
 import SkeletonListItem from "./SkeletonListItem";
+import anyGenre from "../assets/any-genre.webp";
+import GenreItem from "./GenreItem";
 
 interface GenreListProps {
-  onSelectGenre: (genre: Genre) => void;
+  onSelectGenre: (genre: Genre | null) => void;
   selectedGenre: Genre | null;
 }
 
@@ -14,34 +16,24 @@ const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
     <SkeletonListItem key={i} />
   ));
 
-  const getName = (name: string) => {
-    if (name === "Massively Multiplayer") return "MMO";
-    return name;
-  };
-
   return (
     <List>
       {loading && skeletons}
+      {!loading && (
+        <GenreItem
+          genre={null}
+          image={anyGenre}
+          onSelectGenre={onSelectGenre}
+          selectedGenre={selectedGenre}
+        />
+      )}
       {data.map((genre) => (
-        <ListItem key={genre.id} paddingY={2}>
-          <HStack>
-            <Image
-              src={cropImageURL(genre.image_background)}
-              alt={genre.name}
-              boxSize="32px"
-              borderRadius={8}
-            />
-            <Button
-              fontWeight={selectedGenre?.id === genre.id ? "bold" : "normal"}
-              fontSize="lg"
-              onClick={() => onSelectGenre(genre)}
-              textColor={selectedGenre?.id === genre.id ? "blue.500" : ""}
-              variant="link"
-            >
-              {getName(genre.name)}
-            </Button>
-          </HStack>
-        </ListItem>
+        <GenreItem
+          genre={genre}
+          image={cropImageURL(genre.image_background)}
+          onSelectGenre={onSelectGenre}
+          selectedGenre={selectedGenre}
+        />
       ))}
     </List>
   );

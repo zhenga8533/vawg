@@ -1,5 +1,6 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
+import getStyle from "../services/select-style";
 import usePlatforms from "../hooks/usePlatforms";
 import { Platform } from "../hooks/useGames";
 
@@ -14,16 +15,6 @@ const PlatformSelector = ({
 }: PlatformSelectorProps) => {
   const { data, error } = usePlatforms();
 
-  const getStyle = (platform: Platform | null) => {
-    if (selectedPlatform?.id === platform?.id) {
-      return {
-        fontWeight: "bold",
-        textColor: "blue.500",
-      };
-    }
-    return {};
-  };
-
   if (error) return null;
   return (
     <Menu>
@@ -32,7 +23,7 @@ const PlatformSelector = ({
       </MenuButton>
       <MenuList>
         <MenuItem
-          {...getStyle(null)}
+          {...getStyle(undefined, selectedPlatform?.id)}
           key={0}
           onClick={() => onSelectPlatform(null)}
         >
@@ -40,7 +31,7 @@ const PlatformSelector = ({
         </MenuItem>
         {data.map((platform) => (
           <MenuItem
-            {...getStyle(platform)}
+            {...getStyle(platform.id, selectedPlatform?.id)}
             key={platform.id}
             onClick={() => onSelectPlatform(platform)}
           >
