@@ -15,27 +15,24 @@ const GenreItem = ({
   onSelectGenre,
   selectedGenre,
 }: GenreItemProps) => {
-  const getName = (name: string) => {
-    if (name === "Massively Multiplayer") return "MMO";
-    return name;
-  };
-
   return (
     <ListItem key={genre?.id ?? 0} paddingY={2}>
       <HStack>
         <Image
-          src={image}
           alt={genre?.name ?? "Any Genre"}
           boxSize="32px"
           borderRadius={8}
+          objectFit={"cover"}
+          src={image}
         />
         <Button
           {...getStyle(genre?.id, selectedGenre?.id)}
-          fontSize="lg"
           onClick={() => onSelectGenre(genre)}
+          textAlign={"left"}
           variant="link"
+          whiteSpace={"normal"}
         >
-          {getName(genre?.name ?? "Any Genre")}
+          {genre?.name ?? "Any Genre"}
         </Button>
       </HStack>
     </ListItem>

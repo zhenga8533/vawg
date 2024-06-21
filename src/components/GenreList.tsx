@@ -1,4 +1,4 @@
-import { List } from "@chakra-ui/react";
+import { Heading, List } from "@chakra-ui/react";
 import useGenres, { Genre } from "../hooks/useGenres";
 import cropImageURL from "../services/image-url";
 import SkeletonListItem from "./SkeletonListItem";
@@ -17,25 +17,30 @@ const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
   ));
 
   return (
-    <List>
-      {loading && skeletons}
-      {!loading && (
-        <GenreItem
-          genre={null}
-          image={anyGenre}
-          onSelectGenre={onSelectGenre}
-          selectedGenre={selectedGenre}
-        />
-      )}
-      {data.map((genre) => (
-        <GenreItem
-          genre={genre}
-          image={cropImageURL(genre.image_background)}
-          onSelectGenre={onSelectGenre}
-          selectedGenre={selectedGenre}
-        />
-      ))}
-    </List>
+    <>
+      <Heading fontSize="2xl" marginBottom={3}>
+        Genres
+      </Heading>
+      <List>
+        {loading && skeletons}
+        {!loading && (
+          <GenreItem
+            genre={null}
+            image={anyGenre}
+            onSelectGenre={onSelectGenre}
+            selectedGenre={selectedGenre}
+          />
+        )}
+        {data.map((genre) => (
+          <GenreItem
+            genre={genre}
+            image={cropImageURL(genre.image_background)}
+            onSelectGenre={onSelectGenre}
+            selectedGenre={selectedGenre}
+          />
+        ))}
+      </List>
+    </>
   );
 };
 
