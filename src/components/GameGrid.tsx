@@ -1,4 +1,4 @@
-import { SimpleGrid, Text } from "@chakra-ui/react";
+import { Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import CardContainer from "./CardContainer";
 import GameCard from "./GameCard";
 import SkeletonCard from "./SkeletonCard";
@@ -27,18 +27,21 @@ const GameGrid = ({ gameData }: GameGridProps) => {
       </Text>
     );
   return (
-    <SimpleGrid
-      columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-      spacing={5}
-      padding={10}
-    >
-      {loading && skeletons}
-      {data.map((game: Game) => (
-        <CardContainer key={game.id}>
-          <GameCard game={game} />
-        </CardContainer>
-      ))}
-    </SimpleGrid>
+    <Flex alignItems="center" justifyContent="center" width="100%">
+      <SimpleGrid
+        width="auto"
+        columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+        spacing={5}
+        padding={10}
+      >
+        {loading && skeletons}
+        {data.map((game: Game) => (
+          <CardContainer key={game.id}>
+            <GameCard game={game} />
+          </CardContainer>
+        ))}
+      </SimpleGrid>
+    </Flex>
   );
 };
 
