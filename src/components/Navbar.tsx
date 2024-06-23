@@ -10,7 +10,7 @@ interface SearchInputProps {
 const Navbar = ({ onSearch }: SearchInputProps) => {
   return (
     <HStack padding="10px">
-      <Image src={logo} alt="logo" boxSize={"60px"} />
+      <Image src={logo} alt="logo" boxSize={"60px"} borderRadius={16} />
       <SearchInput onSearch={onSearch} />
       <ThemeSelector />
     </HStack>
