@@ -1,9 +1,11 @@
-import { Heading, List } from "@chakra-ui/react";
+import { Button, Heading, List, ListItem } from "@chakra-ui/react";
 import useGenres, { Genre } from "../hooks/useGenres";
 import cropImageURL from "../services/image-url";
 import SkeletonListItem from "./SkeletonListItem";
 import anyGenre from "../assets/any-genre.webp";
 import GenreItem from "./GenreItem";
+import { useState } from "react";
+import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 
 interface GenreListProps {
   onSelectGenre: (genre: Genre | null) => void;
@@ -12,7 +14,8 @@ interface GenreListProps {
 
 const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
   const { data, loading } = useGenres();
-  const skeletons = Array.from({ length: 16 }, (_, i) => (
+  const [showAll, setShowAll] = useState(false);
+  const skeletons = Array.from({ length: 3 }, (_, i) => (
     <SkeletonListItem key={i} />
   ));
 
@@ -32,7 +35,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
             selectedGenre={selectedGenre}
           />
         )}
-        {data.map((genre) => (
+        {data.slice(0, showAll ? data.length : 2).map((genre) => (
           <GenreItem
             genre={genre}
             image={cropImageURL(genre.image_background)}
@@ -41,6 +44,17 @@ const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
             selectedGenre={selectedGenre}
           />
         ))}
+        <ListItem marginTop={1}>
+          <Button
+            color="gray"
+            leftIcon={showAll ? <BsChevronUp /> : <BsChevronDown />}
+            onClick={() => setShowAll(!showAll)}
+            padding={0}
+            variant="link"
+          >
+            {showAll ? "Show less" : "Show all"}
+          </Button>
+        </ListItem>
       </List>
     </>
   );
