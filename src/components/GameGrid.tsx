@@ -22,7 +22,7 @@ const GameGrid = ({ gameData }: GameGridProps) => {
 
   if (error)
     return (
-      <Text color="red" marginTop={3} textAlign="center">
+      <Text color="red" margin={5} textAlign="center">
         {error}
       </Text>
     );
