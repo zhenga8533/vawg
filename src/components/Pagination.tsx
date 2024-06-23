@@ -21,6 +21,10 @@ const Pagination = ({ count, onPageChange, page }: PaginationProps) => {
   const changePage = (newPage: number) => {
     if (newPage !== page && newPage >= 1 && newPage <= totalPages) {
       onPageChange(newPage);
+    } else if (newPage < 1) {
+      onPageChange(1);
+    } else if (newPage > totalPages) {
+      onPageChange(totalPages);
     }
   };
 
