@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Button,
@@ -12,7 +11,7 @@ interface PaginationProps {
   page: number;
 }
 
-const Pagination: React.FC<PaginationProps> = ({ onPageChange, page }) => {
+const Pagination = ({ onPageChange, page }: PaginationProps) => {
   page = page ?? 1;
   const totalPages = 100;
   const hasPreviousPage = page > 1;
@@ -40,8 +39,11 @@ const Pagination: React.FC<PaginationProps> = ({ onPageChange, page }) => {
           value={page}
           onChange={(_, valueNumber) => changePage(valueNumber)}
         >
-          <NumberInputField padding={1} />
-        </NumberInput>{" "}
+          <NumberInputField
+            padding={1}
+            width={`${totalPages.toString().length + 1.5}ch`}
+          />
+        </NumberInput>
         <Box>of {totalPages}</Box>
       </HStack>
       <Button onClick={() => changePage(page + 1)} isDisabled={!hasNextPage}>
