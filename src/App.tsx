@@ -29,6 +29,7 @@ function App() {
 
   return (
     <Grid
+      margin={10}
       templateAreas={{
         base: `"nav" "main"`,
         lg: `"nav nav" "aside main"`,
@@ -38,7 +39,7 @@ function App() {
         lg: "200px 1fr",
       }}
     >
-      <GridItem area="nav">
+      <GridItem area="nav" marginBottom={4}>
         <Navbar
           onSearch={(searchText) => {
             setGameQuery({ ...gameQuery, searchText });
@@ -46,7 +47,7 @@ function App() {
         />
       </GridItem>
       <Show above="lg">
-        <GridItem area="aside" paddingX={5}>
+        <GridItem area="aside">
           <TopList />
           <ReleaseList />
           <BrowseList />
@@ -85,7 +86,7 @@ function App() {
           </HStack>
         </Box>
         <GameGrid gameData={gameData} />
-        <HStack marginBottom={10} justifyContent="center">
+        <HStack justifyContent="center">
           <Pagination
             count={gameData.count}
             onPageChange={(page) => setGameQuery({ ...gameQuery, page })}

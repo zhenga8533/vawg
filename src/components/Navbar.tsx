@@ -1,5 +1,4 @@
-import { HStack, Image } from "@chakra-ui/react";
-import logo from "../assets/logo.webp";
+import { HStack, Text } from "@chakra-ui/react";
 import ThemeSelector from "./ThemeSelector";
 import SearchInput from "./SearchInput";
 
@@ -9,8 +8,10 @@ interface SearchInputProps {
 
 const Navbar = ({ onSearch }: SearchInputProps) => {
   return (
-    <HStack padding="10px">
-      <Image src={logo} alt="logo" boxSize={"60px"} borderRadius={16} />
+    <HStack>
+      <Text fontSize="2xl" fontWeight={1000} letterSpacing={5}>
+        VAWG
+      </Text>
       <SearchInput onSearch={onSearch} />
       <ThemeSelector />
     </HStack>
