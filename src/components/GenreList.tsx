@@ -52,7 +52,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
             padding={0}
             variant="link"
           >
-            {showAll ? "Show less" : "Show all"}
+            {showAll ? "Hide" : "Show all"}
           </Button>
         </ListItem>
       </List>
