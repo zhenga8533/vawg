@@ -11,6 +11,7 @@ import GameHeading from "./components/GameHeading";
 import Pagination from "./components/Pagination";
 import ReleaseList from "./components/ReleaseList";
 import BrowseList from "./components/BrowseList";
+import TopList from "./components/TopList";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -46,6 +47,7 @@ function App() {
       </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
+          <TopList />
           <ReleaseList />
           <BrowseList />
           <GenreList

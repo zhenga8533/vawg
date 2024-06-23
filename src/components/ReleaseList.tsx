@@ -6,7 +6,7 @@ import { SiFireship } from "react-icons/si";
 const ReleaseList = () => {
   return (
     <>
-      <Heading className="list-heading" fontSize="3xl" marginTop={0}>
+      <Heading className="list-heading" fontSize="3xl">
         Releases
       </Heading>
       <List>
