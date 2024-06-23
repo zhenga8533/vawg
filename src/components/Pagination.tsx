@@ -5,6 +5,8 @@ import {
   NumberInput,
   NumberInputField,
 } from "@chakra-ui/react";
+import { FaBackward, FaForward } from "react-icons/fa";
+import { IoCaretBack, IoCaretForward } from "react-icons/io5";
 
 interface PaginationProps {
   count: number;
@@ -31,13 +33,13 @@ const Pagination = ({ count, onPageChange, page }: PaginationProps) => {
   return (
     <HStack display="flex" justifyContent="space-between" alignItems="center">
       <Button onClick={() => changePage(1)} isDisabled={!hasPreviousPage}>
-        First
+        <FaBackward />
       </Button>
       <Button
         onClick={() => changePage(page - 1)}
         isDisabled={!hasPreviousPage}
       >
-        Previous
+        <IoCaretBack />
       </Button>
       <HStack>
         <NumberInput
@@ -46,16 +48,16 @@ const Pagination = ({ count, onPageChange, page }: PaginationProps) => {
         >
           <NumberInputField
             padding={1}
-            width={`${totalPages.toString().length + 1.25}ch`}
+            width={`${page.toString().length + 1.25}ch`}
           />
         </NumberInput>
         <Box>of {totalPages}</Box>
       </HStack>
       <Button onClick={() => changePage(page + 1)} isDisabled={!hasNextPage}>
-        Next
+        <IoCaretForward />
       </Button>
       <Button onClick={() => changePage(totalPages)} isDisabled={!hasNextPage}>
-        Last
+        <FaForward />
       </Button>
     </HStack>
   );
