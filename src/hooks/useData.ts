@@ -12,6 +12,7 @@ const useData = <T>(
   requestConfig?: AxiosRequestConfig,
   deps?: any[]
 ) => {
+  const [count, setCount] = useState(0);
   const [data, setData] = useState<T[]>([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
@@ -29,6 +30,7 @@ const useData = <T>(
         })
         .then((res) => {
           setError("");
+          setCount(res.data.count);
           setData(res.data.results);
           setLoading(false);
         })
@@ -43,7 +45,7 @@ const useData = <T>(
     deps ? [...deps] : []
   );
 
-  return { data, error, loading };
+  return { count, data, error, loading };
 };
 
 export default useData;
