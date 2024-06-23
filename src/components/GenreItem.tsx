@@ -22,7 +22,9 @@ const GenreItem = ({
           alt={genre?.name ?? "Any Genre"}
           boxSize="32px"
           borderRadius={8}
+          cursor="pointer"
           objectFit={"cover"}
+          onClick={() => onSelectGenre(genre)}
           src={image}
         />
         <Button
