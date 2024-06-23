@@ -7,13 +7,14 @@ import {
 } from "@chakra-ui/react";
 
 interface PaginationProps {
+  count: number;
   onPageChange: (page: number) => void;
   page: number;
 }
 
-const Pagination = ({ onPageChange, page }: PaginationProps) => {
+const Pagination = ({ count, onPageChange, page }: PaginationProps) => {
   page = page ?? 1;
-  const totalPages = 100;
+  const totalPages = Math.ceil(count / 20);
   const hasPreviousPage = page > 1;
   const hasNextPage = page < totalPages;
 
@@ -41,7 +42,7 @@ const Pagination = ({ onPageChange, page }: PaginationProps) => {
         >
           <NumberInputField
             padding={1}
-            width={`${totalPages.toString().length + 1.5}ch`}
+            width={`${totalPages.toString().length + 1.25}ch`}
           />
         </NumberInput>
         <Box>of {totalPages}</Box>
