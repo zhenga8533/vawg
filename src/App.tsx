@@ -6,7 +6,7 @@ import GenreList from "./components/GenreList";
 import PlatformSelector from "./components/PlatformSelector";
 import SortSelector from "./components/SortSelector";
 import { Genre } from "./hooks/useGenres";
-import { Platform } from "./hooks/useGames";
+import useGames, { Platform } from "./hooks/useGames";
 import GameHeading from "./components/GameHeading";
 import Pagination from "./components/Pagination";
 
@@ -22,6 +22,7 @@ function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({
     sortOrder: "",
   } as GameQuery);
+  const gameData = useGames(gameQuery);
 
   return (
     <Grid
@@ -71,14 +72,16 @@ function App() {
               />
             </HStack>
             <Pagination
+              count={gameData.count}
               onPageChange={(page) => setGameQuery({ ...gameQuery, page })}
               page={gameQuery.page}
             />
           </HStack>
         </Box>
-        <GameGrid gameQuery={gameQuery} />
+        <GameGrid gameData={gameData} />
         <HStack marginBottom={10} justifyContent="center">
           <Pagination
+            count={gameData.count}
             onPageChange={(page) => setGameQuery({ ...gameQuery, page })}
             page={gameQuery.page}
           />
