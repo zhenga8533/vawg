@@ -9,6 +9,7 @@ import { Genre } from "./hooks/useGenres";
 import useGames, { Platform } from "./hooks/useGames";
 import GameHeading from "./components/GameHeading";
 import Pagination from "./components/Pagination";
+import ReleaseList from "./components/ReleaseList";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -44,6 +45,7 @@ function App() {
       </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
+          <ReleaseList />
           <GenreList
             onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
             selectedGenre={gameQuery.genre}
