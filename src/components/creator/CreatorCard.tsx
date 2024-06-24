@@ -11,15 +11,33 @@ import {
 import cropImageURL from "../../services/image-url";
 import { Creator } from "../../hooks/useCreators";
 import { IoPersonOutline } from "react-icons/io5";
+import { useEffect, useRef, useState } from "react";
 
 interface CreatorCardProps {
   creator: Creator;
 }
 
 const CreatorCard = ({ creator }: CreatorCardProps) => {
+  const boxRef = useRef<HTMLDivElement>(null);
+  const [imageSize, setImageSize] = useState("0px");
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (boxRef.current) {
+        const width = boxRef.current.offsetWidth;
+        setImageSize(`${width / 2}px`);
+      }
+    };
+
+    window.addEventListener("resize", updateSize);
+    updateSize();
+
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
   return (
     <Card>
-      <Box position="relative">
+      <Box position="relative" ref={boxRef}>
         <Image
           src={cropImageURL(creator.image_background)}
           alt={creator.name}
@@ -36,7 +54,7 @@ const CreatorCard = ({ creator }: CreatorCardProps) => {
         <Image
           src={creator.image}
           alt={creator.name}
-          boxSize="144px"
+          boxSize={imageSize}
           borderRadius="full"
           position="absolute"
           left="50%"
@@ -67,7 +85,7 @@ const CreatorCard = ({ creator }: CreatorCardProps) => {
           </HStack>
           <hr />
           {creator.games.map((game) => (
-            <HStack justifyContent="space-between">
+            <HStack justifyContent="space-between" key={game.id}>
               <Text
                 key={game.id}
                 textOverflow="ellipsis"
