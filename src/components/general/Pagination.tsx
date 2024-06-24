@@ -43,8 +43,9 @@ const Pagination = ({ count, onPageChange, page }: PaginationProps) => {
       </Button>
       <HStack>
         <NumberInput
-          value={page}
+          name="page-number"
           onChange={(_, valueNumber) => changePage(valueNumber)}
+          value={page}
         >
           <NumberInputField
             padding={1}

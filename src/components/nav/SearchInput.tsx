@@ -20,6 +20,7 @@ const SearchInput = ({ onSearch }: SearchInputProps) => {
         <InputLeftElement children={<BsSearch />} />
         <Input
           borderRadius={10}
+          name="search"
           placeholder="Search for games..."
           ref={ref}
           variant="filled"
