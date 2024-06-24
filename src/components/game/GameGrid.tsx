@@ -32,7 +32,6 @@ const GameGrid = ({ gameData }: GameGridProps) => {
         width="auto"
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
         spacing={5}
-        padding={10}
       >
         {loading && skeletons}
         {data.map((game: Game) => (

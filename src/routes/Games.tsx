@@ -17,9 +17,9 @@ const Games = ({ gameQuery, setGameQuery }: GamesProps) => {
 
   return (
     <GridItem area="main">
-      <Box marginLeft={10}>
+      <Box marginY={5}>
         <GameHeading gameQuery={gameQuery} />
-        <HStack justifyContent="space-between" marginRight={10}>
+        <HStack justifyContent="space-between">
           <HStack spacing={4}>
             <PlatformSelector
               onSelectPlatform={(platform) =>
