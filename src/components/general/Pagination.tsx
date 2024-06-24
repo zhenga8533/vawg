@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { FaBackward, FaForward } from "react-icons/fa";
 import { IoCaretBack, IoCaretForward } from "react-icons/io5";
+import { commafy } from "../../services/formatting";
 
 interface PaginationProps {
   count: number;
@@ -52,7 +53,7 @@ const Pagination = ({ count, onPageChange, page }: PaginationProps) => {
             width={`${page.toString().length + 1.25}ch`}
           />
         </NumberInput>
-        <Box>of {totalPages}</Box>
+        <Box>of {commafy(totalPages)}</Box>
       </HStack>
       <Button onClick={() => changePage(page + 1)} isDisabled={!hasNextPage}>
         <IoCaretForward />

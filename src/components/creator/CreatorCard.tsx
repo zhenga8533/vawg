@@ -12,6 +12,7 @@ import cropImageURL from "../../services/image-url";
 import { Creator } from "../../hooks/useCreators";
 import { IoPersonOutline } from "react-icons/io5";
 import { useEffect, useRef, useState } from "react";
+import { commafy } from "../../services/formatting";
 
 interface CreatorCardProps {
   creator: Creator;
@@ -95,7 +96,7 @@ const CreatorCard = ({ creator }: CreatorCardProps) => {
                 {game.name}
               </Text>
               <HStack spacing={1}>
-                <Text color="gray">{game.added}</Text>
+                <Text color="gray">{commafy(game.added)}</Text>
                 <Icon as={IoPersonOutline} />
               </HStack>
             </HStack>
