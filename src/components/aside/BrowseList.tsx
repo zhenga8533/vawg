@@ -1,9 +1,7 @@
 import { Button, Heading, List, ListItem } from "@chakra-ui/react";
 import {
-  IoChatbubble,
   IoCloudUpload,
   IoCodeSlash,
-  IoFolder,
   IoGameController,
   IoPerson,
 } from "react-icons/io5";
@@ -18,8 +16,6 @@ const BrowseList = () => {
   const browses = [
     { description: "Platforms", icon: IoGameController },
     { description: "Stores", icon: IoMdDownload },
-    { description: "Collections", icon: IoFolder },
-    { description: "Reviews", icon: IoChatbubble },
     { description: "Genres", icon: FaGhost },
     { description: "Creators", icon: IoPerson },
     { description: "Tags", icon: FaHashtag },
