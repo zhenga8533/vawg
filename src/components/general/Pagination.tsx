@@ -17,7 +17,7 @@ interface PaginationProps {
 
 const Pagination = ({ count, onPageChange, page }: PaginationProps) => {
   page = page ?? 1;
-  const totalPages = Math.ceil(count / 20);
+  const totalPages = Math.ceil(count / 24);
   const hasPreviousPage = page > 1;
   const hasNextPage = page < totalPages;
 
