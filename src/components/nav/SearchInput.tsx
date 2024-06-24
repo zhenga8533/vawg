@@ -1,6 +1,7 @@
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { useRef } from "react";
 import { BsSearch } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 interface SearchInputProps {
   onSearch: (searchText: string) => void;
@@ -8,12 +9,16 @@ interface SearchInputProps {
 
 const SearchInput = ({ onSearch }: SearchInputProps) => {
   const ref = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        if (ref.current) onSearch(ref.current.value);
+        if (ref.current) {
+          navigate("/");
+          onSearch(ref.current.value);
+        }
       }}
     >
       <InputGroup>
