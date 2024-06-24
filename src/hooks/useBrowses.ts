@@ -16,8 +16,19 @@ interface Game {
   added: number;
 }
 
-const useBrowses = (endpoint: string) => {
-  return useData<Browse>(endpoint);
-};
+interface BrowseQuery {
+  page: number;
+}
+
+const useBrowses = (browseQuery: BrowseQuery, endpoint: string) =>
+  useData<Browse>(
+    endpoint,
+    {
+      params: {
+        page: browseQuery.page,
+      },
+    },
+    [browseQuery]
+  );
 
 export default useBrowses;

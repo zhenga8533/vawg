@@ -2,6 +2,7 @@ import { HStack, Heading } from "@chakra-ui/react";
 import useBrowses from "../hooks/useBrowses";
 import Pagination from "../components/general/Pagination";
 import BrowseGrid from "../components/main/browse/BrowseGrid";
+import { useState } from "react";
 
 interface BrowsesProps {
   endpoint: string;
@@ -9,7 +10,8 @@ interface BrowsesProps {
 }
 
 const Browses = ({ endpoint, title }: BrowsesProps) => {
-  const browseData = useBrowses(endpoint);
+  const [browseQuery, setBrowseQuery] = useState({ page: 1 });
+  const browseData = useBrowses(browseQuery, endpoint);
 
   return (
     <>
@@ -19,16 +21,16 @@ const Browses = ({ endpoint, title }: BrowsesProps) => {
         </Heading>
         <Pagination
           count={browseData.count}
-          onPageChange={(page) => console.log(page)}
-          page={1}
+          onPageChange={(page) => setBrowseQuery({ ...browseQuery, page })}
+          page={browseQuery.page}
         />
       </HStack>
       <BrowseGrid browseData={browseData} />
       <HStack justifyContent="center" marginTop={5}>
         <Pagination
           count={browseData.count}
-          onPageChange={(page) => console.log(page)}
-          page={1}
+          onPageChange={(page) => setBrowseQuery({ ...browseQuery, page })}
+          page={browseQuery.page}
         />
       </HStack>
     </>
