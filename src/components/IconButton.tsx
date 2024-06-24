@@ -11,19 +11,22 @@ const IconButton = ({ description, icon: Icon }: IconButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <HStack
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <HStack>
       <Button
+        filter={isHovered ? "invert(1)" : "none"}
         height="auto"
         minWidth="auto"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
         padding="6px"
-        filter={isHovered ? "invert(1)" : "none"}
       >
         <Box as={Icon} size="20px" />
       </Button>
-      <Button variant="link" onMouseEnter={() => setIsHovered(true)}>
+      <Button
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        variant="link"
+      >
         {description}
       </Button>
     </HStack>
