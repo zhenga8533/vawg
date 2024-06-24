@@ -1,4 +1,4 @@
-import { Box, GridItem, HStack } from "@chakra-ui/react";
+import { Box, HStack } from "@chakra-ui/react";
 import GameHeading from "../components/game/GameHeading";
 import PlatformSelector from "../components/PlatformSelector";
 import { GameQuery } from "../App";
@@ -16,7 +16,7 @@ const Games = ({ gameQuery, setGameQuery }: GamesProps) => {
   const gameData = useGames(gameQuery);
 
   return (
-    <GridItem area="main">
+    <>
       <Box marginY={5}>
         <GameHeading gameQuery={gameQuery} />
         <HStack justifyContent="space-between">
@@ -52,7 +52,7 @@ const Games = ({ gameQuery, setGameQuery }: GamesProps) => {
           page={gameQuery.page}
         />
       </HStack>
-    </GridItem>
+    </>
   );
 };
 

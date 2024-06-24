@@ -55,15 +55,17 @@ function App() {
             />
           </GridItem>
         </Show>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Games gameQuery={gameQuery} setGameQuery={setGameQuery} />
-            }
-          />
-          <Route path="/creators" element={<Creators />} />
-        </Routes>
+        <GridItem about="main">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Games gameQuery={gameQuery} setGameQuery={setGameQuery} />
+              }
+            />
+            <Route path="/creators" element={<Creators />} />
+          </Routes>
+        </GridItem>
       </Grid>
     </Router>
   );
