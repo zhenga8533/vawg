@@ -20,7 +20,7 @@ const BrowseList = () => {
     { description: "Creators", icon: IoPerson },
     { description: "Tags", icon: FaHashtag },
     { description: "Developers", icon: IoCodeSlash },
-    { description: "Publisher", icon: IoCloudUpload },
+    { description: "Publishers", icon: IoCloudUpload },
   ];
   const [showAll, setShowAll] = useState(false);
   const navigate = useNavigate();

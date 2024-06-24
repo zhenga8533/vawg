@@ -102,6 +102,16 @@ function App() {
                 />
               }
             />
+            <Route
+              path="/publishers"
+              element={
+                <Browses
+                  endpoint="/publishers"
+                  title="Publishers"
+                  key="publishers"
+                />
+              }
+            />
           </Routes>
         </GridItem>
       </Grid>
