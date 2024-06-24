@@ -1,8 +1,8 @@
 import { Flex, SimpleGrid, Text } from "@chakra-ui/react";
-import CardContainer from "./CardContainer";
+import CardContainer from "../general/CardContainer";
 import GameCard from "./GameCard";
-import SkeletonCard from "./SkeletonCard";
-import { Game } from "../hooks/useGames";
+import SkeletonCard from "../general/SkeletonCard";
+import { Game } from "../../hooks/useGames";
 
 interface GameGridProps {
   gameData: {

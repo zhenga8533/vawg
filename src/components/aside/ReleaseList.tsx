@@ -1,6 +1,6 @@
 import { Heading, List, ListItem } from "@chakra-ui/react";
 import { FaCalendar, FaFastForward, FaStar } from "react-icons/fa";
-import IconButton from "./IconButton";
+import IconButton from "../general/IconButton";
 import { SiFireship } from "react-icons/si";
 
 const ReleaseList = () => {

@@ -1,6 +1,6 @@
 import { Heading, List, ListItem } from "@chakra-ui/react";
 import { FaCrown, FaTrophy } from "react-icons/fa";
-import IconButton from "./IconButton";
+import IconButton from "../general/IconButton";
 import { MdLeaderboard } from "react-icons/md";
 
 const TopList = () => {

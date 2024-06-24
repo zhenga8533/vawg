@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Grid, GridItem, Show } from "@chakra-ui/react";
-import Navbar from "./components/Navbar";
-import GenreList from "./components/GenreList";
+import Navbar from "./components/nav/Navbar";
+import GenreList from "./components/aside/GenreList";
 import { Genre } from "./hooks/useGenres";
 import { Platform } from "./hooks/useGames";
-import ReleaseList from "./components/ReleaseList";
-import BrowseList from "./components/BrowseList";
-import TopList from "./components/TopList";
+import ReleaseList from "./components/aside/ReleaseList";
+import BrowseList from "./components/aside/BrowseList";
+import TopList from "./components/aside/TopList";
 import Games from "./routes/Games";
 
 export interface GameQuery {

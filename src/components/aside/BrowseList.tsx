@@ -7,7 +7,7 @@ import {
   IoGameController,
   IoPerson,
 } from "react-icons/io5";
-import IconButton from "./IconButton";
+import IconButton from "../general/IconButton";
 import { IoMdDownload } from "react-icons/io";
 import { FaGhost, FaHashtag } from "react-icons/fa";
 import { useState } from "react";
@@ -33,8 +33,8 @@ const BrowseList = () => {
         Browse
       </Heading>
       <List>
-        {browses.slice(0, showAll ? browses.length : 3).map((browse) => (
-          <ListItem paddingY={1}>
+        {browses.slice(0, showAll ? browses.length : 3).map((browse, index) => (
+          <ListItem key={index} paddingY={1}>
             <IconButton description={browse.description} icon={browse.icon} />
           </ListItem>
         ))}

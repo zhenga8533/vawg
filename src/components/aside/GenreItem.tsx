@@ -1,6 +1,6 @@
 import { Button, HStack, Image, ListItem } from "@chakra-ui/react";
-import { Genre } from "../hooks/useGenres";
-import getStyle from "../services/select-style";
+import { Genre } from "../../hooks/useGenres";
+import getStyle from "../../services/select-style";
 
 interface GenreItemProps {
   genre: Genre | null;

@@ -1,8 +1,8 @@
 import { Button, Heading, List, ListItem } from "@chakra-ui/react";
-import useGenres, { Genre } from "../hooks/useGenres";
-import cropImageURL from "../services/image-url";
-import SkeletonListItem from "./SkeletonListItem";
-import anyGenre from "../assets/any-genre.webp";
+import useGenres, { Genre } from "../../hooks/useGenres";
+import cropImageURL from "../../services/image-url";
+import SkeletonListItem from "../general/SkeletonListItem";
+import anyGenre from "../../assets/any-genre.webp";
 import GenreItem from "./GenreItem";
 import { useState } from "react";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
