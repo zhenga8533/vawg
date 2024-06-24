@@ -2,9 +2,10 @@ import { Heading, List, ListItem } from "@chakra-ui/react";
 import { FaCrown, FaTrophy } from "react-icons/fa";
 import IconButton from "../general/IconButton";
 import { MdLeaderboard } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const TopList = () => {
-  const lastYear = new Date().getFullYear() - 1;
+  const navigate = useNavigate();
 
   return (
     <>
@@ -13,16 +14,25 @@ const TopList = () => {
       </Heading>
       <List>
         <ListItem paddingY={1}>
-          <IconButton description="Best of the year" icon={FaTrophy} />
-        </ListItem>
-        <ListItem paddingY={1}>
           <IconButton
-            description={`Popular in ${lastYear}`}
-            icon={MdLeaderboard}
+            description="Best of the year"
+            icon={FaTrophy}
+            onClick={() => navigate("/best-of-the-year")}
           />
         </ListItem>
         <ListItem paddingY={1}>
-          <IconButton description="All time top 250" icon={FaCrown} />
+          <IconButton
+            description={`Popular last year`}
+            icon={MdLeaderboard}
+            onClick={() => navigate("/popular-last-year")}
+          />
+        </ListItem>
+        <ListItem paddingY={1}>
+          <IconButton
+            description="All time top 250"
+            icon={FaCrown}
+            onClick={() => navigate("/all-time-top-250")}
+          />
         </ListItem>
       </List>
     </>

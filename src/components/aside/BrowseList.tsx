@@ -12,6 +12,7 @@ import { IoMdDownload } from "react-icons/io";
 import { FaGhost, FaHashtag } from "react-icons/fa";
 import { useState } from "react";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const BrowseList = () => {
   const browses = [
@@ -26,6 +27,7 @@ const BrowseList = () => {
     { description: "Publisher", icon: IoCloudUpload },
   ];
   const [showAll, setShowAll] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -35,7 +37,11 @@ const BrowseList = () => {
       <List>
         {browses.slice(0, showAll ? browses.length : 3).map((browse, index) => (
           <ListItem key={index} paddingY={1}>
-            <IconButton description={browse.description} icon={browse.icon} />
+            <IconButton
+              description={browse.description}
+              icon={browse.icon}
+              onClick={() => navigate(`/${browse.description.toLowerCase()}`)}
+            />
           </ListItem>
         ))}
         <ListItem marginTop={1}>

@@ -5,9 +5,10 @@ import { IconType } from "react-icons";
 interface IconButtonProps {
   description: string;
   icon: IconType;
+  onClick: () => void;
 }
 
-const IconButton = ({ description, icon: Icon }: IconButtonProps) => {
+const IconButton = ({ description, icon: Icon, onClick }: IconButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -16,6 +17,7 @@ const IconButton = ({ description, icon: Icon }: IconButtonProps) => {
         filter={isHovered ? "invert(1)" : "none"}
         height="auto"
         minWidth="auto"
+        onClick={onClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         padding="6px"
@@ -23,6 +25,7 @@ const IconButton = ({ description, icon: Icon }: IconButtonProps) => {
         <Box as={Icon} size="20px" />
       </Button>
       <Button
+        onClick={onClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         variant="link"
