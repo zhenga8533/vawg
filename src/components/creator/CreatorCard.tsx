@@ -1,6 +1,16 @@
-import { Box, Card, CardBody, Heading, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Card,
+  CardBody,
+  HStack,
+  Heading,
+  Icon,
+  Image,
+  Text,
+} from "@chakra-ui/react";
 import cropImageURL from "../../services/image-url";
 import { Creator } from "../../hooks/useCreators";
+import { IoPersonOutline } from "react-icons/io5";
 
 interface CreatorCardProps {
   creator: Creator;
@@ -39,7 +49,40 @@ const CreatorCard = ({ creator }: CreatorCardProps) => {
         flexDirection="column"
         justifyContent="space-between"
       >
-        <Heading fontSize="2xl">{creator.name}</Heading>
+        <Box marginBottom={3} textAlign="center">
+          <Heading fontSize="2xl">{creator.name}</Heading>
+          <Text color="gray.300" fontSize="small">
+            {creator.positions
+              .map(
+                (position) =>
+                  position.name.charAt(0).toUpperCase() + position.name.slice(1)
+              )
+              .join(", ")}
+          </Text>
+        </Box>
+        <Box>
+          <HStack justifyContent="space-between">
+            <Text fontWeight="bold">Known for</Text>
+            <Text color="gray">{creator.games_count}</Text>
+          </HStack>
+          <hr />
+          {creator.games.map((game) => (
+            <HStack justifyContent="space-between">
+              <Text
+                key={game.id}
+                textOverflow="ellipsis"
+                overflow="hidden"
+                whiteSpace="nowrap"
+              >
+                {game.name}
+              </Text>
+              <HStack spacing={1}>
+                <Text color="gray">{game.added}</Text>
+                <Icon as={IoPersonOutline} />
+              </HStack>
+            </HStack>
+          ))}
+        </Box>
       </CardBody>
     </Card>
   );

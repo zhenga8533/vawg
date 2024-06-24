@@ -5,3 +5,7 @@ form {
 .list-heading {
   margin-top: 1rem;
 }
+
+hr {
+  margin: 0.5rem 0;
+}
