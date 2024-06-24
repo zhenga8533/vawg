@@ -8,34 +8,34 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import cropImageURL from "../../services/image-url";
+import cropImageURL from "../../../services/image-url";
 import { IoPersonOutline } from "react-icons/io5";
-import { commafy } from "../../services/formatting";
-import { Genre } from "../../hooks/useGenres";
+import { commafy } from "../../../services/formatting";
+import { Browse } from "../../../hooks/useBrowses";
 
-interface GenreCardProps {
-  genre: Genre;
+interface BrowseCardProps {
+  browse: Browse;
 }
 
-const GenreCard = ({ genre }: GenreCardProps) => {
+const BrowseCard = ({ browse }: BrowseCardProps) => {
   return (
     <Card>
-      <Image src={cropImageURL(genre.image_background)} alt={genre.name} />
+      <Image src={cropImageURL(browse.image_background)} alt={browse.name} />
       <CardBody
         display="flex"
         flexDirection="column"
         justifyContent="space-between"
       >
         <Box marginBottom={3} textAlign="center">
-          <Heading fontSize="2xl">{genre.name}</Heading>
+          <Heading fontSize="2xl">{browse.name}</Heading>
         </Box>
         <Box>
           <HStack justifyContent="space-between">
             <Text fontWeight="bold">Games</Text>
-            <Text color="gray">{commafy(genre.games_count)}</Text>
+            <Text color="gray">{commafy(browse.games_count)}</Text>
           </HStack>
           <hr />
-          {genre.games.map((game) => (
+          {browse.games.map((game) => (
             <HStack justifyContent="space-between" key={game.id}>
               <Text
                 key={game.id}
@@ -57,4 +57,4 @@ const GenreCard = ({ genre }: GenreCardProps) => {
   );
 };
 
-export default GenreCard;
+export default BrowseCard;

@@ -10,7 +10,7 @@ import BrowseList from "./components/aside/BrowseList";
 import TopList from "./components/aside/TopList";
 import Games from "./routes/Games";
 import Creators from "./routes/Creators";
-import Genres from "./routes/Genres";
+import Browses from "./routes/Browses";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -65,7 +65,28 @@ function App() {
               }
             />
             {/* Browse */}
-            <Route path="/genres" element={<Genres />} />
+            <Route
+              path="/platforms"
+              element={
+                <Browses
+                  endpoint="/platforms"
+                  title="Platforms"
+                  key="platforms"
+                />
+              }
+            />
+            <Route
+              path="/stores"
+              element={
+                <Browses endpoint="/stores" title="Storefronts" key="stores" />
+              }
+            />
+            <Route
+              path="/genres"
+              element={
+                <Browses endpoint="/genres" title="Genres" key="genres" />
+              }
+            />
             <Route path="/creators" element={<Creators />} />
           </Routes>
         </GridItem>

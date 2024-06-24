@@ -45,7 +45,7 @@ const Games = ({ gameQuery, setGameQuery }: GamesProps) => {
         </HStack>
       </Box>
       <GameGrid gameData={gameData} />
-      <HStack justifyContent="center">
+      <HStack justifyContent="center" marginTop={5}>
         <Pagination
           count={gameData.count}
           onPageChange={(page) => setGameQuery({ ...gameQuery, page })}
