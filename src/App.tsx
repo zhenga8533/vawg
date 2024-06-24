@@ -88,6 +88,10 @@ function App() {
               }
             />
             <Route path="/creators" element={<Creators />} />
+            <Route
+              path="/tags"
+              element={<Browses endpoint="/tags" title="Tags" key="tags" />}
+            />
           </Routes>
         </GridItem>
       </Grid>
