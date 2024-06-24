@@ -1,7 +1,7 @@
 import { HStack, Heading } from "@chakra-ui/react";
 import useCreator from "../hooks/useCreators";
 import Pagination from "../components/general/Pagination";
-import CreatorGrid from "../components/creator/CreatorGrid";
+import CreatorGrid from "../components/main/creator/CreatorGrid";
 
 const Creators = () => {
   const creatorData = useCreator();

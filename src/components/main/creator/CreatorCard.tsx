@@ -8,11 +8,11 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import cropImageURL from "../../services/image-url";
-import { Creator } from "../../hooks/useCreators";
+import cropImageURL from "../../../services/image-url";
+import { Creator } from "../../../hooks/useCreators";
 import { IoPersonOutline } from "react-icons/io5";
 import { useEffect, useRef, useState } from "react";
-import { commafy } from "../../services/formatting";
+import { commafy } from "../../../services/formatting";
 
 interface CreatorCardProps {
   creator: Creator;

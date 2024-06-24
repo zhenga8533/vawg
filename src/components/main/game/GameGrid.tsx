@@ -1,7 +1,7 @@
-import CardContainer from "../general/CardContainer";
+import CardContainer from "../../general/CardContainer";
 import GameCard from "./GameCard";
-import { Game } from "../../hooks/useGames";
-import CardGrid from "../general/CardGrid";
+import { Game } from "../../../hooks/useGames";
+import CardGrid from "../../general/CardGrid";
 
 interface GameGridProps {
   gameData: {

@@ -1,11 +1,11 @@
 import { Box, HStack } from "@chakra-ui/react";
-import GameHeading from "../components/game/GameHeading";
+import GameHeading from "../components/main/game/GameHeading";
 import PlatformSelector from "../components/PlatformSelector";
 import { GameQuery } from "../App";
 import SortSelector from "../components/SortSelector";
 import Pagination from "../components/general/Pagination";
 import useGames from "../hooks/useGames";
-import GameGrid from "../components/game/GameGrid";
+import GameGrid from "../components/main/game/GameGrid";
 
 interface GamesProps {
   gameQuery: GameQuery;
