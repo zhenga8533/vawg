@@ -4,14 +4,14 @@ export interface Creator {
   id: number;
   name: string;
   image: string;
-  background_image: string;
+  image_background: string;
 }
 
-const useCreator = () =>
+const useCreators = () =>
   useData<Creator>("/creators", {
     params: {
       page: 1,
     },
   });
 
-export default useCreator;
+export default useCreators;

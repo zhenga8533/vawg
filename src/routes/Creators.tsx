@@ -1,6 +1,7 @@
-import { Box, HStack, Heading } from "@chakra-ui/react";
-import useCreator from "../hooks/useCreator";
+import { HStack, Heading } from "@chakra-ui/react";
+import useCreator from "../hooks/useCreators";
 import Pagination from "../components/general/Pagination";
+import CreatorGrid from "../components/creator/CreatorGrid";
 
 const Creators = () => {
   const creatorData = useCreator();
@@ -17,7 +18,7 @@ const Creators = () => {
           page={1}
         />
       </HStack>
-      <Box>TBD</Box>
+      <CreatorGrid creatorData={creatorData} />
       <HStack justifyContent="center">
         <Pagination
           count={creatorData.count}
