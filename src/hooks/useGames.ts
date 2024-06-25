@@ -7,6 +7,11 @@ export interface Platform {
   slug: string;
 }
 
+interface Screenshot {
+  id: number;
+  image: string;
+}
+
 export interface Game {
   id: number;
   name: string;
@@ -16,6 +21,7 @@ export interface Game {
   metacritic: number;
   rating: number;
   rating_top: number;
+  short_screenshots: Screenshot[];
 }
 
 const useGames = (gameQuery: GameQuery) =>
