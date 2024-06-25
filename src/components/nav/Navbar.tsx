@@ -10,14 +10,9 @@ interface SearchInputProps {
 const Navbar = ({ onSearch }: SearchInputProps) => {
   const navigate = useNavigate();
 
-  const handleLogoClick = () => {
-    navigate("/games");
-    window.location.reload();
-  };
-
   return (
     <HStack>
-      <Text cursor="pointer" fontSize="2xl" fontWeight={1000} letterSpacing={5} onClick={handleLogoClick}>
+      <Text cursor="pointer" fontSize="2xl" fontWeight={1000} letterSpacing={5} onClick={() => navigate("/games")}>
         VAWG
       </Text>
       <SearchInput onSearch={onSearch} />

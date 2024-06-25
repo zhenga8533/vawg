@@ -23,9 +23,15 @@ export interface GameQuery {
 }
 
 function App() {
-  const [gameQuery, setGameQuery] = useState<GameQuery>({
+  const baseQuery = {
+    dates: "",
+    genre: null,
+    page: 1,
+    platform: null,
+    searchText: "",
     sortOrder: "",
-  } as GameQuery);
+  } as GameQuery;
+  const [gameQuery, setGameQuery] = useState<GameQuery>(baseQuery);
 
   const parseDate = (date: Date) => date.toISOString().slice(0, 10);
   const parseDateFrame = (days: number) => {
@@ -38,7 +44,7 @@ function App() {
 
   const year = new Date().getFullYear();
   const gameRoutes: { [key: string]: () => void } = {
-    "": () => setGameQuery({ ...gameQuery }),
+    "": () => setGameQuery({ ...baseQuery }),
     "/best-of-the-year": () => setGameQuery({ ...gameQuery, dates: `${year}-01-01,${year}-12-31` }),
     "/popular-last-year": () => setGameQuery({ ...gameQuery, dates: `${year - 1}-01-01,${year - 1}-12-31` }),
     "/all-time": () => setGameQuery({ ...gameQuery, dates: "" }),
