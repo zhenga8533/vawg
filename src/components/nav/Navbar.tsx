@@ -12,10 +12,10 @@ const Navbar = ({ onSearch }: SearchInputProps) => {
   const location = useLocation();
 
   const handleLogoClick = () => {
-    if (location.pathname === "/") {
+    if (location.pathname === "/games") {
       window.location.reload();
     } else {
-      navigate("/");
+      navigate("/games");
     }
   };
 

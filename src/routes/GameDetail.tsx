@@ -1,5 +1,9 @@
+import { useParams } from "react-router-dom";
+
 const GameDetail = () => {
-  return <div>GameDetail</div>;
+  const { slug } = useParams();
+
+  return <div>Game Detail for: {slug}</div>;
 };
 
 export default GameDetail;

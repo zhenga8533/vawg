@@ -24,7 +24,7 @@ const GameCard = ({ game }: GameCardProps) => {
         <Button
           color="white"
           fontSize="2xl"
-          onClick={() => navigate(`games/${game.slug}`)}
+          onClick={() => navigate(`/games/${game.slug}`)}
           variant="link"
           whiteSpace="normal"
         >

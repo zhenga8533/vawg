@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import Navbar from "./components/nav/Navbar";
 import GenreList from "./components/aside/GenreList";
@@ -60,7 +60,8 @@ function App() {
         <GridItem about="main">
           <Routes>
             {/* Games */}
-            <Route path="/" element={<Games gameQuery={gameQuery} setGameQuery={setGameQuery} />} />
+            <Route path="/" element={<Navigate to="/games" replace />} />
+            <Route path="/games" element={<Games gameQuery={gameQuery} setGameQuery={setGameQuery} />} />
             <Route path="/games/:slug" element={<GameDetail />} />
             {/* Browse */}
             <Route path="/platforms" element={<Browses endpoint="/platforms" title="Platforms" key="platforms" />} />

@@ -41,7 +41,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
             image={cropImageURL(genre.image_background)}
             key={genre.id}
             onSelectGenre={() => {
-              navigate("/");
+              navigate("/games");
               onSelectGenre(genre);
             }}
             selectedGenre={selectedGenre}
