@@ -24,11 +24,19 @@ interface Game {
   added: number;
 }
 
-const useCreators = () =>
-  useData<Creator>("/creators", {
-    params: {
-      page: 1,
+interface CreatorQuery {
+  page: number;
+}
+
+const useCreators = (creatorQuery: CreatorQuery) =>
+  useData<Creator>(
+    "/creators",
+    {
+      params: {
+        page: creatorQuery.page,
+      },
     },
-  });
+    [creatorQuery]
+  );
 
 export default useCreators;

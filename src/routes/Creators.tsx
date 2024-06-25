@@ -2,9 +2,11 @@ import { HStack, Heading } from "@chakra-ui/react";
 import useCreator from "../hooks/useCreators";
 import Pagination from "../components/general/Pagination";
 import CreatorGrid from "../components/main/creator/CreatorGrid";
+import { useState } from "react";
 
 const Creators = () => {
-  const creatorData = useCreator();
+  const [creatoryQuery, setCreatoryQuery] = useState({ page: 1 });
+  const creatorData = useCreator(creatoryQuery);
 
   return (
     <>
@@ -14,16 +16,16 @@ const Creators = () => {
         </Heading>
         <Pagination
           count={creatorData.count}
-          onPageChange={(page) => console.log(page)}
-          page={1}
+          onPageChange={(page) => setCreatoryQuery({ ...creatoryQuery, page })}
+          page={creatoryQuery.page}
         />
       </HStack>
       <CreatorGrid creatorData={creatorData} />
-      <HStack justifyContent="center">
+      <HStack justifyContent="center" marginTop={5}>
         <Pagination
           count={creatorData.count}
-          onPageChange={(page) => console.log(page)}
-          page={1}
+          onPageChange={(page) => setCreatoryQuery({ ...creatoryQuery, page })}
+          page={creatoryQuery.page}
         />
       </HStack>
     </>
