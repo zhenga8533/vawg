@@ -1,7 +1,7 @@
 import { HStack, Text } from "@chakra-ui/react";
 import ThemeSelector from "./ThemeSelector";
 import SearchInput from "./SearchInput";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface SearchInputProps {
   onSearch: (searchText: string) => void;
@@ -9,14 +9,10 @@ interface SearchInputProps {
 
 const Navbar = ({ onSearch }: SearchInputProps) => {
   const navigate = useNavigate();
-  const location = useLocation();
 
   const handleLogoClick = () => {
-    if (location.pathname === "/games") {
-      window.location.reload();
-    } else {
-      navigate("/games");
-    }
+    navigate("/games");
+    window.location.reload();
   };
 
   return (
