@@ -11,6 +11,7 @@ import TopList from "./components/aside/TopList";
 import Games from "./routes/Games";
 import Creators from "./routes/Creators";
 import Browses from "./routes/Browses";
+import GameDetail from "./routes/GameDetail";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -58,7 +59,9 @@ function App() {
         </Show>
         <GridItem about="main">
           <Routes>
+            {/* Games */}
             <Route path="/" element={<Games gameQuery={gameQuery} setGameQuery={setGameQuery} />} />
+            <Route path="/games/:slug" element={<GameDetail />} />
             {/* Browse */}
             <Route path="/platforms" element={<Browses endpoint="/platforms" title="Platforms" key="platforms" />} />
             <Route path="/stores" element={<Browses endpoint="/stores" title="Storefronts" key="stores" />} />
