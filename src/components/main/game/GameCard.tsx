@@ -38,7 +38,7 @@ const GameCard = ({ game }: GameCardProps) => {
       <Box position="relative">
         <Image src={cropImageURL(game.short_screenshots?.[ssIndex]?.image || game.background_image)} alt={game.name} />
         {isHovered && (
-          <HStack justifyContent="center" paddingInline={5} position="absolute" bottom={3} left={0} right={0}>
+          <HStack justifyContent="center" paddingInline={3} position="absolute" bottom={3} left={0} right={0}>
             {screenshotCount &&
               game.short_screenshots?.map((_, index) => (
                 <Box
