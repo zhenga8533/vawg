@@ -26,15 +26,30 @@ function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({
     sortOrder: "",
   } as GameQuery);
-  const gameRoutes = [
-    "",
-    "/best-of-the-year",
-    "/popular-last-year",
-    "/all-time",
-    "/last-month",
-    "/this-week",
-    "/next-week",
-  ];
+
+  const date = new Date();
+  const year = date.getFullYear();
+  const gameRoutes: { [key: string]: () => void } = {
+    "": () => setGameQuery({ ...gameQuery }),
+    "/best-of-the-year": () => setGameQuery({ ...gameQuery, dates: `${year}-01-01,${year}-12-31` }),
+    "/popular-last-year": () => setGameQuery({ ...gameQuery, dates: `${year - 1}-01-01,${year - 1}-12-31` }),
+    "/all-time": () => setGameQuery({ ...gameQuery, dates: "" }),
+    "/last-month": () => {
+      date.setMonth(date.getMonth() - 1);
+      const lastMonth = date.toISOString().slice(0, 10);
+      setGameQuery({ ...gameQuery, dates: `${lastMonth},${date.toISOString().slice(0, 10)}` });
+    },
+    "/this-week": () => {
+      date.setDate(date.getDate() - 7);
+      const lastWeek = date.toISOString().slice(0, 10);
+      setGameQuery({ ...gameQuery, dates: `${lastWeek},${date.toISOString().slice(0, 10)}` });
+    },
+    "/next-week": () => {
+      date.setDate(date.getDate() + 7);
+      const nextWeek = date.toISOString().slice(0, 10);
+      setGameQuery({ ...gameQuery, dates: `${date.toISOString().slice(0, 10)},${nextWeek}` });
+    },
+  };
 
   return (
     <Router>
@@ -58,8 +73,8 @@ function App() {
         </GridItem>
         <Show above="lg">
           <GridItem area="aside">
-            <TopList onSelectTop={(dates) => setGameQuery({ ...gameQuery, dates })} />
-            <ReleaseList onSelectRelease={(dates) => setGameQuery({ ...gameQuery, dates })} />
+            <TopList />
+            <ReleaseList />
             <BrowseList />
             <GenreList
               onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
@@ -71,11 +86,13 @@ function App() {
           <Routes>
             {/* Games */}
             <Route path="/" element={<Navigate to="/games" replace />} />
-            {gameRoutes.map((route) => (
+            {Object.keys(gameRoutes).map((route) => (
               <Route
                 key={route}
                 path={`/games${route}`}
-                element={<Games gameQuery={gameQuery} setGameQuery={setGameQuery} />}
+                element={
+                  <Games gameQuery={gameQuery} key={route} onLoad={gameRoutes[route]} setGameQuery={setGameQuery} />
+                }
               />
             ))}
             <Route path="/games/:slug" element={<GameDetail />} />

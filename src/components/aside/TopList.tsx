@@ -4,13 +4,8 @@ import IconButton from "../general/IconButton";
 import { MdLeaderboard } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
-interface TopListProps {
-  onSelectTop: (dates: string) => void;
-}
-
-const TopList = ({ onSelectTop }: TopListProps) => {
+const TopList = () => {
   const navigate = useNavigate();
-  const year = new Date().getFullYear();
 
   return (
     <>
@@ -22,31 +17,18 @@ const TopList = ({ onSelectTop }: TopListProps) => {
           <IconButton
             description="Best of the year"
             icon={FaTrophy}
-            onClick={() => {
-              onSelectTop(`${year}-01-01,${year}-12-31`);
-              navigate("/games/best-of-the-year");
-            }}
+            onClick={() => navigate("/games/best-of-the-year")}
           />
         </ListItem>
         <ListItem paddingY={1}>
           <IconButton
             description={`Popular last year`}
             icon={MdLeaderboard}
-            onClick={() => {
-              onSelectTop(`${year - 1}-01-01,${year - 1}-12-31`);
-              navigate("/games/popular-last-year");
-            }}
+            onClick={() => navigate("/games/popular-last-year")}
           />
         </ListItem>
         <ListItem paddingY={1}>
-          <IconButton
-            description="All time"
-            icon={FaCrown}
-            onClick={() => {
-              onSelectTop(``);
-              navigate("/games/all-time");
-            }}
-          />
+          <IconButton description="All time" icon={FaCrown} onClick={() => navigate("/games/all-time")} />
         </ListItem>
       </List>
     </>
