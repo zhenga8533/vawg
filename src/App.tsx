@@ -27,28 +27,24 @@ function App() {
     sortOrder: "",
   } as GameQuery);
 
-  const date = new Date();
-  const year = date.getFullYear();
+  const parseDate = (date: Date) => date.toISOString().slice(0, 10);
+  const parseDateFrame = (days: number) => {
+    const date = new Date();
+    const lastDate = new Date();
+    lastDate.setDate(date.getDate() + days);
+    if (days > 0) return `${parseDate(date)},${parseDate(lastDate)}`;
+    else return `${parseDate(lastDate)},${parseDate(date)}`;
+  };
+
+  const year = new Date().getFullYear();
   const gameRoutes: { [key: string]: () => void } = {
     "": () => setGameQuery({ ...gameQuery }),
     "/best-of-the-year": () => setGameQuery({ ...gameQuery, dates: `${year}-01-01,${year}-12-31` }),
     "/popular-last-year": () => setGameQuery({ ...gameQuery, dates: `${year - 1}-01-01,${year - 1}-12-31` }),
     "/all-time": () => setGameQuery({ ...gameQuery, dates: "" }),
-    "/last-month": () => {
-      date.setMonth(date.getMonth() - 1);
-      const lastMonth = date.toISOString().slice(0, 10);
-      setGameQuery({ ...gameQuery, dates: `${lastMonth},${date.toISOString().slice(0, 10)}` });
-    },
-    "/this-week": () => {
-      date.setDate(date.getDate() - 7);
-      const lastWeek = date.toISOString().slice(0, 10);
-      setGameQuery({ ...gameQuery, dates: `${lastWeek},${date.toISOString().slice(0, 10)}` });
-    },
-    "/next-week": () => {
-      date.setDate(date.getDate() + 7);
-      const nextWeek = date.toISOString().slice(0, 10);
-      setGameQuery({ ...gameQuery, dates: `${date.toISOString().slice(0, 10)},${nextWeek}` });
-    },
+    "/last-month": () => setGameQuery({ ...gameQuery, dates: parseDateFrame(-30) }),
+    "/this-week": () => setGameQuery({ ...gameQuery, dates: parseDateFrame(-7) }),
+    "/next-week": () => setGameQuery({ ...gameQuery, dates: parseDateFrame(7) }),
   };
 
   return (
