@@ -6,6 +6,7 @@ import anyGenre from "../../assets/any-genre.webp";
 import GenreItem from "./GenreItem";
 import { useState } from "react";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 interface GenreListProps {
   onSelectGenre: (genre: Genre | null) => void;
@@ -14,6 +15,7 @@ interface GenreListProps {
 
 const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
   const { data, loading } = useGenres();
+  const navigate = useNavigate();
   const [showAll, setShowAll] = useState(false);
   const skeletons = Array.from({ length: 3 }, (_, i) => <SkeletonListItem key={i} />);
 
@@ -38,7 +40,10 @@ const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
             genre={genre}
             image={cropImageURL(genre.image_background)}
             key={genre.id}
-            onSelectGenre={onSelectGenre}
+            onSelectGenre={() => {
+              navigate("/");
+              onSelectGenre(genre);
+            }}
             selectedGenre={selectedGenre}
           />
         ))}
