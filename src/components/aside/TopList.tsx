@@ -4,8 +4,13 @@ import IconButton from "../general/IconButton";
 import { MdLeaderboard } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
-const TopList = () => {
+interface TopListProps {
+  onSelectTop: (dates: string) => void;
+}
+
+const TopList = ({ onSelectTop }: TopListProps) => {
   const navigate = useNavigate();
+  const year = new Date().getFullYear();
 
   return (
     <>
@@ -14,17 +19,34 @@ const TopList = () => {
       </Heading>
       <List>
         <ListItem paddingY={1}>
-          <IconButton description="Best of the year" icon={FaTrophy} onClick={() => navigate("/best-of-the-year")} />
+          <IconButton
+            description="Best of the year"
+            icon={FaTrophy}
+            onClick={() => {
+              onSelectTop(`${year}-01-01,${year}-12-31`);
+              navigate("/games/best-of-the-year");
+            }}
+          />
         </ListItem>
         <ListItem paddingY={1}>
           <IconButton
             description={`Popular last year`}
             icon={MdLeaderboard}
-            onClick={() => navigate("/popular-last-year")}
+            onClick={() => {
+              onSelectTop(`${year - 1}-01-01,${year - 1}-12-31`);
+              navigate("/games/popular-last-year");
+            }}
           />
         </ListItem>
         <ListItem paddingY={1}>
-          <IconButton description="All time top 250" icon={FaCrown} onClick={() => navigate("/all-time-top-250")} />
+          <IconButton
+            description="All time"
+            icon={FaCrown}
+            onClick={() => {
+              onSelectTop(``);
+              navigate("/games/all-time");
+            }}
+          />
         </ListItem>
       </List>
     </>

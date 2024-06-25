@@ -14,6 +14,7 @@ import Browses from "./routes/Browses";
 import GameDetail from "./routes/GameDetail";
 
 export interface GameQuery {
+  dates: string;
   genre: Genre | null;
   page: number;
   platform: Platform | null;
@@ -48,7 +49,7 @@ function App() {
         </GridItem>
         <Show above="lg">
           <GridItem area="aside">
-            <TopList />
+            <TopList onSelectTop={(dates) => setGameQuery({ ...gameQuery, dates })} />
             <ReleaseList />
             <BrowseList />
             <GenreList
@@ -63,6 +64,16 @@ function App() {
             <Route path="/" element={<Navigate to="/games" replace />} />
             <Route path="/games" element={<Games gameQuery={gameQuery} setGameQuery={setGameQuery} />} />
             <Route path="/games/:slug" element={<GameDetail />} />
+            {/* Top */}
+            <Route
+              path="/games/best-of-the-year"
+              element={<Games gameQuery={gameQuery} setGameQuery={setGameQuery} />}
+            />
+            <Route
+              path="/games/popular-last-year"
+              element={<Games gameQuery={gameQuery} setGameQuery={setGameQuery} />}
+            />
+            <Route path="/games/all-time" element={<Games gameQuery={gameQuery} setGameQuery={setGameQuery} />} />
             {/* Browse */}
             <Route path="/platforms" element={<Browses endpoint="/platforms" title="Platforms" key="platforms" />} />
             <Route path="/stores" element={<Browses endpoint="/stores" title="Storefronts" key="stores" />} />
