@@ -26,6 +26,15 @@ function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({
     sortOrder: "",
   } as GameQuery);
+  const gameRoutes = [
+    "",
+    "/best-of-the-year",
+    "/popular-last-year",
+    "/all-time",
+    "/last-month",
+    "/this-week",
+    "/next-week",
+  ];
 
   return (
     <Router>
@@ -50,7 +59,7 @@ function App() {
         <Show above="lg">
           <GridItem area="aside">
             <TopList onSelectTop={(dates) => setGameQuery({ ...gameQuery, dates })} />
-            <ReleaseList />
+            <ReleaseList onSelectRelease={(dates) => setGameQuery({ ...gameQuery, dates })} />
             <BrowseList />
             <GenreList
               onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
@@ -62,18 +71,14 @@ function App() {
           <Routes>
             {/* Games */}
             <Route path="/" element={<Navigate to="/games" replace />} />
-            <Route path="/games" element={<Games gameQuery={gameQuery} setGameQuery={setGameQuery} />} />
+            {gameRoutes.map((route) => (
+              <Route
+                key={route}
+                path={`/games${route}`}
+                element={<Games gameQuery={gameQuery} setGameQuery={setGameQuery} />}
+              />
+            ))}
             <Route path="/games/:slug" element={<GameDetail />} />
-            {/* Top */}
-            <Route
-              path="/games/best-of-the-year"
-              element={<Games gameQuery={gameQuery} setGameQuery={setGameQuery} />}
-            />
-            <Route
-              path="/games/popular-last-year"
-              element={<Games gameQuery={gameQuery} setGameQuery={setGameQuery} />}
-            />
-            <Route path="/games/all-time" element={<Games gameQuery={gameQuery} setGameQuery={setGameQuery} />} />
             {/* Browse */}
             <Route path="/platforms" element={<Browses endpoint="/platforms" title="Platforms" key="platforms" />} />
             <Route path="/stores" element={<Browses endpoint="/stores" title="Storefronts" key="stores" />} />
