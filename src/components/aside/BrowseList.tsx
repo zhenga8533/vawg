@@ -1,10 +1,5 @@
 import { Button, Heading, List, ListItem } from "@chakra-ui/react";
-import {
-  IoCloudUpload,
-  IoCodeSlash,
-  IoGameController,
-  IoPerson,
-} from "react-icons/io5";
+import { IoCloudUpload, IoCodeSlash, IoGameController, IoPerson } from "react-icons/io5";
 import IconButton from "../general/IconButton";
 import { IoMdDownload } from "react-icons/io";
 import { FaGhost, FaHashtag } from "react-icons/fa";

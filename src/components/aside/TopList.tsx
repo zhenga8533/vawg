@@ -14,11 +14,7 @@ const TopList = () => {
       </Heading>
       <List>
         <ListItem paddingY={1}>
-          <IconButton
-            description="Best of the year"
-            icon={FaTrophy}
-            onClick={() => navigate("/best-of-the-year")}
-          />
+          <IconButton description="Best of the year" icon={FaTrophy} onClick={() => navigate("/best-of-the-year")} />
         </ListItem>
         <ListItem paddingY={1}>
           <IconButton
@@ -28,11 +24,7 @@ const TopList = () => {
           />
         </ListItem>
         <ListItem paddingY={1}>
-          <IconButton
-            description="All time top 250"
-            icon={FaCrown}
-            onClick={() => navigate("/all-time-top-250")}
-          />
+          <IconButton description="All time top 250" icon={FaCrown} onClick={() => navigate("/all-time-top-250")} />
         </ListItem>
       </List>
     </>

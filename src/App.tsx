@@ -58,59 +58,20 @@ function App() {
         </Show>
         <GridItem about="main">
           <Routes>
-            <Route
-              path="/"
-              element={
-                <Games gameQuery={gameQuery} setGameQuery={setGameQuery} />
-              }
-            />
+            <Route path="/" element={<Games gameQuery={gameQuery} setGameQuery={setGameQuery} />} />
             {/* Browse */}
-            <Route
-              path="/platforms"
-              element={
-                <Browses
-                  endpoint="/platforms"
-                  title="Platforms"
-                  key="platforms"
-                />
-              }
-            />
-            <Route
-              path="/stores"
-              element={
-                <Browses endpoint="/stores" title="Storefronts" key="stores" />
-              }
-            />
-            <Route
-              path="/genres"
-              element={
-                <Browses endpoint="/genres" title="Genres" key="genres" />
-              }
-            />
+            <Route path="/platforms" element={<Browses endpoint="/platforms" title="Platforms" key="platforms" />} />
+            <Route path="/stores" element={<Browses endpoint="/stores" title="Storefronts" key="stores" />} />
+            <Route path="/genres" element={<Browses endpoint="/genres" title="Genres" key="genres" />} />
             <Route path="/creators" element={<Creators />} />
-            <Route
-              path="/tags"
-              element={<Browses endpoint="/tags" title="Tags" key="tags" />}
-            />
+            <Route path="/tags" element={<Browses endpoint="/tags" title="Tags" key="tags" />} />
             <Route
               path="/developers"
-              element={
-                <Browses
-                  endpoint="/developers"
-                  title="Developers"
-                  key="developers"
-                />
-              }
+              element={<Browses endpoint="/developers" title="Developers" key="developers" />}
             />
             <Route
               path="/publishers"
-              element={
-                <Browses
-                  endpoint="/publishers"
-                  title="Publishers"
-                  key="publishers"
-                />
-              }
+              element={<Browses endpoint="/publishers" title="Publishers" key="publishers" />}
             />
           </Routes>
         </GridItem>

@@ -9,10 +9,7 @@ interface PlatformSelectorProps {
   onSelectPlatform: (platform: Platform | null) => void;
 }
 
-const PlatformSelector = ({
-  selectedPlatform,
-  onSelectPlatform,
-}: PlatformSelectorProps) => {
+const PlatformSelector = ({ selectedPlatform, onSelectPlatform }: PlatformSelectorProps) => {
   const { data } = usePlatforms();
 
   return (
@@ -21,11 +18,7 @@ const PlatformSelector = ({
         {selectedPlatform ? selectedPlatform.name : "Platforms"}
       </MenuButton>
       <MenuList>
-        <MenuItem
-          {...getStyle(undefined, selectedPlatform?.id)}
-          key={0}
-          onClick={() => onSelectPlatform(null)}
-        >
+        <MenuItem {...getStyle(undefined, selectedPlatform?.id)} key={0} onClick={() => onSelectPlatform(null)}>
           Any Platform
         </MenuItem>
         {data.map((platform) => (

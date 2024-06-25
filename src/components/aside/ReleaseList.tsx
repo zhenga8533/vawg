@@ -14,32 +14,16 @@ const ReleaseList = () => {
       </Heading>
       <List>
         <ListItem paddingY={1}>
-          <IconButton
-            description="Last 30 days"
-            icon={FaStar}
-            onClick={() => navigate("/last-30-days")}
-          />
+          <IconButton description="Last 30 days" icon={FaStar} onClick={() => navigate("/last-30-days")} />
         </ListItem>
         <ListItem paddingY={1}>
-          <IconButton
-            description="This week"
-            icon={SiFireship}
-            onClick={() => navigate("/this-week")}
-          />
+          <IconButton description="This week" icon={SiFireship} onClick={() => navigate("/this-week")} />
         </ListItem>
         <ListItem paddingY={1}>
-          <IconButton
-            description="Next week"
-            icon={FaFastForward}
-            onClick={() => navigate("/next-week")}
-          />
+          <IconButton description="Next week" icon={FaFastForward} onClick={() => navigate("/next-week")} />
         </ListItem>
         <ListItem paddingY={1}>
-          <IconButton
-            description="Release calendar"
-            icon={FaCalendar}
-            onClick={() => navigate("/release-calendar")}
-          />
+          <IconButton description="Release calendar" icon={FaCalendar} onClick={() => navigate("/release-calendar")} />
         </ListItem>
       </List>
     </>

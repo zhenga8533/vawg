@@ -22,18 +22,12 @@ const Games = ({ gameQuery, setGameQuery }: GamesProps) => {
         <HStack justifyContent="space-between">
           <HStack spacing={4}>
             <PlatformSelector
-              onSelectPlatform={(platform) =>
-                setGameQuery({ ...gameQuery, platform })
-              }
+              onSelectPlatform={(platform) => setGameQuery({ ...gameQuery, platform })}
               selectedPlatform={gameQuery.platform}
             />
             <SortSelector
-              onReverseOrder={(sortOrder) =>
-                setGameQuery({ ...gameQuery, sortOrder })
-              }
-              onSelectOrder={(sortOrder) =>
-                setGameQuery({ ...gameQuery, sortOrder })
-              }
+              onReverseOrder={(sortOrder) => setGameQuery({ ...gameQuery, sortOrder })}
+              onSelectOrder={(sortOrder) => setGameQuery({ ...gameQuery, sortOrder })}
               sortOrder={gameQuery.sortOrder}
             />
           </HStack>

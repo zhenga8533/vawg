@@ -10,12 +10,7 @@ const GameStars = ({ rating }: GameStarsProps) => {
     const roundedRating = Math.round(rating * 2) / 2;
     const stars = [];
     for (let i = 1; i <= 5; i++) {
-      const icon =
-        roundedRating >= i
-          ? FaStar
-          : roundedRating + 0.5 === i
-          ? FaStarHalfAlt
-          : FaRegStar;
+      const icon = roundedRating >= i ? FaStar : roundedRating + 0.5 === i ? FaStarHalfAlt : FaRegStar;
       stars.push(<Icon as={icon} color="yellow.500" fontSize="xl" key={i} />);
     }
     return stars;

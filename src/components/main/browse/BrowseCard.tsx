@@ -1,13 +1,4 @@
-import {
-  Box,
-  Card,
-  CardBody,
-  HStack,
-  Heading,
-  Icon,
-  Image,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Card, CardBody, HStack, Heading, Icon, Image, Text } from "@chakra-ui/react";
 import cropImageURL from "../../../services/image-url";
 import { IoPersonOutline } from "react-icons/io5";
 import { commafy } from "../../../services/formatting";
@@ -21,11 +12,7 @@ const BrowseCard = ({ browse }: BrowseCardProps) => {
   return (
     <Card>
       <Image src={cropImageURL(browse.image_background)} alt={browse.name} />
-      <CardBody
-        display="flex"
-        flexDirection="column"
-        justifyContent="space-between"
-      >
+      <CardBody display="flex" flexDirection="column" justifyContent="space-between">
         <Box marginBottom={3} textAlign="center">
           <Heading fontSize="2xl">{browse.name}</Heading>
         </Box>
@@ -37,12 +24,7 @@ const BrowseCard = ({ browse }: BrowseCardProps) => {
           <hr />
           {browse.games.map((game) => (
             <HStack justifyContent="space-between" key={game.id}>
-              <Text
-                key={game.id}
-                textOverflow="ellipsis"
-                overflow="hidden"
-                whiteSpace="nowrap"
-              >
+              <Text key={game.id} textOverflow="ellipsis" overflow="hidden" whiteSpace="nowrap">
                 {game.name}
               </Text>
               <HStack spacing={1}>

@@ -21,13 +21,7 @@ const Navbar = ({ onSearch }: SearchInputProps) => {
 
   return (
     <HStack>
-      <Text
-        cursor="pointer"
-        fontSize="2xl"
-        fontWeight={1000}
-        letterSpacing={5}
-        onClick={handleLogoClick}
-      >
+      <Text cursor="pointer" fontSize="2xl" fontWeight={1000} letterSpacing={5} onClick={handleLogoClick}>
         VAWG
       </Text>
       <SearchInput onSearch={onSearch} />

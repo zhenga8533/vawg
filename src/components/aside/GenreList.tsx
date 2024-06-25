@@ -15,9 +15,7 @@ interface GenreListProps {
 const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
   const { data, loading } = useGenres();
   const [showAll, setShowAll] = useState(false);
-  const skeletons = Array.from({ length: 3 }, (_, i) => (
-    <SkeletonListItem key={i} />
-  ));
+  const skeletons = Array.from({ length: 3 }, (_, i) => <SkeletonListItem key={i} />);
 
   return (
     <>

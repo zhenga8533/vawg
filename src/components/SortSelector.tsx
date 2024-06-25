@@ -1,12 +1,4 @@
-import {
-  Button,
-  Checkbox,
-  Menu,
-  MenuButton,
-  MenuDivider,
-  MenuItem,
-  MenuList,
-} from "@chakra-ui/react";
+import { Button, Checkbox, Menu, MenuButton, MenuDivider, MenuItem, MenuList } from "@chakra-ui/react";
 import { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
 import getStyle from "../services/select-style";
@@ -17,11 +9,7 @@ interface SortSelectorProps {
   sortOrder: string;
 }
 
-const SortSelector = ({
-  onReverseOrder,
-  onSelectOrder,
-  sortOrder,
-}: SortSelectorProps) => {
+const SortSelector = ({ onReverseOrder, onSelectOrder, sortOrder }: SortSelectorProps) => {
   const [reverse, setReverse] = useState(false);
   const [sortOrders, setSortOrders] = useState([
     { label: "Relevance", value: "" },
@@ -34,13 +22,10 @@ const SortSelector = ({
     { label: "Metacritic", value: "-metacritic" },
   ]);
 
-  const sortOrderLabel = sortOrders.find(
-    (order) => order.value === sortOrder
-  )?.label;
+  const sortOrderLabel = sortOrders.find((order) => order.value === sortOrder)?.label;
 
   const reverseOrder = () => {
-    const reverseValue = (value: string) =>
-      value?.startsWith("-") ? value.slice(1) : `-${value || ""}`;
+    const reverseValue = (value: string) => (value?.startsWith("-") ? value.slice(1) : `-${value || ""}`);
 
     setReverse(!reverse);
     setSortOrders(
@@ -58,20 +43,12 @@ const SortSelector = ({
       </MenuButton>
       <MenuList>
         {sortOrders.map((order) => (
-          <MenuItem
-            {...getStyle(order.value, sortOrder)}
-            key={order.value}
-            onClick={() => onSelectOrder(order.value)}
-          >
+          <MenuItem {...getStyle(order.value, sortOrder)} key={order.value} onClick={() => onSelectOrder(order.value)}>
             {order.label}
           </MenuItem>
         ))}
         <MenuDivider />
-        <Checkbox
-          isChecked={reverse}
-          marginLeft={2}
-          onChange={() => reverseOrder()}
-        >
+        <Checkbox isChecked={reverse} marginLeft={2} onChange={() => reverseOrder()}>
           Reverse
         </Checkbox>
       </MenuList>

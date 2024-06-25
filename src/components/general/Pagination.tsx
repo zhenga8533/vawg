@@ -1,10 +1,4 @@
-import {
-  Box,
-  Button,
-  HStack,
-  NumberInput,
-  NumberInputField,
-} from "@chakra-ui/react";
+import { Box, Button, HStack, NumberInput, NumberInputField } from "@chakra-ui/react";
 import { FaBackward, FaForward } from "react-icons/fa";
 import { IoCaretBack, IoCaretForward } from "react-icons/io5";
 import { commafy } from "../../services/formatting";
@@ -36,22 +30,12 @@ const Pagination = ({ count, onPageChange, page }: PaginationProps) => {
       <Button onClick={() => changePage(1)} isDisabled={!hasPreviousPage}>
         <FaBackward />
       </Button>
-      <Button
-        onClick={() => changePage(page - 1)}
-        isDisabled={!hasPreviousPage}
-      >
+      <Button onClick={() => changePage(page - 1)} isDisabled={!hasPreviousPage}>
         <IoCaretBack />
       </Button>
       <HStack>
-        <NumberInput
-          name="page-number"
-          onChange={(_, valueNumber) => changePage(valueNumber)}
-          value={page}
-        >
-          <NumberInputField
-            padding={1}
-            width={`${page.toString().length + 1.25}ch`}
-          />
+        <NumberInput name="page-number" onChange={(_, valueNumber) => changePage(valueNumber)} value={page}>
+          <NumberInputField padding={1} width={`${page.toString().length + 1.25}ch`} />
         </NumberInput>
         <Box>of {commafy(totalPages)}</Box>
       </HStack>

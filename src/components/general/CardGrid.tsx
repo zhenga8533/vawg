@@ -23,11 +23,7 @@ const CardGrid = ({ cards, error, loading }: CardGridProps) => {
     );
   return (
     <Flex alignItems="center" justifyContent="center" width="100%">
-      <SimpleGrid
-        width="auto"
-        columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-        spacing={5}
-      >
+      <SimpleGrid width="auto" columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing={5}>
         {loading && skeletons}
         {cards}
       </SimpleGrid>

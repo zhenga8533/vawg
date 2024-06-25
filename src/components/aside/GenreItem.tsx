@@ -9,12 +9,7 @@ interface GenreItemProps {
   selectedGenre: Genre | null;
 }
 
-const GenreItem = ({
-  genre,
-  image,
-  onSelectGenre,
-  selectedGenre,
-}: GenreItemProps) => {
+const GenreItem = ({ genre, image, onSelectGenre, selectedGenre }: GenreItemProps) => {
   return (
     <ListItem paddingY={2}>
       <HStack>
