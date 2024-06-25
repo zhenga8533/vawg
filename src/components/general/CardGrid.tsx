@@ -1,6 +1,6 @@
 import { Flex, SimpleGrid, Text } from "@chakra-ui/react";
-import CardContainer from "../general/CardContainer";
 import SkeletonCard from "./SkeletonCard";
+import CardContainer from "./CardContainer";
 
 interface CardGridProps {
   cards: JSX.Element[];

@@ -1,7 +1,7 @@
-import CardContainer from "../../general/CardContainer";
 import BrowseCard from "./BrowseCard";
 import { Browse } from "../../../hooks/useBrowses";
 import CardGrid from "../../general/CardGrid";
+import CardContainer from "../../general/CardContainer";
 
 interface BrowseGridProps {
   browseData: {
