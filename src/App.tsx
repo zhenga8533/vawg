@@ -18,6 +18,7 @@ export interface GameQuery {
   genre: Item | null;
   page: number;
   parentPlatform: Platform | null;
+  platform: Item | null;
   searchText: string;
   sortOrder: string;
   store: Item | null;
@@ -29,6 +30,7 @@ function App() {
     genre: null,
     page: 1,
     parentPlatform: null,
+    platform: null,
     searchText: "",
     sortOrder: "",
     store: null,
@@ -85,6 +87,12 @@ function App() {
               name="Genre"
               onSelectItem={(genre) => setGameQuery({ ...gameQuery, genre })}
               selectedItem={gameQuery.genre}
+            />
+            <ItemList
+              endpoint="platforms"
+              name="Platform"
+              onSelectItem={(platform) => setGameQuery({ ...gameQuery, platform })}
+              selectedItem={gameQuery.platform}
             />
             <ItemList
               endpoint="stores"

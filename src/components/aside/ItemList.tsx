@@ -2,7 +2,7 @@ import { Button, Heading, List, ListItem } from "@chakra-ui/react";
 import useItems, { Item } from "../../hooks/useItems";
 import cropImageURL from "../../services/image-url";
 import SkeletonListItem from "../general/SkeletonListItem";
-import anyItem from "../../assets/any-genre.webp";
+import anyItem from "../../assets/any-item.webp";
 import ItemItem from "./ItemItem";
 import { useState } from "react";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
