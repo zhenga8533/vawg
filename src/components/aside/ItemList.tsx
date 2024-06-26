@@ -6,7 +6,7 @@ import anyItem from "../../assets/any-item.webp";
 import ItemItem from "./ItemItem";
 import { useState } from "react";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 interface ItemListProps {
   endpoint: string;
@@ -18,6 +18,7 @@ interface ItemListProps {
 const ItemList = ({ endpoint, name, selectedItem, onSelectItem }: ItemListProps) => {
   const { data, loading } = useItems(endpoint);
   const navigate = useNavigate();
+  const location = useLocation();
   const [showAll, setShowAll] = useState(false);
   const skeletons = Array.from({ length: 3 }, (_, i) => <SkeletonListItem key={i} />);
 
@@ -45,8 +46,8 @@ const ItemList = ({ endpoint, name, selectedItem, onSelectItem }: ItemListProps)
             name={item.name}
             key={item.id}
             onSelectItem={() => {
-              navigate("/games");
               onSelectItem(item);
+              if (!location.pathname.startsWith("/games")) navigate("/games");
             }}
             selectedItem={selectedItem}
           />

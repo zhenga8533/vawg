@@ -50,7 +50,6 @@ function App() {
 
   const year = new Date().getFullYear();
   const gameRoutes: { [key: string]: () => void } = {
-    "": () => setGameQuery({ ...baseQuery }),
     "/best-of-the-year": () => setGameQuery({ ...gameQuery, dates: `${year}-01-01,${year}-12-31` }),
     "/popular-last-year": () => setGameQuery({ ...gameQuery, dates: `${year - 1}-01-01,${year - 1}-12-31` }),
     "/all-time": () => setGameQuery({ ...gameQuery, dates: "" }),
@@ -109,6 +108,7 @@ function App() {
           <Routes>
             {/* Games */}
             <Route path="/" element={<Navigate to="/games" replace />} />
+            <Route path="/games" element={<Games gameQuery={gameQuery} setGameQuery={setGameQuery} />} />
             {Object.keys(gameRoutes).map((route) => (
               <Route
                 key={route}
