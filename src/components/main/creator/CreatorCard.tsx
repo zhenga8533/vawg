@@ -1,15 +1,17 @@
-import { Box, Card, CardBody, HStack, Heading, Icon, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Card, CardBody, HStack, Heading, Icon, Image, Text } from "@chakra-ui/react";
 import cropImageURL from "../../../services/image-url";
 import { Creator } from "../../../hooks/useCreators";
 import { IoPersonOutline } from "react-icons/io5";
 import { useEffect, useRef, useState } from "react";
 import { commafy } from "../../../services/formatting";
+import { useNavigate } from "react-router-dom";
 
 interface CreatorCardProps {
   creator: Creator;
 }
 
 const CreatorCard = ({ creator }: CreatorCardProps) => {
+  const navigate = useNavigate();
   const boxRef = useRef<HTMLDivElement>(null);
   const [imageSize, setImageSize] = useState("0px");
 
@@ -60,9 +62,11 @@ const CreatorCard = ({ creator }: CreatorCardProps) => {
           <hr />
           {creator.games.map((game) => (
             <HStack justifyContent="space-between" key={game.id}>
-              <Text key={game.id} textOverflow="ellipsis" overflow="hidden" whiteSpace="nowrap">
-                {game.name}
-              </Text>
+              <Button onClick={() => navigate(`/games/${game.slug}`)} variant="link">
+                <Box textOverflow="ellipsis" overflow="hidden" whiteSpace="nowrap">
+                  {game.name}
+                </Box>
+              </Button>
               <HStack spacing={1}>
                 <Text color="gray">{commafy(game.added)}</Text>
                 <Icon as={IoPersonOutline} />
