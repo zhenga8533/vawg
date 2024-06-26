@@ -5,6 +5,12 @@ import { SiFireship } from "react-icons/si";
 import { useNavigate } from "react-router-dom";
 
 const ReleaseList = () => {
+  const releases = [
+    { description: "Last month", icon: FaStar, slug: "last-month" },
+    { description: "This week", icon: SiFireship, slug: "this-week" },
+    { description: "Next week", icon: FaFastForward, slug: "next-week" },
+    { description: "Release calendar", icon: FaCalendar, slug: "release-calendar" },
+  ];
   const navigate = useNavigate();
 
   return (
@@ -13,22 +19,16 @@ const ReleaseList = () => {
         Releases
       </Heading>
       <List>
-        <ListItem paddingY={1}>
-          <IconButton description="Last month" icon={FaStar} onClick={() => navigate("/games/last-month")} />
-        </ListItem>
-        <ListItem paddingY={1}>
-          <IconButton description="This week" icon={SiFireship} onClick={() => navigate("/games/this-week")} />
-        </ListItem>
-        <ListItem paddingY={1}>
-          <IconButton description="Next week" icon={FaFastForward} onClick={() => navigate("/games/next-week")} />
-        </ListItem>
-        <ListItem paddingY={1}>
-          <IconButton
-            description="Release calendar"
-            icon={FaCalendar}
-            onClick={() => navigate("/games/release-calendar")}
-          />
-        </ListItem>
+        {releases.map((release, index) => (
+          <ListItem key={index} paddingY={1}>
+            <IconButton
+              description={release.description}
+              highlight={window.location.pathname.includes(release.slug)}
+              icon={release.icon}
+              onClick={() => navigate(`/games/${release.slug}`)}
+            />
+          </ListItem>
+        ))}
       </List>
     </>
   );

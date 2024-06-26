@@ -5,6 +5,11 @@ import { MdLeaderboard } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
 const TopList = () => {
+  const tops = [
+    { description: "Best of the year", icon: FaTrophy, slug: "best-of-the-year" },
+    { description: "Popular last year", icon: MdLeaderboard, slug: "popular-last-year" },
+    { description: "All time", icon: FaCrown, slug: "all-time" },
+  ];
   const navigate = useNavigate();
 
   return (
@@ -13,23 +18,16 @@ const TopList = () => {
         Top
       </Heading>
       <List>
-        <ListItem paddingY={1}>
-          <IconButton
-            description="Best of the year"
-            icon={FaTrophy}
-            onClick={() => navigate("/games/best-of-the-year")}
-          />
-        </ListItem>
-        <ListItem paddingY={1}>
-          <IconButton
-            description={`Popular last year`}
-            icon={MdLeaderboard}
-            onClick={() => navigate("/games/popular-last-year")}
-          />
-        </ListItem>
-        <ListItem paddingY={1}>
-          <IconButton description="All time" icon={FaCrown} onClick={() => navigate("/games/all-time")} />
-        </ListItem>
+        {tops.map((top, index) => (
+          <ListItem key={index} paddingY={1}>
+            <IconButton
+              description={top.description}
+              highlight={window.location.pathname.includes(top.slug)}
+              icon={top.icon}
+              onClick={() => navigate(`/games/${top.slug}`)}
+            />
+          </ListItem>
+        ))}
       </List>
     </>
   );

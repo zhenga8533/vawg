@@ -9,13 +9,13 @@ import { useNavigate } from "react-router-dom";
 
 const BrowseList = () => {
   const browses = [
-    { description: "Platforms", icon: IoGameController },
-    { description: "Stores", icon: IoMdDownload },
-    { description: "Genres", icon: FaGhost },
-    { description: "Creators", icon: IoPerson },
-    { description: "Tags", icon: FaHashtag },
-    { description: "Developers", icon: IoCodeSlash },
-    { description: "Publishers", icon: IoCloudUpload },
+    { description: "Platforms", icon: IoGameController, slug: "platforms" },
+    { description: "Stores", icon: IoMdDownload, slug: "stores" },
+    { description: "Genres", icon: FaGhost, slug: "genres" },
+    { description: "Creators", icon: IoPerson, slug: "creators" },
+    { description: "Tags", icon: FaHashtag, slug: "tags" },
+    { description: "Developers", icon: IoCodeSlash, slug: "developers" },
+    { description: "Publishers", icon: IoCloudUpload, slug: "publishers" },
   ];
   const [showAll, setShowAll] = useState(false);
   const navigate = useNavigate();
@@ -30,8 +30,9 @@ const BrowseList = () => {
           <ListItem key={index} paddingY={1}>
             <IconButton
               description={browse.description}
+              highlight={window.location.pathname.includes(browse.slug)}
               icon={browse.icon}
-              onClick={() => navigate(`/${browse.description.toLowerCase()}`)}
+              onClick={() => navigate(`/${browse.slug}`)}
             />
           </ListItem>
         ))}

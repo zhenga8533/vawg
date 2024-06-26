@@ -4,11 +4,12 @@ import { IconType } from "react-icons";
 
 interface IconButtonProps {
   description: string;
+  highlight?: boolean;
   icon: IconType;
   onClick: () => void;
 }
 
-const IconButton = ({ description, icon: Icon, onClick }: IconButtonProps) => {
+const IconButton = ({ description, highlight, icon: Icon, onClick }: IconButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -29,6 +30,8 @@ const IconButton = ({ description, icon: Icon, onClick }: IconButtonProps) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         variant="link"
+        color={highlight ? "blue.500" : "default"}
+        fontWeight={highlight ? "bold" : "semibold"}
       >
         {description}
       </Button>
