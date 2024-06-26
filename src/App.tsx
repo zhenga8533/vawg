@@ -12,6 +12,7 @@ import Browses from "./routes/Browses";
 import GameDetail from "./routes/GameDetail";
 import ItemList from "./components/aside/ItemList";
 import { Item } from "./hooks/useItems";
+import Breadcrumbs from "./components/main/Breadcrumbs";
 
 export interface GameQuery {
   dates: string;
@@ -103,6 +104,7 @@ function App() {
           </GridItem>
         </Show>
         <GridItem about="main">
+          <Breadcrumbs />
           <Routes>
             {/* Games */}
             <Route path="/" element={<Navigate to="/games" replace />} />

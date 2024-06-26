@@ -13,7 +13,7 @@ const GameHeading = ({ gameQuery }: GameHeadingProps) => {
   const heading = `${parentPlatform} ${parentPlatform && platform ? "+" : ""} ${platform} ${genre} Games ${store}`;
 
   return (
-    <Heading as="h1" fontSize="5xl" marginY={5}>
+    <Heading as="h1" fontSize="5xl" marginBottom={3}>
       {heading}
     </Heading>
   );
