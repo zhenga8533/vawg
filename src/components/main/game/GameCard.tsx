@@ -6,7 +6,7 @@ import CriticScore from "./CriticScore";
 import cropImageURL from "../../../services/image-url";
 import GameStars from "./GameStars";
 import { useNavigate } from "react-router-dom";
-import RatingEmoji from "./RatingEmoji";
+// import RatingEmoji from "./RatingEmoji";
 
 interface GameCardProps {
   game: Game;
