@@ -15,11 +15,11 @@ const PlatformSelector = ({ selectedPlatform, onSelectPlatform }: PlatformSelect
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        {selectedPlatform ? selectedPlatform.name : "Platforms"}
+        {selectedPlatform ? selectedPlatform.name : "Parent Platforms"}
       </MenuButton>
       <MenuList>
         <MenuItem {...getStyle(undefined, selectedPlatform?.id)} key={0} onClick={() => onSelectPlatform(null)}>
-          Any Platform
+          Any Parent Platform
         </MenuItem>
         {data.map((parentPlatform) => (
           <MenuItem
