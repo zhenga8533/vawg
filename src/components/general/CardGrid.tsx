@@ -1,6 +1,7 @@
-import { Flex, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, HStack, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import SkeletonCard from "./SkeletonCard";
 import CardContainer from "./CardContainer";
+import noResults from "../../assets/no-results.webp";
 
 interface CardGridProps {
   cards: JSX.Element[];
@@ -27,6 +28,17 @@ const CardGrid = ({ cards, error, loading }: CardGridProps) => {
         {loading && skeletons}
         {cards}
       </SimpleGrid>
+      {cards.length === 0 && !loading && (
+        <Box marginRight="5%">
+          <Image alt="No results found" boxSize="244px" src={noResults} />
+          <HStack>
+            <Text>No results found.</Text>
+            <Button color="gray.300" onClick={() => window.location.reload()} variant="link">
+              Reset all filters?
+            </Button>
+          </HStack>
+        </Box>
+      )}
     </Flex>
   );
 };
