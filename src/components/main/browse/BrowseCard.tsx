@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardBody, HStack, Heading, Icon, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Card, CardBody, HStack, Icon, Image, Text } from "@chakra-ui/react";
 import cropImageURL from "../../../services/image-url";
 import { IoPersonOutline } from "react-icons/io5";
 import { commafy } from "../../../services/formatting";
@@ -17,7 +17,9 @@ const BrowseCard = ({ browse }: BrowseCardProps) => {
       <Image src={cropImageURL(browse.image_background)} alt={browse.name} />
       <CardBody display="flex" flexDirection="column" justifyContent="space-between">
         <Box marginBottom={3} textAlign="center">
-          <Heading fontSize="2xl">{browse.name}</Heading>
+          <Button color="white" fontSize="2xl" onClick={() => navigate(browse.slug)} variant="link" whiteSpace="normal">
+            {browse.name}
+          </Button>
         </Box>
         <Box>
           <HStack justifyContent="space-between">
