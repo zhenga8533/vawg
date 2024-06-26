@@ -6,6 +6,7 @@ import CriticScore from "./CriticScore";
 import cropImageURL from "../../../services/image-url";
 import GameStars from "./GameStars";
 import { useNavigate } from "react-router-dom";
+import RatingEmoji from "./RatingEmoji";
 
 interface GameCardProps {
   game: Game;
@@ -66,7 +67,10 @@ const GameCard = ({ game }: GameCardProps) => {
         >
           {game.name}
         </Button>
-        <GameStars rating={game.rating} />
+        <HStack justifyContent="space-between">
+          <GameStars rating={game.rating} />
+          {/* <RatingEmoji rating={game.rating_top} /> */}
+        </HStack>
       </CardBody>
     </Card>
   );
