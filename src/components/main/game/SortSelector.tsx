@@ -1,7 +1,7 @@
 import { Button, Checkbox, Menu, MenuButton, MenuDivider, MenuItem, MenuList } from "@chakra-ui/react";
 import { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
-import getStyle from "../services/select-style";
+import getStyle from "../../../services/select-style";
 
 interface SortSelectorProps {
   onReverseOrder: (order: string) => void;

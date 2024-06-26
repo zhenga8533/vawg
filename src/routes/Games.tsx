@@ -1,8 +1,8 @@
 import { Box, HStack } from "@chakra-ui/react";
 import GameHeading from "../components/main/game/GameHeading";
-import PlatformSelector from "../components/PlatformSelector";
+import PlatformSelector from "../components/main/game/PlatformSelector";
 import { GameQuery } from "../App";
-import SortSelector from "../components/SortSelector";
+import SortSelector from "../components/main/game/SortSelector";
 import Pagination from "../components/general/Pagination";
 import useGames from "../hooks/useGames";
 import GameGrid from "../components/main/game/GameGrid";
@@ -28,8 +28,8 @@ const Games = ({ gameQuery, onLoad, setGameQuery }: GamesProps) => {
         <HStack justifyContent="space-between">
           <HStack spacing={4}>
             <PlatformSelector
-              onSelectPlatform={(platform) => setGameQuery({ ...gameQuery, platform })}
-              selectedPlatform={gameQuery.platform}
+              onSelectPlatform={(parentPlatform) => setGameQuery({ ...gameQuery, parentPlatform })}
+              selectedPlatform={gameQuery.parentPlatform}
             />
             <SortSelector
               onReverseOrder={(sortOrder) => setGameQuery({ ...gameQuery, sortOrder })}

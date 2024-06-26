@@ -2,7 +2,6 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import Navbar from "./components/nav/Navbar";
-import { Genre } from "./hooks/useGenres";
 import { Platform } from "./hooks/useGames";
 import ReleaseList from "./components/aside/ReleaseList";
 import BrowseList from "./components/aside/BrowseList";
@@ -16,9 +15,9 @@ import { Item } from "./hooks/useItems";
 
 export interface GameQuery {
   dates: string;
-  genre: Genre | null;
+  genre: Item | null;
   page: number;
-  platform: Platform | null;
+  parentPlatform: Platform | null;
   searchText: string;
   sortOrder: string;
   store: Item | null;
@@ -29,7 +28,7 @@ function App() {
     dates: "",
     genre: null,
     page: 1,
-    platform: null,
+    parentPlatform: null,
     searchText: "",
     sortOrder: "",
     store: null,
