@@ -23,7 +23,11 @@ const ReleaseList = () => {
           <IconButton description="Next week" icon={FaFastForward} onClick={() => navigate("/games/next-week")} />
         </ListItem>
         <ListItem paddingY={1}>
-          <IconButton description="Release calendar" icon={FaCalendar} onClick={() => navigate("/release-calendar")} />
+          <IconButton
+            description="Release calendar"
+            icon={FaCalendar}
+            onClick={() => navigate("/games/release-calendar")}
+          />
         </ListItem>
       </List>
     </>

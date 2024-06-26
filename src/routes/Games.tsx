@@ -8,9 +8,9 @@ import useGames from "../hooks/useGames";
 import GameGrid from "../components/main/game/GameGrid";
 import { useEffect } from "react";
 
-interface GamesProps {
+export interface GamesProps {
   gameQuery: GameQuery;
-  onLoad: () => void;
+  onLoad?: () => void;
   setGameQuery: (gameQuery: GameQuery) => void;
 }
 
@@ -18,7 +18,7 @@ const Games = ({ gameQuery, onLoad, setGameQuery }: GamesProps) => {
   const gameData = useGames(gameQuery);
 
   useEffect(() => {
-    onLoad();
+    if (onLoad) onLoad();
   }, []);
 
   return (

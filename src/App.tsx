@@ -13,6 +13,7 @@ import GameDetail from "./routes/GameDetail";
 import ItemList from "./components/aside/ItemList";
 import { Item } from "./hooks/useItems";
 import Breadcrumbs from "./components/main/Breadcrumbs";
+import ReleaseCalendar from "./routes/ReleaseCalendar";
 
 export interface GameQuery {
   dates: string;
@@ -117,6 +118,10 @@ function App() {
                 }
               />
             ))}
+            <Route
+              path={`/games/release-calendar`}
+              element={<ReleaseCalendar gameQuery={gameQuery} setGameQuery={setGameQuery} />}
+            />
             <Route path="/games/:slug" element={<GameDetail />} />
             {/* Browse */}
             <Route path="/platforms" element={<Browses endpoint="/platforms" title="Platforms" key="platforms" />} />
