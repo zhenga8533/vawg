@@ -17,6 +17,7 @@ const Breadcrumbs = () => {
     <HStack>
       {locations.flatMap((location, index) => [
         <Button
+          isDisabled={index === locations.length - 1}
           key={location}
           color="gray"
           onClick={() => navigate(locations.slice(0, index + 1).join("/"))}
