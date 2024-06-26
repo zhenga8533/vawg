@@ -1,39 +1,40 @@
 import { Button, HStack, Image, ListItem } from "@chakra-ui/react";
-import { Genre } from "../../hooks/useGenres";
+import { Item } from "../../hooks/useItems";
 import getStyle from "../../services/select-style";
 
-interface GenreItemProps {
-  genre: Genre | null;
+interface ItemItemProps {
+  item: Item | null;
   image: string;
-  onSelectGenre: (genre: Genre | null) => void;
-  selectedGenre: Genre | null;
+  name: string;
+  onSelectItem: (item: Item | null) => void;
+  selectedItem: Item | null;
 }
 
-const GenreItem = ({ genre, image, onSelectGenre, selectedGenre }: GenreItemProps) => {
+const ItemItem = ({ item, image, name, onSelectItem, selectedItem }: ItemItemProps) => {
   return (
     <ListItem paddingY={2}>
       <HStack>
         <Image
-          alt={genre?.name ?? "Any Genre"}
+          alt={name}
           boxSize="32px"
           borderRadius={8}
           cursor="pointer"
           objectFit={"cover"}
-          onClick={() => onSelectGenre(genre)}
+          onClick={() => onSelectItem(item)}
           src={image}
         />
         <Button
-          {...getStyle(genre?.id, selectedGenre?.id)}
-          onClick={() => onSelectGenre(genre)}
+          {...getStyle(item?.id, selectedItem?.id)}
+          onClick={() => onSelectItem(item)}
           textAlign={"left"}
           variant="link"
           whiteSpace={"normal"}
         >
-          {genre?.name ?? "Any Genre"}
+          {name}
         </Button>
       </HStack>
     </ListItem>
   );
 };
 
-export default GenreItem;
+export default ItemItem;

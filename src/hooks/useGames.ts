@@ -35,6 +35,7 @@ const useGames = (gameQuery: GameQuery) =>
         page: gameQuery.page,
         platforms: gameQuery.platform?.id,
         search: gameQuery.searchText,
+        stores: gameQuery.store?.id,
       },
     },
     [gameQuery]

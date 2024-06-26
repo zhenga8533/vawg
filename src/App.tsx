@@ -2,7 +2,6 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import Navbar from "./components/nav/Navbar";
-import GenreList from "./components/aside/GenreList";
 import { Genre } from "./hooks/useGenres";
 import { Platform } from "./hooks/useGames";
 import ReleaseList from "./components/aside/ReleaseList";
@@ -12,6 +11,8 @@ import Games from "./routes/Games";
 import Creators from "./routes/Creators";
 import Browses from "./routes/Browses";
 import GameDetail from "./routes/GameDetail";
+import ItemList from "./components/aside/ItemList";
+import { Item } from "./hooks/useItems";
 
 export interface GameQuery {
   dates: string;
@@ -20,6 +21,7 @@ export interface GameQuery {
   platform: Platform | null;
   searchText: string;
   sortOrder: string;
+  store: Item | null;
 }
 
 function App() {
@@ -30,6 +32,7 @@ function App() {
     platform: null,
     searchText: "",
     sortOrder: "",
+    store: null,
   } as GameQuery;
   const [gameQuery, setGameQuery] = useState<GameQuery>(baseQuery);
 
@@ -78,9 +81,17 @@ function App() {
             <TopList />
             <ReleaseList />
             <BrowseList />
-            <GenreList
-              onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
-              selectedGenre={gameQuery.genre}
+            <ItemList
+              endpoint="genres"
+              name="Genre"
+              onSelectItem={(genre) => setGameQuery({ ...gameQuery, genre })}
+              selectedItem={gameQuery.genre}
+            />
+            <ItemList
+              endpoint="stores"
+              name="Store"
+              onSelectItem={(store) => setGameQuery({ ...gameQuery, store })}
+              selectedItem={gameQuery.store}
             />
           </GridItem>
         </Show>

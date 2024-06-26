@@ -1,20 +1,22 @@
 import { Button, Heading, List, ListItem } from "@chakra-ui/react";
-import useGenres, { Genre } from "../../hooks/useGenres";
+import useItems, { Item } from "../../hooks/useItems";
 import cropImageURL from "../../services/image-url";
 import SkeletonListItem from "../general/SkeletonListItem";
-import anyGenre from "../../assets/any-genre.webp";
-import GenreItem from "./GenreItem";
+import anyItem from "../../assets/any-genre.webp";
+import ItemItem from "./ItemItem";
 import { useState } from "react";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
-interface GenreListProps {
-  onSelectGenre: (genre: Genre | null) => void;
-  selectedGenre: Genre | null;
+interface ItemListProps {
+  endpoint: string;
+  name: string;
+  onSelectItem: (item: Item | null) => void;
+  selectedItem: Item | null;
 }
 
-const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
-  const { data, loading } = useGenres();
+const ItemList = ({ endpoint, name, selectedItem, onSelectItem }: ItemListProps) => {
+  const { data, loading } = useItems(endpoint);
   const navigate = useNavigate();
   const [showAll, setShowAll] = useState(false);
   const skeletons = Array.from({ length: 3 }, (_, i) => <SkeletonListItem key={i} />);
@@ -22,29 +24,31 @@ const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
   return (
     <>
       <Heading className="list-heading" fontSize="3xl">
-        Genres
+        {`${name}s`}
       </Heading>
       <List>
         {loading && skeletons}
         {!loading && (
-          <GenreItem
-            genre={null}
-            image={anyGenre}
+          <ItemItem
+            item={null}
+            image={anyItem}
+            name={`Any ${name}`}
             key={0}
-            onSelectGenre={onSelectGenre}
-            selectedGenre={selectedGenre}
+            onSelectItem={onSelectItem}
+            selectedItem={selectedItem}
           />
         )}
-        {data.slice(0, showAll ? data.length : 2).map((genre) => (
-          <GenreItem
-            genre={genre}
-            image={cropImageURL(genre.image_background)}
-            key={genre.id}
-            onSelectGenre={() => {
+        {data.slice(0, showAll ? data.length : 2).map((item) => (
+          <ItemItem
+            item={item}
+            image={cropImageURL(item.image_background)}
+            name={item.name}
+            key={item.id}
+            onSelectItem={() => {
               navigate("/games");
-              onSelectGenre(genre);
+              onSelectItem(item);
             }}
-            selectedGenre={selectedGenre}
+            selectedItem={selectedItem}
           />
         ))}
         <ListItem marginTop={1}>
@@ -63,4 +67,4 @@ const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
   );
 };
 
-export default GenreList;
+export default ItemList;
