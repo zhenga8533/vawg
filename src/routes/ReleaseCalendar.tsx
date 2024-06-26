@@ -1,3 +1,4 @@
+import ReleaseSelector from "../components/main/game/ReleaseSelector";
 import Games, { GamesProps } from "./Games";
 
 const ReleaseCalendar = ({ gameQuery, setGameQuery }: GamesProps) => {
@@ -11,7 +12,12 @@ const ReleaseCalendar = ({ gameQuery, setGameQuery }: GamesProps) => {
     setGameQuery({ ...gameQuery, dates: dates });
   };
 
-  return <Games gameQuery={gameQuery} onLoad={onLoad} setGameQuery={setGameQuery} />;
+  return (
+    <>
+      <ReleaseSelector onSelectDate={(dates: string) => setGameQuery({ ...gameQuery, dates })} />
+      <Games gameQuery={gameQuery} onLoad={onLoad} setGameQuery={setGameQuery} />
+    </>
+  );
 };
 
 export default ReleaseCalendar;
