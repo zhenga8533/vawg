@@ -16,7 +16,7 @@ interface ItemListProps {
 }
 
 const ItemList = ({ endpoint, name, selectedItem, onSelectItem }: ItemListProps) => {
-  const { data, loading } = useItems(endpoint);
+  const { results, loading } = useItems(endpoint);
   const navigate = useNavigate();
   const location = useLocation();
   const [showAll, setShowAll] = useState(false);
@@ -39,7 +39,7 @@ const ItemList = ({ endpoint, name, selectedItem, onSelectItem }: ItemListProps)
             selectedItem={selectedItem}
           />
         )}
-        {data.slice(0, showAll ? data.length : 2).map((item) => (
+        {results.slice(0, showAll ? results.length : 2).map((item) => (
           <ItemItem
             item={item}
             image={cropImageURL(item.image_background)}

@@ -9,9 +9,9 @@ interface CreatorGridProps {
 }
 
 const CreatorGrid = ({ creatorData }: CreatorGridProps) => {
-  const { data, error, loading } = creatorData;
+  const { results, error, loading } = creatorData;
 
-  const cards = data.map((creator: Creator) => (
+  const cards = results.map((creator: Creator) => (
     <CardContainer key={creator.id}>
       <CreatorCard creator={creator} />
     </CardContainer>

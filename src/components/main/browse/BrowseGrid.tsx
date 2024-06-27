@@ -9,9 +9,9 @@ interface BrowseGridProps {
 }
 
 const BrowseGrid = ({ browseData }: BrowseGridProps) => {
-  const { data, error, loading } = browseData;
+  const { results, error, loading } = browseData;
 
-  const cards = data.map((browse: Browse) => (
+  const cards = results.map((browse: Browse) => (
     <CardContainer key={browse.id}>
       <BrowseCard browse={browse} />
     </CardContainer>

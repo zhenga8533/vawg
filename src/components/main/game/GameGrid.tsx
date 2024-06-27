@@ -9,8 +9,8 @@ interface GameGridProps {
 }
 
 const GameGrid = ({ gameData }: GameGridProps) => {
-  const { data, error, loading } = gameData;
-  const cards = data.map((game: Game) => (
+  const { results, error, loading } = gameData;
+  const cards = results.map((game: Game) => (
     <CardContainer key={game.id}>
       <GameCard game={game} />
     </CardContainer>

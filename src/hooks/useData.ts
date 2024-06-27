@@ -9,33 +9,33 @@ interface FetchResponse<T> {
 
 export interface Data {
   count: number;
-  data: any[];
   error: string;
   loading: boolean;
+  results: any[];
 }
 
 const useData = <T>(endpoint: string, requestConfig?: AxiosRequestConfig, deps?: any[]) => {
   const [count, setCount] = useState(0);
-  const [data, setData] = useState<T[]>([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
+  const [results, setResults] = useState<T[]>([]);
 
   useEffect(
     () => {
       const controller = new AbortController();
 
       setLoading(true);
-      setData([]);
+      setResults([]);
       apiClient
         .get<FetchResponse<T>>(endpoint, {
           signal: controller.signal,
           ...requestConfig,
         })
         .then((res) => {
-          setError("");
           setCount(res.data.count);
-          setData(res.data.results);
+          setError("");
           setLoading(false);
+          setResults(res.data.results);
         })
         .catch((err) => {
           if (err instanceof CanceledError) return;
@@ -48,7 +48,7 @@ const useData = <T>(endpoint: string, requestConfig?: AxiosRequestConfig, deps?:
     deps ? [...deps] : []
   );
 
-  return { count, data, error, loading };
+  return { count, error, loading, results };
 };
 
 export default useData;

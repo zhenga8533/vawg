@@ -10,7 +10,7 @@ export interface PlatformSelectorProps {
 }
 
 const PlatformSelector = ({ selectedPlatform, onSelectPlatform }: PlatformSelectorProps) => {
-  const { data } = usePlatforms();
+  const { results } = usePlatforms();
 
   return (
     <Menu>
@@ -21,7 +21,7 @@ const PlatformSelector = ({ selectedPlatform, onSelectPlatform }: PlatformSelect
         <MenuItem {...getStyle(undefined, selectedPlatform?.id)} key={0} onClick={() => onSelectPlatform(null)}>
           Any Parent Platform
         </MenuItem>
-        {data.map((parentPlatform) => (
+        {results.map((parentPlatform) => (
           <MenuItem
             {...getStyle(parentPlatform.id, selectedPlatform?.id)}
             key={parentPlatform.id}
