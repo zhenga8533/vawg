@@ -3,7 +3,7 @@ import { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
 import getStyle from "../../../services/select-style";
 
-interface SortSelectorProps {
+export interface SortSelectorProps {
   onReverseOrder: (order: string) => void;
   onSelectOrder: (order: string) => void;
   sortOrder: string;

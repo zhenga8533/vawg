@@ -4,7 +4,7 @@ import getStyle from "../../../services/select-style";
 import usePlatforms from "../../../hooks/usePlatforms";
 import { Platform } from "../../../hooks/useGames";
 
-interface PlatformSelectorProps {
+export interface PlatformSelectorProps {
   selectedPlatform: Platform | null;
   onSelectPlatform: (platform: Platform | null) => void;
 }

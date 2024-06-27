@@ -1,10 +1,24 @@
-import { Box, HStack, IconButton, Menu, MenuButton, MenuList, Text } from "@chakra-ui/react";
+import { Box, HStack, Heading, IconButton, Menu, MenuButton, MenuList, Text } from "@chakra-ui/react";
 import ThemeSelector from "./ThemeSelector";
 import SearchInput, { SearchInputProps } from "./SearchInput";
 import { useLocation, useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+import Aside, { AsideProps } from "../aside/Aside";
+import PlatformSelector, { PlatformSelectorProps } from "../main/game/PlatformSelector";
+import SortSelector, { SortSelectorProps } from "../main/game/SortSelector";
 
-const Navbar = ({ onSearch }: SearchInputProps) => {
+interface NavbarProps extends AsideProps, PlatformSelectorProps, SearchInputProps, SortSelectorProps {}
+
+const Navbar = ({
+  onSearch,
+  gameQuery,
+  setGameQuery,
+  onSelectPlatform,
+  selectedPlatform,
+  onReverseOrder,
+  onSelectOrder,
+  sortOrder,
+}: NavbarProps) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -24,18 +38,25 @@ const Navbar = ({ onSearch }: SearchInputProps) => {
       </Text>
       <SearchInput onSearch={onSearch} />
 
-      <Box display={{ base: "block", sm: "none", md: "block" }}>
+      <Box display={{ base: "none", lg: "block" }}>
         <ThemeSelector />
       </Box>
 
-      <Box display={{ base: "none", sm: "block", md: "none" }}>
+      <Box display={{ base: "block", lg: "none" }}>
         <Menu>
           <MenuButton as={IconButton} aria-label="Options" icon={<GiHamburgerMenu />} variant="outline" />
-          <MenuList paddingLeft={2}>
-            <HStack>
-              <Text>Theme: </Text>
+          <MenuList paddingX={2}>
+            <Box display={{ base: "block", md: "none" }} marginBottom={3}>
+              <Heading fontSize="3xl">Filter</Heading>
+              <hr />
               <ThemeSelector />
-            </HStack>
+              <hr />
+              <PlatformSelector onSelectPlatform={onSelectPlatform} selectedPlatform={selectedPlatform} />
+              <hr />
+              <SortSelector onReverseOrder={onReverseOrder} onSelectOrder={onSelectOrder} sortOrder={sortOrder} />
+              <hr />
+            </Box>
+            <Aside gameQuery={gameQuery} setGameQuery={setGameQuery} />
           </MenuList>
         </Menu>
       </Box>

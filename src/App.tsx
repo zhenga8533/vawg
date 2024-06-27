@@ -3,17 +3,14 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import Navbar from "./components/nav/Navbar";
 import { Platform } from "./hooks/useGames";
-import ReleaseList from "./components/aside/ReleaseList";
-import BrowseList from "./components/aside/BrowseList";
-import TopList from "./components/aside/TopList";
 import Games from "./routes/Games";
 import Creators from "./routes/Creators";
 import Browses from "./routes/Browses";
 import GameDetail from "./routes/GameDetail";
-import ItemList from "./components/aside/ItemList";
 import { Item } from "./hooks/useItems";
 import Breadcrumbs from "./components/main/Breadcrumbs";
 import ReleaseCalendar from "./routes/ReleaseCalendar";
+import Aside from "./components/aside/Aside";
 
 export interface GameQuery {
   dates: string;
@@ -77,31 +74,18 @@ function App() {
             onSearch={(searchText) => {
               setGameQuery({ ...gameQuery, searchText });
             }}
+            gameQuery={gameQuery}
+            setGameQuery={setGameQuery}
+            onSelectPlatform={(parentPlatform) => setGameQuery({ ...gameQuery, parentPlatform })}
+            selectedPlatform={gameQuery.parentPlatform}
+            onReverseOrder={(order) => setGameQuery({ ...gameQuery, sortOrder: order })}
+            onSelectOrder={(order) => setGameQuery({ ...gameQuery, sortOrder: order })}
+            sortOrder={gameQuery.sortOrder}
           />
         </GridItem>
         <Show above="lg">
           <GridItem area="aside">
-            <TopList />
-            <ReleaseList />
-            <BrowseList />
-            <ItemList
-              endpoint="genres"
-              name="Genre"
-              onSelectItem={(genre) => setGameQuery({ ...gameQuery, genre })}
-              selectedItem={gameQuery.genre}
-            />
-            <ItemList
-              endpoint="platforms"
-              name="Platform"
-              onSelectItem={(platform) => setGameQuery({ ...gameQuery, platform })}
-              selectedItem={gameQuery.platform}
-            />
-            <ItemList
-              endpoint="stores"
-              name="Store"
-              onSelectItem={(store) => setGameQuery({ ...gameQuery, store })}
-              selectedItem={gameQuery.store}
-            />
+            <Aside gameQuery={gameQuery} setGameQuery={setGameQuery} />
           </GridItem>
         </Show>
         <GridItem about="main">
