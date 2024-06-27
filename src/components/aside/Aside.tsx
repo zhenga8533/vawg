@@ -1,15 +1,10 @@
-import { GameQuery } from "../../App";
+import { GameQueryProps } from "../../App";
 import BrowseList from "./BrowseList";
 import ItemList from "./ItemList";
 import ReleaseList from "./ReleaseList";
 import TopList from "./TopList";
 
-export interface AsideProps {
-  gameQuery: GameQuery;
-  setGameQuery: React.Dispatch<React.SetStateAction<GameQuery>>;
-}
-
-const Aside = ({ gameQuery, setGameQuery }: AsideProps) => {
+const Aside = ({ gameQuery, setGameQuery }: GameQueryProps) => {
   return (
     <>
       <TopList />

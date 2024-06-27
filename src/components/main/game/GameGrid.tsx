@@ -2,13 +2,10 @@ import GameCard from "./GameCard";
 import { Game } from "../../../hooks/useGames";
 import CardGrid from "../../general/CardGrid";
 import CardContainer from "../../general/CardContainer";
+import { Data } from "../../../hooks/useData";
 
 interface GameGridProps {
-  gameData: {
-    data: Game[];
-    error: string | null;
-    loading: boolean;
-  };
+  gameData: Data;
 }
 
 const GameGrid = ({ gameData }: GameGridProps) => {

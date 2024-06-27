@@ -23,8 +23,13 @@ export interface GameQuery {
   store: Item | null;
 }
 
+export interface GameQueryProps {
+  gameQuery: GameQuery;
+  setGameQuery: (gameQuery: GameQuery) => void;
+}
+
 function App() {
-  const baseQuery = {
+  const [gameQuery, setGameQuery] = useState<GameQuery>({
     dates: "",
     genre: null,
     page: 1,
@@ -33,8 +38,7 @@ function App() {
     searchText: "",
     sortOrder: "",
     store: null,
-  } as GameQuery;
-  const [gameQuery, setGameQuery] = useState<GameQuery>(baseQuery);
+  });
 
   const parseDate = (date: Date) => date.toISOString().slice(0, 10);
   const parseDateFrame = (days: number) => {
@@ -47,13 +51,13 @@ function App() {
 
   const year = new Date().getFullYear();
   const gameRoutes: { [key: string]: () => void } = {
-    "": () => setGameQuery({ ...gameQuery, dates: "" }),
-    "/best-of-the-year": () => setGameQuery({ ...gameQuery, dates: `${year}-01-01,${year}-12-31` }),
-    "/popular-last-year": () => setGameQuery({ ...gameQuery, dates: `${year - 1}-01-01,${year - 1}-12-31` }),
-    "/all-time": () => setGameQuery({ ...gameQuery, dates: "" }),
-    "/last-month": () => setGameQuery({ ...gameQuery, dates: parseDateFrame(-30) }),
-    "/this-week": () => setGameQuery({ ...gameQuery, dates: parseDateFrame(-7) }),
-    "/next-week": () => setGameQuery({ ...gameQuery, dates: parseDateFrame(7) }),
+    "": () => setGameQuery({ ...gameQuery, dates: "", page: 1 }),
+    "/best-of-the-year": () => setGameQuery({ ...gameQuery, dates: `${year}-01-01,${year}-12-31`, page: 1 }),
+    "/popular-last-year": () => setGameQuery({ ...gameQuery, dates: `${year - 1}-01-01,${year - 1}-12-31`, page: 1 }),
+    "/all-time": () => setGameQuery({ ...gameQuery, dates: "", page: 1 }),
+    "/last-month": () => setGameQuery({ ...gameQuery, dates: parseDateFrame(-30), page: 1 }),
+    "/this-week": () => setGameQuery({ ...gameQuery, dates: parseDateFrame(-7), page: 1 }),
+    "/next-week": () => setGameQuery({ ...gameQuery, dates: parseDateFrame(7), page: 1 }),
   };
 
   return (

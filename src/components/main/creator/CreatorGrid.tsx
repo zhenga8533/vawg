@@ -2,13 +2,10 @@ import CreatorCard from "./CreatorCard";
 import { Creator } from "../../../hooks/useCreators";
 import CardGrid from "../../general/CardGrid";
 import CardContainer from "../../general/CardContainer";
+import { Data } from "../../../hooks/useData";
 
 interface CreatorGridProps {
-  creatorData: {
-    data: Creator[];
-    error: string | null;
-    loading: boolean;
-  };
+  creatorData: Data;
 }
 
 const CreatorGrid = ({ creatorData }: CreatorGridProps) => {

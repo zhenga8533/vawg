@@ -3,11 +3,12 @@ import ThemeSelector from "./ThemeSelector";
 import SearchInput, { SearchInputProps } from "./SearchInput";
 import { useLocation, useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
-import Aside, { AsideProps } from "../aside/Aside";
+import Aside from "../aside/Aside";
 import PlatformSelector, { PlatformSelectorProps } from "../main/game/PlatformSelector";
 import SortSelector, { SortSelectorProps } from "../main/game/SortSelector";
+import { GameQueryProps } from "../../App";
 
-interface NavbarProps extends AsideProps, PlatformSelectorProps, SearchInputProps, SortSelectorProps {}
+interface NavbarProps extends GameQueryProps, PlatformSelectorProps, SearchInputProps, SortSelectorProps {}
 
 const Navbar = ({
   onSearch,
@@ -45,7 +46,7 @@ const Navbar = ({
       <Box display={{ base: "block", lg: "none" }} position="relative">
         <Menu>
           <MenuButton as={IconButton} aria-label="Options" icon={<GiHamburgerMenu />} variant="outline" />
-          <MenuList paddingX={2} position="absolute" right={-16} maxHeight="90vh" overflowX="hidden" overflowY="auto">
+          <MenuList paddingX={2} position="absolute" right={-16} maxHeight="85vh" overflowX="hidden" overflowY="auto">
             <Box display={{ base: "block", md: "none" }} marginBottom={3}>
               <Heading fontSize="3xl">Filter</Heading>
               <hr />
