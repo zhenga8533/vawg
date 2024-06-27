@@ -42,10 +42,10 @@ const Navbar = ({
         <ThemeSelector />
       </Box>
 
-      <Box display={{ base: "block", lg: "none" }}>
+      <Box display={{ base: "block", lg: "none" }} position="relative">
         <Menu>
           <MenuButton as={IconButton} aria-label="Options" icon={<GiHamburgerMenu />} variant="outline" />
-          <MenuList paddingX={2}>
+          <MenuList paddingX={2} position="absolute" right={-16} maxHeight="90vh" overflowX="hidden" overflowY="auto">
             <Box display={{ base: "block", md: "none" }} marginBottom={3}>
               <Heading fontSize="3xl">Filter</Heading>
               <hr />
