@@ -4,7 +4,7 @@ import { Navigate, Route, BrowserRouter as Router, Routes } from "react-router-d
 import Aside from "./components/aside/Aside";
 import Breadcrumbs from "./components/main/Breadcrumbs";
 import Navbar from "./components/nav/Navbar";
-import { Platform } from "./hooks/useGames";
+import { Platform } from "./hooks/useGame";
 import { Item } from "./hooks/useItems";
 import Browses from "./routes/Browses";
 import Creators from "./routes/Creators";

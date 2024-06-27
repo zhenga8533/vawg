@@ -1,5 +1,5 @@
 import { Data } from "../../../hooks/useData";
-import { Game } from "../../../hooks/useGames";
+import { Game } from "../../../hooks/useGame";
 import CardContainer from "../../general/CardContainer";
 import CardGrid from "../../general/CardGrid";
 import GameCard from "./GameCard";

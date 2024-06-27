@@ -1,7 +1,7 @@
 import { Box, Button, Card, CardBody, HStack, Image } from "@chakra-ui/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Game } from "../../../hooks/useGames";
+import { Game } from "../../../hooks/useGame";
 import cropImageURL from "../../../services/image-url";
 import CriticScore from "./CriticScore";
 import GameStars from "./GameStars";
