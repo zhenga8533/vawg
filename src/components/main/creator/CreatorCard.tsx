@@ -1,10 +1,10 @@
 import { Box, Button, Card, CardBody, HStack, Heading, Icon, Image, Text } from "@chakra-ui/react";
-import cropImageURL from "../../../services/image-url";
-import { Creator } from "../../../hooks/useCreators";
-import { IoPersonOutline } from "react-icons/io5";
 import { useEffect, useRef, useState } from "react";
-import { commafy } from "../../../services/formatting";
+import { IoPersonOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import { Creator } from "../../../hooks/useCreators";
+import { commafy } from "../../../services/formatting";
+import cropImageURL from "../../../services/image-url";
 
 interface CreatorCardProps {
   creator: Creator;

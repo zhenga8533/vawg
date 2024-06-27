@@ -1,8 +1,8 @@
-import CreatorCard from "./CreatorCard";
 import { Creator } from "../../../hooks/useCreators";
-import CardGrid from "../../general/CardGrid";
-import CardContainer from "../../general/CardContainer";
 import { Data } from "../../../hooks/useData";
+import CardContainer from "../../general/CardContainer";
+import CardGrid from "../../general/CardGrid";
+import CreatorCard from "./CreatorCard";
 
 interface CreatorGridProps {
   creatorData: Data;

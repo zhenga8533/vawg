@@ -1,9 +1,9 @@
 import { HStack } from "@chakra-ui/react";
-import PlatformSelector from "./PlatformSelector";
-import Pagination from "../../general/Pagination";
 import { GameQuery } from "../../../App";
-import SortSelector from "./SortSelector";
 import { Data } from "../../../hooks/useData";
+import Pagination from "../../general/Pagination";
+import PlatformSelector from "./PlatformSelector";
+import SortSelector from "./SortSelector";
 
 interface GameSelectorProps {
   gameData: Data;

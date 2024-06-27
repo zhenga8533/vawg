@@ -1,9 +1,9 @@
 import { Box, Button, Card, CardBody, HStack, Icon, Image, Text } from "@chakra-ui/react";
-import cropImageURL from "../../../services/image-url";
 import { IoPersonOutline } from "react-icons/io5";
-import { commafy } from "../../../services/formatting";
-import { Browse } from "../../../hooks/useBrowses";
 import { useNavigate } from "react-router-dom";
+import { Browse } from "../../../hooks/useBrowses";
+import { commafy } from "../../../services/formatting";
+import cropImageURL from "../../../services/image-url";
 
 interface BrowseCardProps {
   browse: Browse;

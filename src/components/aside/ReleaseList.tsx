@@ -1,8 +1,8 @@
 import { Heading, List, ListItem } from "@chakra-ui/react";
 import { FaCalendar, FaFastForward, FaStar } from "react-icons/fa";
-import IconButton from "../general/IconButton";
 import { SiFireship } from "react-icons/si";
 import { useNavigate } from "react-router-dom";
+import IconButton from "../general/IconButton";
 
 const ReleaseList = () => {
   const releases = [

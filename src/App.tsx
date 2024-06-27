@@ -1,16 +1,16 @@
-import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Grid, GridItem, Show } from "@chakra-ui/react";
+import { useState } from "react";
+import { Navigate, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Aside from "./components/aside/Aside";
+import Breadcrumbs from "./components/main/Breadcrumbs";
 import Navbar from "./components/nav/Navbar";
 import { Platform } from "./hooks/useGames";
-import Games from "./routes/Games";
-import Creators from "./routes/Creators";
-import Browses from "./routes/Browses";
-import GameDetail from "./routes/GameDetail";
 import { Item } from "./hooks/useItems";
-import Breadcrumbs from "./components/main/Breadcrumbs";
+import Browses from "./routes/Browses";
+import Creators from "./routes/Creators";
+import GameDetail from "./routes/GameDetail";
+import Games from "./routes/Games";
 import ReleaseCalendar from "./routes/ReleaseCalendar";
-import Aside from "./components/aside/Aside";
 
 export interface GameQuery {
   dates: string;

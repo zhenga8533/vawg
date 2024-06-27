@@ -1,7 +1,7 @@
 import { Box, Button, Flex, HStack, Image, SimpleGrid, Text } from "@chakra-ui/react";
-import SkeletonCard from "./SkeletonCard";
-import CardContainer from "./CardContainer";
 import noResults from "../../assets/no-results.webp";
+import CardContainer from "./CardContainer";
+import SkeletonCard from "./SkeletonCard";
 
 interface CardGridProps {
   cards: JSX.Element[];

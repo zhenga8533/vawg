@@ -1,11 +1,11 @@
-import { useState } from "react";
 import { Box, Button, Card, CardBody, HStack, Image } from "@chakra-ui/react";
-import { Game } from "../../../hooks/useGames";
-import PlatformIcons from "./PlatformIcons";
-import CriticScore from "./CriticScore";
-import cropImageURL from "../../../services/image-url";
-import GameStars from "./GameStars";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Game } from "../../../hooks/useGames";
+import cropImageURL from "../../../services/image-url";
+import CriticScore from "./CriticScore";
+import GameStars from "./GameStars";
+import PlatformIcons from "./PlatformIcons";
 // import RatingEmoji from "./RatingEmoji";
 
 interface GameCardProps {

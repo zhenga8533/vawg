@@ -1,8 +1,8 @@
 import { HStack, Heading } from "@chakra-ui/react";
-import useBrowses from "../hooks/useBrowses";
+import { useState } from "react";
 import Pagination from "../components/general/Pagination";
 import BrowseGrid from "../components/main/browse/BrowseGrid";
-import { useState } from "react";
+import useBrowses from "../hooks/useBrowses";
 
 interface BrowsesProps {
   endpoint: string;

@@ -1,11 +1,11 @@
 import { Button, Heading, List, ListItem } from "@chakra-ui/react";
-import { IoCloudUpload, IoCodeSlash, IoGameController, IoPerson } from "react-icons/io5";
-import IconButton from "../general/IconButton";
-import { IoMdDownload } from "react-icons/io";
-import { FaGhost, FaHashtag } from "react-icons/fa";
 import { useState } from "react";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
+import { FaGhost, FaHashtag } from "react-icons/fa";
+import { IoMdDownload } from "react-icons/io";
+import { IoCloudUpload, IoCodeSlash, IoGameController, IoPerson } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import IconButton from "../general/IconButton";
 
 const BrowseList = () => {
   const browses = [

@@ -1,12 +1,12 @@
 import { Box, HStack, Heading, IconButton, Menu, MenuButton, MenuList, Text } from "@chakra-ui/react";
-import ThemeSelector from "./ThemeSelector";
-import SearchInput, { SearchInputProps } from "./SearchInput";
-import { useLocation, useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useLocation, useNavigate } from "react-router-dom";
+import { GameQueryProps } from "../../App";
 import Aside from "../aside/Aside";
 import PlatformSelector, { PlatformSelectorProps } from "../main/game/PlatformSelector";
 import SortSelector, { SortSelectorProps } from "../main/game/SortSelector";
-import { GameQueryProps } from "../../App";
+import SearchInput, { SearchInputProps } from "./SearchInput";
+import ThemeSelector from "./ThemeSelector";
 
 interface NavbarProps extends GameQueryProps, PlatformSelectorProps, SearchInputProps, SortSelectorProps {}
 

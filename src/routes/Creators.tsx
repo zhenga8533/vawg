@@ -1,8 +1,8 @@
 import { HStack, Heading } from "@chakra-ui/react";
-import useCreator from "../hooks/useCreators";
+import { useState } from "react";
 import Pagination from "../components/general/Pagination";
 import CreatorGrid from "../components/main/creator/CreatorGrid";
-import { useState } from "react";
+import useCreator from "../hooks/useCreators";
 
 const Creators = () => {
   const [creatoryQuery, setCreatoryQuery] = useState({ page: 1 });
