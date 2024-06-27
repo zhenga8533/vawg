@@ -88,9 +88,8 @@ export interface GameData {
     name: string;
     slug: string;
   };
-  platforms: {
-    platform: Platform;
-  }[];
+  platforms: { platform: Platform }[];
+  parent_platforms: { platform: Platform }[];
 }
 
 const useGame = (slug: string | undefined) => {
