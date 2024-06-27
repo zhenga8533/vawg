@@ -7,6 +7,13 @@ interface FetchResponse<T> {
   results: T[];
 }
 
+export interface Data {
+  count: number;
+  data: any[];
+  error: string;
+  loading: boolean;
+}
+
 const useData = <T>(endpoint: string, requestConfig?: AxiosRequestConfig, deps?: any[]) => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState<T[]>([]);

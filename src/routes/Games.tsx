@@ -1,12 +1,11 @@
 import { Box, HStack } from "@chakra-ui/react";
 import GameHeading from "../components/main/game/GameHeading";
-import PlatformSelector from "../components/main/game/PlatformSelector";
 import { GameQuery } from "../App";
-import SortSelector from "../components/main/game/SortSelector";
 import Pagination from "../components/general/Pagination";
 import useGames from "../hooks/useGames";
 import GameGrid from "../components/main/game/GameGrid";
 import { useEffect } from "react";
+import GameSelector from "../components/main/game/GameSelector";
 
 export interface GamesProps {
   gameQuery: GameQuery;
@@ -25,24 +24,7 @@ const Games = ({ gameQuery, onLoad, setGameQuery }: GamesProps) => {
     <>
       <Box marginY={5}>
         <GameHeading gameQuery={gameQuery} />
-        <HStack justifyContent="space-between">
-          <HStack spacing={4}>
-            <PlatformSelector
-              onSelectPlatform={(parentPlatform) => setGameQuery({ ...gameQuery, parentPlatform })}
-              selectedPlatform={gameQuery.parentPlatform}
-            />
-            <SortSelector
-              onReverseOrder={(sortOrder) => setGameQuery({ ...gameQuery, sortOrder })}
-              onSelectOrder={(sortOrder) => setGameQuery({ ...gameQuery, sortOrder })}
-              sortOrder={gameQuery.sortOrder}
-            />
-          </HStack>
-          <Pagination
-            count={gameData.count}
-            onPageChange={(page) => setGameQuery({ ...gameQuery, page })}
-            page={gameQuery.page}
-          />
-        </HStack>
+        <GameSelector gameData={gameData} gameQuery={gameQuery} setGameQuery={setGameQuery} />
       </Box>
       <GameGrid gameData={gameData} />
       <HStack justifyContent="center" marginTop={5}>
