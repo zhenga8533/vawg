@@ -1,11 +1,8 @@
-import { HStack, Text } from "@chakra-ui/react";
+import { Box, HStack, IconButton, Menu, MenuButton, MenuList, Text } from "@chakra-ui/react";
 import ThemeSelector from "./ThemeSelector";
-import SearchInput from "./SearchInput";
+import SearchInput, { SearchInputProps } from "./SearchInput";
 import { useLocation, useNavigate } from "react-router-dom";
-
-interface SearchInputProps {
-  onSearch: (searchText: string) => void;
-}
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = ({ onSearch }: SearchInputProps) => {
   const location = useLocation();
@@ -26,7 +23,22 @@ const Navbar = ({ onSearch }: SearchInputProps) => {
         VAWG
       </Text>
       <SearchInput onSearch={onSearch} />
-      <ThemeSelector />
+
+      <Box display={{ base: "block", sm: "none", md: "block" }}>
+        <ThemeSelector />
+      </Box>
+
+      <Box display={{ base: "none", sm: "block", md: "none" }}>
+        <Menu>
+          <MenuButton as={IconButton} aria-label="Options" icon={<GiHamburgerMenu />} variant="outline" />
+          <MenuList paddingLeft={2}>
+            <HStack>
+              <Text>Theme: </Text>
+              <ThemeSelector />
+            </HStack>
+          </MenuList>
+        </Menu>
+      </Box>
     </HStack>
   );
 };

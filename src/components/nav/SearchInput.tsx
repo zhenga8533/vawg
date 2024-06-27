@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { BsSearch } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
-interface SearchInputProps {
+export interface SearchInputProps {
   onSearch: (searchText: string) => void;
 }
 
