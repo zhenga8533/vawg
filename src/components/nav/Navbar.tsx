@@ -52,10 +52,14 @@ const Navbar = ({
               <hr />
               <ThemeSelector />
               <hr />
-              <PlatformSelector onSelectPlatform={onSelectPlatform} selectedPlatform={selectedPlatform} />
-              <hr />
-              <SortSelector onReverseOrder={onReverseOrder} onSelectOrder={onSelectOrder} sortOrder={sortOrder} />
-              <hr />
+              {location.pathname.startsWith("/games") && (
+                <>
+                  <PlatformSelector onSelectPlatform={onSelectPlatform} selectedPlatform={selectedPlatform} />
+                  <hr />
+                  <SortSelector onReverseOrder={onReverseOrder} onSelectOrder={onSelectOrder} sortOrder={sortOrder} />
+                  <hr />
+                </>
+              )}
             </Box>
             <Aside gameQuery={gameQuery} setGameQuery={setGameQuery} />
           </MenuList>
