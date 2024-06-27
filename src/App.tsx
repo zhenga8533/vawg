@@ -21,6 +21,7 @@ export interface GameQuery {
   searchText: string;
   sortOrder: string;
   store: Item | null;
+  tag: Item | null;
 }
 
 export interface GameQueryProps {
@@ -38,6 +39,7 @@ function App() {
     searchText: "",
     sortOrder: "",
     store: null,
+    tag: null,
   });
 
   const parseDate = (date: Date) => date.toISOString().slice(0, 10);
