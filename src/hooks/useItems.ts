@@ -1,4 +1,5 @@
 import genres from "../json/genres.json";
+import parents from "../json/parents.json";
 import platforms from "../json/platforms.json";
 import stores from "../json/stores.json";
 import tags from "../json/tags.json";
@@ -14,13 +15,15 @@ export interface Item {
 const useItems = (endpoint: string) => {
   const presets: { [key: string]: any } = {
     genres,
+    parents,
     platforms,
     stores,
     tags,
   };
 
-  if (presets[endpoint])
-    return { count: presets[endpoint].length, error: "", loading: false, results: presets[endpoint].results };
+  const end = endpoint.split("/").pop();
+  if (end && presets[end])
+    return { count: presets[end].length, error: "", loading: false, results: presets[end].results };
 
   return useData<Item>(endpoint);
 };
