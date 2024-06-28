@@ -1,0 +1,1111 @@
+{
+  "count": 9670,
+  "next": "https://api.rawg.io/api/tags?key=616d5f162c6f4008831fae093f1615de&page=2&page_size=24",
+  "previous": null,
+  "results": [
+    {
+      "id": 31,
+      "name": "Singleplayer",
+      "slug": "singleplayer",
+      "games_count": 224133,
+      "image_background": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 3328,
+          "slug": "the-witcher-3-wild-hunt",
+          "name": "The Witcher 3: Wild Hunt",
+          "added": 20455
+        },
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 5286,
+          "slug": "tomb-raider",
+          "name": "Tomb Raider (2013)",
+          "added": 16697
+        },
+        {
+          "id": 13536,
+          "slug": "portal",
+          "name": "Portal",
+          "added": 16472
+        },
+        {
+          "id": 12020,
+          "slug": "left-4-dead-2",
+          "name": "Left 4 Dead 2",
+          "added": 16361
+        }
+      ]
+    },
+    {
+      "id": 40847,
+      "name": "Steam Achievements",
+      "slug": "steam-achievements",
+      "games_count": 38196,
+      "image_background": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 4291,
+          "slug": "counter-strike-global-offensive",
+          "name": "Counter-Strike: Global Offensive",
+          "added": 17036
+        },
+        {
+          "id": 13536,
+          "slug": "portal",
+          "name": "Portal",
+          "added": 16472
+        },
+        {
+          "id": 12020,
+          "slug": "left-4-dead-2",
+          "name": "Left 4 Dead 2",
+          "added": 16361
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Multiplayer",
+      "slug": "multiplayer",
+      "games_count": 38115,
+      "image_background": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 4291,
+          "slug": "counter-strike-global-offensive",
+          "name": "Counter-Strike: Global Offensive",
+          "added": 17036
+        },
+        {
+          "id": 5286,
+          "slug": "tomb-raider",
+          "name": "Tomb Raider (2013)",
+          "added": 16697
+        },
+        {
+          "id": 12020,
+          "slug": "left-4-dead-2",
+          "name": "Left 4 Dead 2",
+          "added": 16361
+        },
+        {
+          "id": 28,
+          "slug": "red-dead-redemption-2",
+          "name": "Red Dead Redemption 2",
+          "added": 15448
+        }
+      ]
+    },
+    {
+      "id": 40836,
+      "name": "Full controller support",
+      "slug": "full-controller-support",
+      "games_count": 18117,
+      "image_background": "https://media.rawg.io/media/games/120/1201a40e4364557b124392ee50317b99.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 3328,
+          "slug": "the-witcher-3-wild-hunt",
+          "name": "The Witcher 3: Wild Hunt",
+          "added": 20455
+        },
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 4291,
+          "slug": "counter-strike-global-offensive",
+          "name": "Counter-Strike: Global Offensive",
+          "added": 17036
+        },
+        {
+          "id": 5286,
+          "slug": "tomb-raider",
+          "name": "Tomb Raider (2013)",
+          "added": 16697
+        },
+        {
+          "id": 12020,
+          "slug": "left-4-dead-2",
+          "name": "Left 4 Dead 2",
+          "added": 16361
+        }
+      ]
+    },
+    {
+      "id": 40849,
+      "name": "Steam Cloud",
+      "slug": "steam-cloud",
+      "games_count": 18108,
+      "image_background": "https://media.rawg.io/media/games/9dd/9ddabb34840ea9227556670606cf8ea3.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 12020,
+          "slug": "left-4-dead-2",
+          "name": "Left 4 Dead 2",
+          "added": 16361
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        },
+        {
+          "id": 4062,
+          "slug": "bioshock-infinite",
+          "name": "BioShock Infinite",
+          "added": 15284
+        },
+        {
+          "id": 802,
+          "slug": "borderlands-2",
+          "name": "Borderlands 2",
+          "added": 15103
+        },
+        {
+          "id": 13537,
+          "slug": "half-life-2",
+          "name": "Half-Life 2",
+          "added": 14625
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Atmospheric",
+      "slug": "atmospheric",
+      "games_count": 33404,
+      "image_background": "https://media.rawg.io/media/games/49c/49c3dfa4ce2f6f140cc4825868e858cb.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 3328,
+          "slug": "the-witcher-3-wild-hunt",
+          "name": "The Witcher 3: Wild Hunt",
+          "added": 20455
+        },
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 5286,
+          "slug": "tomb-raider",
+          "name": "Tomb Raider (2013)",
+          "added": 16697
+        },
+        {
+          "id": 13536,
+          "slug": "portal",
+          "name": "Portal",
+          "added": 16472
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        }
+      ]
+    },
+    {
+      "id": 7808,
+      "name": "steam-trading-cards",
+      "slug": "steam-trading-cards",
+      "games_count": 7569,
+      "image_background": "https://media.rawg.io/media/games/6cd/6cd653e0aaef5ff8bbd295bf4bcb12eb.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 4291,
+          "slug": "counter-strike-global-offensive",
+          "name": "Counter-Strike: Global Offensive",
+          "added": 17036
+        },
+        {
+          "id": 12020,
+          "slug": "left-4-dead-2",
+          "name": "Left 4 Dead 2",
+          "added": 16361
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        },
+        {
+          "id": 4062,
+          "slug": "bioshock-infinite",
+          "name": "BioShock Infinite",
+          "added": 15284
+        },
+        {
+          "id": 3439,
+          "slug": "life-is-strange-episode-1-2",
+          "name": "Life is Strange",
+          "added": 15117
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Great Soundtrack",
+      "slug": "great-soundtrack",
+      "games_count": 3400,
+      "image_background": "https://media.rawg.io/media/games/490/49016e06ae2103881ff6373248843069.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 3328,
+          "slug": "the-witcher-3-wild-hunt",
+          "name": "The Witcher 3: Wild Hunt",
+          "added": 20455
+        },
+        {
+          "id": 13536,
+          "slug": "portal",
+          "name": "Portal",
+          "added": 16472
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        },
+        {
+          "id": 28,
+          "slug": "red-dead-redemption-2",
+          "name": "Red Dead Redemption 2",
+          "added": 15448
+        },
+        {
+          "id": 4062,
+          "slug": "bioshock-infinite",
+          "name": "BioShock Infinite",
+          "added": 15284
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "RPG",
+      "slug": "rpg",
+      "games_count": 21145,
+      "image_background": "https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 3328,
+          "slug": "the-witcher-3-wild-hunt",
+          "name": "The Witcher 3: Wild Hunt",
+          "added": 20455
+        },
+        {
+          "id": 5286,
+          "slug": "tomb-raider",
+          "name": "Tomb Raider (2013)",
+          "added": 16697
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        },
+        {
+          "id": 4062,
+          "slug": "bioshock-infinite",
+          "name": "BioShock Infinite",
+          "added": 15284
+        },
+        {
+          "id": 802,
+          "slug": "borderlands-2",
+          "name": "Borderlands 2",
+          "added": 15103
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Co-op",
+      "slug": "co-op",
+      "games_count": 11655,
+      "image_background": "https://media.rawg.io/media/games/dd5/dd50d4266915d56dd5b63ae1bf72606a.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 4291,
+          "slug": "counter-strike-global-offensive",
+          "name": "Counter-Strike: Global Offensive",
+          "added": 17036
+        },
+        {
+          "id": 12020,
+          "slug": "left-4-dead-2",
+          "name": "Left 4 Dead 2",
+          "added": 16361
+        },
+        {
+          "id": 28,
+          "slug": "red-dead-redemption-2",
+          "name": "Red Dead Redemption 2",
+          "added": 15448
+        },
+        {
+          "id": 802,
+          "slug": "borderlands-2",
+          "name": "Borderlands 2",
+          "added": 15103
+        }
+      ]
+    },
+    {
+      "id": 118,
+      "name": "Story Rich",
+      "slug": "story-rich",
+      "games_count": 21736,
+      "image_background": "https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56099.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 3328,
+          "slug": "the-witcher-3-wild-hunt",
+          "name": "The Witcher 3: Wild Hunt",
+          "added": 20455
+        },
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 13536,
+          "slug": "portal",
+          "name": "Portal",
+          "added": 16472
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        },
+        {
+          "id": 28,
+          "slug": "red-dead-redemption-2",
+          "name": "Red Dead Redemption 2",
+          "added": 15448
+        },
+        {
+          "id": 4062,
+          "slug": "bioshock-infinite",
+          "name": "BioShock Infinite",
+          "added": 15284
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Open World",
+      "slug": "open-world",
+      "games_count": 7526,
+      "image_background": "https://media.rawg.io/media/games/b7d/b7d3f1715fa8381a4e780173a197a615.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 3328,
+          "slug": "the-witcher-3-wild-hunt",
+          "name": "The Witcher 3: Wild Hunt",
+          "added": 20455
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        },
+        {
+          "id": 28,
+          "slug": "red-dead-redemption-2",
+          "name": "Red Dead Redemption 2",
+          "added": 15448
+        },
+        {
+          "id": 802,
+          "slug": "borderlands-2",
+          "name": "Borderlands 2",
+          "added": 15103
+        },
+        {
+          "id": 32,
+          "slug": "destiny-2",
+          "name": "Destiny 2",
+          "added": 13692
+        }
+      ]
+    },
+    {
+      "id": 411,
+      "name": "cooperative",
+      "slug": "cooperative",
+      "games_count": 5018,
+      "image_background": "https://media.rawg.io/media/games/476/476178ef18ab0534771d099f51cdc694.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 4291,
+          "slug": "counter-strike-global-offensive",
+          "name": "Counter-Strike: Global Offensive",
+          "added": 17036
+        },
+        {
+          "id": 12020,
+          "slug": "left-4-dead-2",
+          "name": "Left 4 Dead 2",
+          "added": 16361
+        },
+        {
+          "id": 802,
+          "slug": "borderlands-2",
+          "name": "Borderlands 2",
+          "added": 15103
+        },
+        {
+          "id": 32,
+          "slug": "destiny-2",
+          "name": "Destiny 2",
+          "added": 13692
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "First-Person",
+      "slug": "first-person",
+      "games_count": 31796,
+      "image_background": "https://media.rawg.io/media/games/b8c/b8c243eaa0fbac8115e0cdccac3f91dc.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 4291,
+          "slug": "counter-strike-global-offensive",
+          "name": "Counter-Strike: Global Offensive",
+          "added": 17036
+        },
+        {
+          "id": 13536,
+          "slug": "portal",
+          "name": "Portal",
+          "added": 16472
+        },
+        {
+          "id": 12020,
+          "slug": "left-4-dead-2",
+          "name": "Left 4 Dead 2",
+          "added": 16361
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "name": "2D",
+      "slug": "2d",
+      "games_count": 195641,
+      "image_background": "https://media.rawg.io/media/games/8ca/8ca40b562a755d6a0e30d48e6c74b178.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 1030,
+          "slug": "limbo",
+          "name": "Limbo",
+          "added": 13431
+        },
+        {
+          "id": 422,
+          "slug": "terraria",
+          "name": "Terraria",
+          "added": 12577
+        },
+        {
+          "id": 9767,
+          "slug": "hollow-knight",
+          "name": "Hollow Knight",
+          "added": 10892
+        },
+        {
+          "id": 3612,
+          "slug": "hotline-miami",
+          "name": "Hotline Miami",
+          "added": 10354
+        },
+        {
+          "id": 654,
+          "slug": "stardew-valley",
+          "name": "Stardew Valley",
+          "added": 10009
+        },
+        {
+          "id": 17540,
+          "slug": "injustice-gods-among-us-ultimate-edition",
+          "name": "Injustice: Gods Among Us Ultimate Edition",
+          "added": 9446
+        }
+      ]
+    },
+    {
+      "id": 149,
+      "name": "Third Person",
+      "slug": "third-person",
+      "games_count": 11559,
+      "image_background": "https://media.rawg.io/media/games/62c/62c7c8b28a27b83680b22fb9d33fc619.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 3328,
+          "slug": "the-witcher-3-wild-hunt",
+          "name": "The Witcher 3: Wild Hunt",
+          "added": 20455
+        },
+        {
+          "id": 5286,
+          "slug": "tomb-raider",
+          "name": "Tomb Raider (2013)",
+          "added": 16697
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        },
+        {
+          "id": 28,
+          "slug": "red-dead-redemption-2",
+          "name": "Red Dead Redemption 2",
+          "added": 15448
+        },
+        {
+          "id": 3439,
+          "slug": "life-is-strange-episode-1-2",
+          "name": "Life is Strange",
+          "added": 15117
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Sci-fi",
+      "slug": "sci-fi",
+      "games_count": 19224,
+      "image_background": "https://media.rawg.io/media/games/d82/d82990b9c67ba0d2d09d4e6fa88885a7.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 13536,
+          "slug": "portal",
+          "name": "Portal",
+          "added": 16472
+        },
+        {
+          "id": 4062,
+          "slug": "bioshock-infinite",
+          "name": "BioShock Infinite",
+          "added": 15284
+        },
+        {
+          "id": 802,
+          "slug": "borderlands-2",
+          "name": "Borderlands 2",
+          "added": 15103
+        },
+        {
+          "id": 13537,
+          "slug": "half-life-2",
+          "name": "Half-Life 2",
+          "added": 14625
+        },
+        {
+          "id": 4286,
+          "slug": "bioshock",
+          "name": "BioShock",
+          "added": 13848
+        }
+      ]
+    },
+    {
+      "id": 40845,
+      "name": "Partial Controller Support",
+      "slug": "partial-controller-support",
+      "games_count": 11755,
+      "image_background": "https://media.rawg.io/media/games/995/9951d9d55323d08967640f7b9ab3e342.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 13536,
+          "slug": "portal",
+          "name": "Portal",
+          "added": 16472
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        },
+        {
+          "id": 28,
+          "slug": "red-dead-redemption-2",
+          "name": "Red Dead Redemption 2",
+          "added": 15448
+        },
+        {
+          "id": 13537,
+          "slug": "half-life-2",
+          "name": "Half-Life 2",
+          "added": 14625
+        },
+        {
+          "id": 4286,
+          "slug": "bioshock",
+          "name": "BioShock",
+          "added": 13848
+        },
+        {
+          "id": 2454,
+          "slug": "doom",
+          "name": "DOOM (2016)",
+          "added": 13274
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Horror",
+      "slug": "horror",
+      "games_count": 44443,
+      "image_background": "https://media.rawg.io/media/games/b8c/b8c243eaa0fbac8115e0cdccac3f91dc.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 12020,
+          "slug": "left-4-dead-2",
+          "name": "Left 4 Dead 2",
+          "added": 16361
+        },
+        {
+          "id": 13537,
+          "slug": "half-life-2",
+          "name": "Half-Life 2",
+          "added": 14625
+        },
+        {
+          "id": 4286,
+          "slug": "bioshock",
+          "name": "BioShock",
+          "added": 13848
+        },
+        {
+          "id": 1030,
+          "slug": "limbo",
+          "name": "Limbo",
+          "added": 13431
+        },
+        {
+          "id": 2454,
+          "slug": "doom",
+          "name": "DOOM (2016)",
+          "added": 13274
+        },
+        {
+          "id": 29028,
+          "slug": "metro-2033",
+          "name": "Metro 2033",
+          "added": 12053
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "name": "FPS",
+      "slug": "fps",
+      "games_count": 13281,
+      "image_background": "https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 4291,
+          "slug": "counter-strike-global-offensive",
+          "name": "Counter-Strike: Global Offensive",
+          "added": 17036
+        },
+        {
+          "id": 13536,
+          "slug": "portal",
+          "name": "Portal",
+          "added": 16472
+        },
+        {
+          "id": 12020,
+          "slug": "left-4-dead-2",
+          "name": "Left 4 Dead 2",
+          "added": 16361
+        },
+        {
+          "id": 28,
+          "slug": "red-dead-redemption-2",
+          "name": "Red Dead Redemption 2",
+          "added": 15448
+        },
+        {
+          "id": 4062,
+          "slug": "bioshock-infinite",
+          "name": "BioShock Infinite",
+          "added": 15284
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Online Co-Op",
+      "slug": "online-co-op",
+      "games_count": 5631,
+      "image_background": "https://media.rawg.io/media/games/736/73619bd336c894d6941d926bfd563946.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 4291,
+          "slug": "counter-strike-global-offensive",
+          "name": "Counter-Strike: Global Offensive",
+          "added": 17036
+        },
+        {
+          "id": 12020,
+          "slug": "left-4-dead-2",
+          "name": "Left 4 Dead 2",
+          "added": 16361
+        },
+        {
+          "id": 28,
+          "slug": "red-dead-redemption-2",
+          "name": "Red Dead Redemption 2",
+          "added": 15448
+        },
+        {
+          "id": 802,
+          "slug": "borderlands-2",
+          "name": "Borderlands 2",
+          "added": 15103
+        },
+        {
+          "id": 32,
+          "slug": "destiny-2",
+          "name": "Destiny 2",
+          "added": 13692
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "name": "Fantasy",
+      "slug": "fantasy",
+      "games_count": 27874,
+      "image_background": "https://media.rawg.io/media/games/ee3/ee3e10193aafc3230ba1cae426967d10.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 3328,
+          "slug": "the-witcher-3-wild-hunt",
+          "name": "The Witcher 3: Wild Hunt",
+          "added": 20455
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        },
+        {
+          "id": 4062,
+          "slug": "bioshock-infinite",
+          "name": "BioShock Infinite",
+          "added": 15284
+        },
+        {
+          "id": 58175,
+          "slug": "god-of-war-2",
+          "name": "God of War (2018)",
+          "added": 13503
+        },
+        {
+          "id": 10213,
+          "slug": "dota-2",
+          "name": "Dota 2",
+          "added": 12407
+        },
+        {
+          "id": 16944,
+          "slug": "the-witcher-2-assassins-of-kings-enhanced-edition",
+          "name": "The Witcher 2: Assassins of Kings Enhanced Edition",
+          "added": 11345
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Funny",
+      "slug": "funny",
+      "games_count": 24939,
+      "image_background": "https://media.rawg.io/media/games/13a/13a528ac9cf48bbb6be5d35fe029336d.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 13536,
+          "slug": "portal",
+          "name": "Portal",
+          "added": 16472
+        },
+        {
+          "id": 802,
+          "slug": "borderlands-2",
+          "name": "Borderlands 2",
+          "added": 15103
+        },
+        {
+          "id": 3939,
+          "slug": "payday-2",
+          "name": "PAYDAY 2",
+          "added": 13289
+        },
+        {
+          "id": 11859,
+          "slug": "team-fortress-2",
+          "name": "Team Fortress 2",
+          "added": 13220
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Gore",
+      "slug": "gore",
+      "games_count": 5717,
+      "image_background": "https://media.rawg.io/media/games/d58/d588947d4286e7b5e0e12e1bea7d9844.jpg",
+      "language": "eng",
+      "games": [
+        {
+          "id": 12020,
+          "slug": "left-4-dead-2",
+          "name": "Left 4 Dead 2",
+          "added": 16361
+        },
+        {
+          "id": 28,
+          "slug": "red-dead-redemption-2",
+          "name": "Red Dead Redemption 2",
+          "added": 15448
+        },
+        {
+          "id": 4062,
+          "slug": "bioshock-infinite",
+          "name": "BioShock Infinite",
+          "added": 15284
+        },
+        {
+          "id": 58175,
+          "slug": "god-of-war-2",
+          "name": "God of War (2018)",
+          "added": 13503
+        },
+        {
+          "id": 2454,
+          "slug": "doom",
+          "name": "DOOM (2016)",
+          "added": 13274
+        },
+        {
+          "id": 4459,
+          "slug": "grand-theft-auto-iv",
+          "name": "Grand Theft Auto IV",
+          "added": 12438
+        }
+      ]
+    }
+  ]
+}

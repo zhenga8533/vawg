@@ -1,0 +1,1159 @@
+{
+  "count": 51,
+  "next": "https://api.rawg.io/api/platforms?key=616d5f162c6f4008831fae093f1615de&page=2&page_size=24",
+  "previous": null,
+  "results": [
+    {
+      "id": 4,
+      "name": "PC",
+      "slug": "pc",
+      "games_count": 532170,
+      "image_background": "https://media.rawg.io/media/games/587/587588c64afbff80e6f444eb2e46f9da.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 3328,
+          "slug": "the-witcher-3-wild-hunt",
+          "name": "The Witcher 3: Wild Hunt",
+          "added": 20455
+        },
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 4291,
+          "slug": "counter-strike-global-offensive",
+          "name": "Counter-Strike: Global Offensive",
+          "added": 17036
+        },
+        {
+          "id": 5286,
+          "slug": "tomb-raider",
+          "name": "Tomb Raider (2013)",
+          "added": 16697
+        },
+        {
+          "id": 13536,
+          "slug": "portal",
+          "name": "Portal",
+          "added": 16472
+        }
+      ]
+    },
+    {
+      "id": 187,
+      "name": "PlayStation 5",
+      "slug": "playstation5",
+      "games_count": 1097,
+      "image_background": "https://media.rawg.io/media/games/b34/b3419c2706f8f8dbe40d08e23642ad06.jpg",
+      "image": null,
+      "year_start": 2020,
+      "year_end": null,
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 3328,
+          "slug": "the-witcher-3-wild-hunt",
+          "name": "The Witcher 3: Wild Hunt",
+          "added": 20455
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        },
+        {
+          "id": 32,
+          "slug": "destiny-2",
+          "name": "Destiny 2",
+          "added": 13692
+        },
+        {
+          "id": 3070,
+          "slug": "fallout-4",
+          "name": "Fallout 4",
+          "added": 13421
+        },
+        {
+          "id": 41494,
+          "slug": "cyberpunk-2077",
+          "name": "Cyberpunk 2077",
+          "added": 12738
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "PlayStation 4",
+      "slug": "playstation4",
+      "games_count": 6821,
+      "image_background": "https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 3328,
+          "slug": "the-witcher-3-wild-hunt",
+          "name": "The Witcher 3: Wild Hunt",
+          "added": 20455
+        },
+        {
+          "id": 5286,
+          "slug": "tomb-raider",
+          "name": "Tomb Raider (2013)",
+          "added": 16697
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        },
+        {
+          "id": 28,
+          "slug": "red-dead-redemption-2",
+          "name": "Red Dead Redemption 2",
+          "added": 15448
+        },
+        {
+          "id": 4062,
+          "slug": "bioshock-infinite",
+          "name": "BioShock Infinite",
+          "added": 15284
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Xbox One",
+      "slug": "xbox-one",
+      "games_count": 5634,
+      "image_background": "https://media.rawg.io/media/games/b45/b45575f34285f2c4479c9a5f719d972e.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 3328,
+          "slug": "the-witcher-3-wild-hunt",
+          "name": "The Witcher 3: Wild Hunt",
+          "added": 20455
+        },
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 5286,
+          "slug": "tomb-raider",
+          "name": "Tomb Raider (2013)",
+          "added": 16697
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        },
+        {
+          "id": 28,
+          "slug": "red-dead-redemption-2",
+          "name": "Red Dead Redemption 2",
+          "added": 15448
+        }
+      ]
+    },
+    {
+      "id": 186,
+      "name": "Xbox Series S/X",
+      "slug": "xbox-series-x",
+      "games_count": 956,
+      "image_background": "https://media.rawg.io/media/games/f87/f87457e8347484033cb34cde6101d08d.jpg",
+      "image": null,
+      "year_start": 2020,
+      "year_end": null,
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 3328,
+          "slug": "the-witcher-3-wild-hunt",
+          "name": "The Witcher 3: Wild Hunt",
+          "added": 20455
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        },
+        {
+          "id": 32,
+          "slug": "destiny-2",
+          "name": "Destiny 2",
+          "added": 13692
+        },
+        {
+          "id": 41494,
+          "slug": "cyberpunk-2077",
+          "name": "Cyberpunk 2077",
+          "added": 12738
+        },
+        {
+          "id": 766,
+          "slug": "warframe",
+          "name": "Warframe",
+          "added": 12327
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Nintendo Switch",
+      "slug": "nintendo-switch",
+      "games_count": 5490,
+      "image_background": "https://media.rawg.io/media/games/8cc/8cce7c0e99dcc43d66c8efd42f9d03e3.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 3328,
+          "slug": "the-witcher-3-wild-hunt",
+          "name": "The Witcher 3: Wild Hunt",
+          "added": 20455
+        },
+        {
+          "id": 13536,
+          "slug": "portal",
+          "name": "Portal",
+          "added": 16472
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        },
+        {
+          "id": 4062,
+          "slug": "bioshock-infinite",
+          "name": "BioShock Infinite",
+          "added": 15284
+        },
+        {
+          "id": 1030,
+          "slug": "limbo",
+          "name": "Limbo",
+          "added": 13431
+        },
+        {
+          "id": 2454,
+          "slug": "doom",
+          "name": "DOOM (2016)",
+          "added": 13274
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "iOS",
+      "slug": "ios",
+      "games_count": 77326,
+      "image_background": "https://media.rawg.io/media/games/238/2383a172b4d50a7b44e07980eb7141ea.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 3439,
+          "slug": "life-is-strange-episode-1-2",
+          "name": "Life is Strange",
+          "added": 15117
+        },
+        {
+          "id": 1030,
+          "slug": "limbo",
+          "name": "Limbo",
+          "added": 13431
+        },
+        {
+          "id": 422,
+          "slug": "terraria",
+          "name": "Terraria",
+          "added": 12577
+        },
+        {
+          "id": 766,
+          "slug": "warframe",
+          "name": "Warframe",
+          "added": 12327
+        },
+        {
+          "id": 416,
+          "slug": "grand-theft-auto-san-andreas",
+          "name": "Grand Theft Auto: San Andreas",
+          "added": 11213
+        },
+        {
+          "id": 23027,
+          "slug": "the-walking-dead",
+          "name": "The Walking Dead: Season 1",
+          "added": 11157
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Android",
+      "slug": "android",
+      "games_count": 52369,
+      "image_background": "https://media.rawg.io/media/games/13a/13a528ac9cf48bbb6be5d35fe029336d.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 13536,
+          "slug": "portal",
+          "name": "Portal",
+          "added": 16472
+        },
+        {
+          "id": 3439,
+          "slug": "life-is-strange-episode-1-2",
+          "name": "Life is Strange",
+          "added": 15117
+        },
+        {
+          "id": 802,
+          "slug": "borderlands-2",
+          "name": "Borderlands 2",
+          "added": 15103
+        },
+        {
+          "id": 13537,
+          "slug": "half-life-2",
+          "name": "Half-Life 2",
+          "added": 14625
+        },
+        {
+          "id": 1030,
+          "slug": "limbo",
+          "name": "Limbo",
+          "added": 13431
+        },
+        {
+          "id": 422,
+          "slug": "terraria",
+          "name": "Terraria",
+          "added": 12577
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Nintendo 3DS",
+      "slug": "nintendo-3ds",
+      "games_count": 1694,
+      "image_background": "https://media.rawg.io/media/screenshots/be1/be17f78d80b50121fa2ed6d4562d403e.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 422,
+          "slug": "terraria",
+          "name": "Terraria",
+          "added": 12577
+        },
+        {
+          "id": 22509,
+          "slug": "minecraft",
+          "name": "Minecraft",
+          "added": 8332
+        },
+        {
+          "id": 2597,
+          "slug": "lego-lord-of-the-rings",
+          "name": "LEGO The Lord of the Rings",
+          "added": 5484
+        },
+        {
+          "id": 250,
+          "slug": "the-binding-of-isaac-rebirth",
+          "name": "The Binding of Isaac: Rebirth",
+          "added": 5428
+        },
+        {
+          "id": 3729,
+          "slug": "lego-the-hobbit",
+          "name": "LEGO The Hobbit",
+          "added": 5036
+        },
+        {
+          "id": 4012,
+          "slug": "resident-evil-revelations-biohazard-revelations",
+          "name": "Resident Evil Revelations",
+          "added": 4203
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Nintendo DS",
+      "slug": "nintendo-ds",
+      "games_count": 2484,
+      "image_background": "https://media.rawg.io/media/screenshots/4f2/4f2246a85225b7a91d63990fe540b7c4.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 865,
+          "slug": "call-of-duty-black-ops",
+          "name": "Call of Duty: Black Ops",
+          "added": 6638
+        },
+        {
+          "id": 3486,
+          "slug": "syberia",
+          "name": "Syberia",
+          "added": 6470
+        },
+        {
+          "id": 2597,
+          "slug": "lego-lord-of-the-rings",
+          "name": "LEGO The Lord of the Rings",
+          "added": 5484
+        },
+        {
+          "id": 5578,
+          "slug": "grid",
+          "name": "GRID (2008)",
+          "added": 5329
+        },
+        {
+          "id": 4869,
+          "slug": "tomb-raider-underworld",
+          "name": "Tomb Raider: Underworld",
+          "added": 4554
+        },
+        {
+          "id": 5528,
+          "slug": "call-of-duty-world-at-war",
+          "name": "Call of Duty: World at War",
+          "added": 4397
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Nintendo DSi",
+      "slug": "nintendo-dsi",
+      "games_count": 37,
+      "image_background": "https://media.rawg.io/media/games/096/0962642c3f74cd6306ad8bfdfd3d6150.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 19309,
+          "slug": "plants-vs-zombies-goty-edition",
+          "name": "Plants vs. Zombies GOTY Edition",
+          "added": 3703
+        },
+        {
+          "id": 949,
+          "slug": "cut-the-rope",
+          "name": "Cut the Rope",
+          "added": 642
+        },
+        {
+          "id": 223378,
+          "slug": "ace-attorney-investigations-miles-edgeworth",
+          "name": "Ace Attorney Investigations - Miles Edgeworth",
+          "added": 200
+        },
+        {
+          "id": 22727,
+          "slug": "jagged-alliance",
+          "name": "Jagged Alliance",
+          "added": 145
+        },
+        {
+          "id": 53802,
+          "slug": "dragons-lair",
+          "name": "Dragon's Lair",
+          "added": 70
+        },
+        {
+          "id": 25953,
+          "slug": "mario-vs-donkey-kong-minis-march-again",
+          "name": "Mario vs. Donkey Kong: Minis March Again!",
+          "added": 35
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "macOS",
+      "slug": "macos",
+      "games_count": 104238,
+      "image_background": "https://media.rawg.io/media/games/b8c/b8c243eaa0fbac8115e0cdccac3f91dc.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 3328,
+          "slug": "the-witcher-3-wild-hunt",
+          "name": "The Witcher 3: Wild Hunt",
+          "added": 20455
+        },
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 5286,
+          "slug": "tomb-raider",
+          "name": "Tomb Raider (2013)",
+          "added": 16697
+        },
+        {
+          "id": 13536,
+          "slug": "portal",
+          "name": "Portal",
+          "added": 16472
+        },
+        {
+          "id": 12020,
+          "slug": "left-4-dead-2",
+          "name": "Left 4 Dead 2",
+          "added": 16361
+        },
+        {
+          "id": 3439,
+          "slug": "life-is-strange-episode-1-2",
+          "name": "Life is Strange",
+          "added": 15117
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Linux",
+      "slug": "linux",
+      "games_count": 77159,
+      "image_background": "https://media.rawg.io/media/games/7fa/7fa0b586293c5861ee32490e953a4996.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 4291,
+          "slug": "counter-strike-global-offensive",
+          "name": "Counter-Strike: Global Offensive",
+          "added": 17036
+        },
+        {
+          "id": 13536,
+          "slug": "portal",
+          "name": "Portal",
+          "added": 16472
+        },
+        {
+          "id": 12020,
+          "slug": "left-4-dead-2",
+          "name": "Left 4 Dead 2",
+          "added": 16361
+        },
+        {
+          "id": 4062,
+          "slug": "bioshock-infinite",
+          "name": "BioShock Infinite",
+          "added": 15284
+        },
+        {
+          "id": 3439,
+          "slug": "life-is-strange-episode-1-2",
+          "name": "Life is Strange",
+          "added": 15117
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Xbox 360",
+      "slug": "xbox360",
+      "games_count": 2800,
+      "image_background": "https://media.rawg.io/media/games/157/15742f2f67eacff546738e1ab5c19d20.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 4291,
+          "slug": "counter-strike-global-offensive",
+          "name": "Counter-Strike: Global Offensive",
+          "added": 17036
+        },
+        {
+          "id": 5286,
+          "slug": "tomb-raider",
+          "name": "Tomb Raider (2013)",
+          "added": 16697
+        },
+        {
+          "id": 13536,
+          "slug": "portal",
+          "name": "Portal",
+          "added": 16472
+        },
+        {
+          "id": 12020,
+          "slug": "left-4-dead-2",
+          "name": "Left 4 Dead 2",
+          "added": 16361
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "name": "Xbox",
+      "slug": "xbox-old",
+      "games_count": 736,
+      "image_background": "https://media.rawg.io/media/games/683/6833fbb183fd72a61c032501e3bc6d36.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 13537,
+          "slug": "half-life-2",
+          "name": "Half-Life 2",
+          "added": 14625
+        },
+        {
+          "id": 416,
+          "slug": "grand-theft-auto-san-andreas",
+          "name": "Grand Theft Auto: San Andreas",
+          "added": 11213
+        },
+        {
+          "id": 430,
+          "slug": "grand-theft-auto-vice-city",
+          "name": "Grand Theft Auto: Vice City",
+          "added": 9255
+        },
+        {
+          "id": 19301,
+          "slug": "counter-strike",
+          "name": "Counter-Strike",
+          "added": 8732
+        },
+        {
+          "id": 2361,
+          "slug": "psychonauts",
+          "name": "Psychonauts",
+          "added": 7969
+        },
+        {
+          "id": 432,
+          "slug": "grand-theft-auto-iii",
+          "name": "Grand Theft Auto III",
+          "added": 6965
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "PlayStation 3",
+      "slug": "playstation3",
+      "games_count": 3164,
+      "image_background": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 3498,
+          "slug": "grand-theft-auto-v",
+          "name": "Grand Theft Auto V",
+          "added": 21007
+        },
+        {
+          "id": 4200,
+          "slug": "portal-2",
+          "name": "Portal 2",
+          "added": 19342
+        },
+        {
+          "id": 4291,
+          "slug": "counter-strike-global-offensive",
+          "name": "Counter-Strike: Global Offensive",
+          "added": 17036
+        },
+        {
+          "id": 5286,
+          "slug": "tomb-raider",
+          "name": "Tomb Raider (2013)",
+          "added": 16697
+        },
+        {
+          "id": 13536,
+          "slug": "portal",
+          "name": "Portal",
+          "added": 16472
+        },
+        {
+          "id": 5679,
+          "slug": "the-elder-scrolls-v-skyrim",
+          "name": "The Elder Scrolls V: Skyrim",
+          "added": 15824
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "PlayStation 2",
+      "slug": "playstation2",
+      "games_count": 2035,
+      "image_background": "https://media.rawg.io/media/games/9d4/9d45e22df640fcb6f4b754aa3491ae09.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 416,
+          "slug": "grand-theft-auto-san-andreas",
+          "name": "Grand Theft Auto: San Andreas",
+          "added": 11213
+        },
+        {
+          "id": 18080,
+          "slug": "half-life",
+          "name": "Half-Life",
+          "added": 10523
+        },
+        {
+          "id": 430,
+          "slug": "grand-theft-auto-vice-city",
+          "name": "Grand Theft Auto: Vice City",
+          "added": 9255
+        },
+        {
+          "id": 2361,
+          "slug": "psychonauts",
+          "name": "Psychonauts",
+          "added": 7969
+        },
+        {
+          "id": 432,
+          "slug": "grand-theft-auto-iii",
+          "name": "Grand Theft Auto III",
+          "added": 6965
+        },
+        {
+          "id": 56184,
+          "slug": "resident-evil-4",
+          "name": "Resident Evil 4 (2005)",
+          "added": 6604
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "name": "PlayStation",
+      "slug": "playstation1",
+      "games_count": 1670,
+      "image_background": "https://media.rawg.io/media/games/96a/96a48ac7487d9db9179d83170afcb16a.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 5159,
+          "slug": "resident-evil-2",
+          "name": "Resident Evil 2 (1998)",
+          "added": 6101
+        },
+        {
+          "id": 5193,
+          "slug": "oddworld-abes-oddysee",
+          "name": "Oddworld: Abe's Oddysee",
+          "added": 5532
+        },
+        {
+          "id": 3449,
+          "slug": "resident-evil",
+          "name": "Resident Evil",
+          "added": 5200
+        },
+        {
+          "id": 52939,
+          "slug": "final-fantasy-vii",
+          "name": "Final Fantasy VII (1997)",
+          "added": 4124
+        },
+        {
+          "id": 20569,
+          "slug": "ufo-enemy-unknown",
+          "name": "X-COM: UFO Defense",
+          "added": 3523
+        },
+        {
+          "id": 57908,
+          "slug": "tomb-raider-ii",
+          "name": "Tomb Raider II",
+          "added": 3115
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "PS Vita",
+      "slug": "ps-vita",
+      "games_count": 1447,
+      "image_background": "https://media.rawg.io/media/games/003/0031c0067559d41df19cf98ad87e02aa.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 802,
+          "slug": "borderlands-2",
+          "name": "Borderlands 2",
+          "added": 15103
+        },
+        {
+          "id": 1030,
+          "slug": "limbo",
+          "name": "Limbo",
+          "added": 13431
+        },
+        {
+          "id": 422,
+          "slug": "terraria",
+          "name": "Terraria",
+          "added": 12577
+        },
+        {
+          "id": 23027,
+          "slug": "the-walking-dead",
+          "name": "The Walking Dead: Season 1",
+          "added": 11157
+        },
+        {
+          "id": 3612,
+          "slug": "hotline-miami",
+          "name": "Hotline Miami",
+          "added": 10354
+        },
+        {
+          "id": 654,
+          "slug": "stardew-valley",
+          "name": "Stardew Valley",
+          "added": 10009
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "PSP",
+      "slug": "psp",
+      "games_count": 1369,
+      "image_background": "https://media.rawg.io/media/games/9f7/9f750cb69a31a42648f45e3681abed3a.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 13886,
+          "slug": "star-wars-battlefront-ii-2",
+          "name": "Star Wars: Battlefront II (2005)",
+          "added": 4637
+        },
+        {
+          "id": 5298,
+          "slug": "tomb-raider-legend",
+          "name": "Tomb Raider: Legend",
+          "added": 4092
+        },
+        {
+          "id": 5297,
+          "slug": "tomb-raider-anniversary",
+          "name": "Tomb Raider: Anniversary",
+          "added": 3987
+        },
+        {
+          "id": 57908,
+          "slug": "tomb-raider-ii",
+          "name": "Tomb Raider II",
+          "added": 3115
+        },
+        {
+          "id": 16543,
+          "slug": "lego-batman",
+          "name": "LEGO Batman",
+          "added": 3027
+        },
+        {
+          "id": 58890,
+          "slug": "need-for-speed-most-wanted",
+          "name": "Need For Speed: Most Wanted",
+          "added": 2873
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Wii U",
+      "slug": "wii-u",
+      "games_count": 1126,
+      "image_background": "https://media.rawg.io/media/games/879/879c930f9c6787c920153fa2df452eb3.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 422,
+          "slug": "terraria",
+          "name": "Terraria",
+          "added": 12577
+        },
+        {
+          "id": 3144,
+          "slug": "super-meat-boy",
+          "name": "Super Meat Boy",
+          "added": 9315
+        },
+        {
+          "id": 3841,
+          "slug": "assassins-creed-iv-black-flag",
+          "name": "Assassin’s Creed IV: Black Flag",
+          "added": 9225
+        },
+        {
+          "id": 22509,
+          "slug": "minecraft",
+          "name": "Minecraft",
+          "added": 8332
+        },
+        {
+          "id": 3687,
+          "slug": "watch-dogs",
+          "name": "Watch Dogs",
+          "added": 7968
+        },
+        {
+          "id": 3876,
+          "slug": "deus-ex-human-revolution-directors-cut",
+          "name": "Deus Ex: Human Revolution - Director's Cut",
+          "added": 7332
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Wii",
+      "slug": "wii",
+      "games_count": 2230,
+      "image_background": "https://media.rawg.io/media/games/9fb/9fbaea2168caea1f806546dfdaaeb1da.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 865,
+          "slug": "call-of-duty-black-ops",
+          "name": "Call of Duty: Black Ops",
+          "added": 6638
+        },
+        {
+          "id": 56184,
+          "slug": "resident-evil-4",
+          "name": "Resident Evil 4 (2005)",
+          "added": 6604
+        },
+        {
+          "id": 11276,
+          "slug": "call-of-duty-modern-warfare-3",
+          "name": "Call of Duty: Modern Warfare 3",
+          "added": 6059
+        },
+        {
+          "id": 2597,
+          "slug": "lego-lord-of-the-rings",
+          "name": "LEGO The Lord of the Rings",
+          "added": 5484
+        },
+        {
+          "id": 4869,
+          "slug": "tomb-raider-underworld",
+          "name": "Tomb Raider: Underworld",
+          "added": 4554
+        },
+        {
+          "id": 1140,
+          "slug": "world-of-goo",
+          "name": "World of Goo",
+          "added": 4411
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "name": "GameCube",
+      "slug": "gamecube",
+      "games_count": 633,
+      "image_background": "https://media.rawg.io/media/games/0a5/0a56e2bb9ce95359e69ff9689c553a45.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 56184,
+          "slug": "resident-evil-4",
+          "name": "Resident Evil 4 (2005)",
+          "added": 6604
+        },
+        {
+          "id": 5159,
+          "slug": "resident-evil-2",
+          "name": "Resident Evil 2 (1998)",
+          "added": 6101
+        },
+        {
+          "id": 19592,
+          "slug": "hitman-2-silent-assassin",
+          "name": "Hitman 2: Silent Assassin",
+          "added": 4433
+        },
+        {
+          "id": 5298,
+          "slug": "tomb-raider-legend",
+          "name": "Tomb Raider: Legend",
+          "added": 4092
+        },
+        {
+          "id": 12018,
+          "slug": "star-wars-jedi-knight-ii-jedi-outcast",
+          "name": "Star Wars Jedi Knight II: Jedi Outcast",
+          "added": 3623
+        },
+        {
+          "id": 13909,
+          "slug": "prince-of-persia-the-sands-of-time",
+          "name": "Prince of Persia: The Sands of Time",
+          "added": 3273
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "name": "Nintendo 64",
+      "slug": "nintendo-64",
+      "games_count": 363,
+      "image_background": "https://media.rawg.io/media/screenshots/0fa/0fa357fe0160e2b592a6fafff0e6683e.jpg",
+      "image": null,
+      "year_start": null,
+      "year_end": null,
+      "games": [
+        {
+          "id": 5159,
+          "slug": "resident-evil-2",
+          "name": "Resident Evil 2 (1998)",
+          "added": 6101
+        },
+        {
+          "id": 54491,
+          "slug": "quake",
+          "name": "Quake",
+          "added": 3168
+        },
+        {
+          "id": 20466,
+          "slug": "worms-armageddon",
+          "name": "Worms Armageddon",
+          "added": 3007
+        },
+        {
+          "id": 54492,
+          "slug": "quake-2",
+          "name": "Quake II",
+          "added": 2471
+        },
+        {
+          "id": 25097,
+          "slug": "the-legend-of-zelda-ocarina-of-time",
+          "name": "The Legend of Zelda: Ocarina of Time",
+          "added": 1718
+        },
+        {
+          "id": 28532,
+          "slug": "banjo-kazooie",
+          "name": "Banjo-Kazooie",
+          "added": 1543
+        }
+      ]
+    }
+  ]
+}

@@ -39,7 +39,7 @@ const ItemList = ({ endpoint, name, selectedItem, onSelectItem }: ItemListProps)
             selectedItem={selectedItem}
           />
         )}
-        {results.slice(0, showAll ? results.length : 2).map((item) => (
+        {results.slice(0, showAll ? results.length : 2).map((item: Item) => (
           <ItemItem
             item={item}
             image={cropImageURL(item.image_background)}
