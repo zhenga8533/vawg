@@ -12,6 +12,16 @@ interface Screenshot {
   image: string;
 }
 
+interface Trailer {
+  id: number;
+  name: string;
+  preview: string;
+  data: {
+    480: string;
+    max: string;
+  };
+}
+
 export interface Game {
   id: number;
   name: string;
@@ -30,11 +40,13 @@ export interface GameData {
   name: string;
   name_original: string;
   description: string;
+  description_raw: string;
   metacrictic: number;
   metacritic_platforms: {
     metascore: number;
     url: string;
-  };
+    platform: Platform;
+  }[];
   released: string;
   tba: boolean;
   updated: string;
@@ -49,10 +61,7 @@ export interface GameData {
     count: number;
     percent: number;
   }[];
-  reactons: {
-    reactions: number;
-    title: string;
-  }[];
+  reactons: object;
   added: number;
   added_by_status: {
     yet: number;
@@ -90,12 +99,35 @@ export interface GameData {
   };
   platforms: { platform: Platform }[];
   parent_platforms: { platform: Platform }[];
+  developers: {
+    id: number;
+    name: string;
+    slug: string;
+    games_count: number;
+    image_background: string;
+  }[];
+  genres: {
+    id: number;
+    name: string;
+    slug: string;
+    games_count: number;
+    image_background: string;
+  }[];
+  tags: {
+    id: number;
+    name: string;
+    slug: string;
+    language: string;
+    games_count: number;
+    image_background: string;
+  };
 }
 
 const useGame = (slug: string | undefined) => {
   const [data, setData] = useState({} as GameData);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
+  const [trailers, setTrailers] = useState<Trailer[]>([]);
 
   useEffect(() => {
     if (!slug) return;
@@ -112,9 +144,11 @@ const useGame = (slug: string | undefined) => {
         setError(err.message);
         setLoading(false);
       });
+
+    apiClient.get<{ results: Trailer[] }>(`/games/${slug}/movies`).then((res) => setTrailers(res.data.results));
   }, []);
 
-  return { data, error, loading };
+  return { data, error, loading, trailers };
 };
 
 export default useGame;
