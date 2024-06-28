@@ -47,11 +47,11 @@ const Navbar = ({
         <Menu>
           <MenuButton as={IconButton} aria-label="Options" icon={<GiHamburgerMenu />} variant="outline" />
           <MenuList paddingX={2} position="absolute" right={-16} maxHeight="85vh" overflowX="hidden" overflowY="auto">
+            <Heading fontSize="3xl">Filter</Heading>
+            <hr />
+            <ThemeSelector />
+            <hr />
             <Box display={{ base: "block", md: "none" }} marginBottom={3}>
-              <Heading fontSize="3xl">Filter</Heading>
-              <hr />
-              <ThemeSelector />
-              <hr />
               {location.pathname.startsWith("/games") && (
                 <>
                   <PlatformSelector onSelectPlatform={onSelectPlatform} selectedPlatform={selectedPlatform} />
