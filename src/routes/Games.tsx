@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { GameQuery } from "../App";
 import Pagination from "../components/general/Pagination";
 import GameGrid from "../components/main/games/GameGrid";
-import GameHeading from "../components/main/games/GameHeading";
 import GameSelector from "../components/main/games/GameSelector";
+import GameHeading from "../components/main/games/GamesHeading";
 import useGames from "../hooks/useGames";
 
 export interface GamesProps {

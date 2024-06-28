@@ -1,7 +1,7 @@
-import { Grid, GridItem, HStack, Heading, Text } from "@chakra-ui/react";
+import { Grid, GridItem, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
-import About from "../components/main/game/About";
-import PlatformIcons from "../components/main/games/PlatformIcons";
+import GameAbout from "../components/main/game/GameAbout";
+import GameHeading from "../components/main/game/GameHeading";
 import useGame from "../hooks/useGame";
 
 const GameDetail = () => {
@@ -18,13 +18,9 @@ const GameDetail = () => {
         templateAreas={{ base: '"left" "right"', md: '"left right"' }}
       >
         <GridItem area="left">
-          <HStack spacing={5}>
-            <PlatformIcons platforms={data.parent_platforms?.map((p) => p.platform)} />
-            <Text>AVERAGE PLAYTIME: {data.playtime} HOURS</Text>
-          </HStack>
-          <Heading fontSize={50}>{data.name}</Heading>
+          <GameHeading name={data.name} parent_platforms={data.parent_platforms} playtime={data.playtime} />
 
-          <About description={data.description_raw} />
+          <GameAbout description={data.description_raw} />
         </GridItem>
         <GridItem area="right">
           {trailers && trailers.length > 0 && (
