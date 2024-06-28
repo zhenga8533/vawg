@@ -3,8 +3,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { useLocation, useNavigate } from "react-router-dom";
 import { GameQueryProps } from "../../App";
 import Aside from "../aside/Aside";
-import PlatformSelector, { PlatformSelectorProps } from "../main/game/PlatformSelector";
-import SortSelector, { SortSelectorProps } from "../main/game/SortSelector";
+import PlatformSelector, { PlatformSelectorProps } from "../main/games/PlatformSelector";
+import SortSelector, { SortSelectorProps } from "../main/games/SortSelector";
 import SearchInput, { SearchInputProps } from "./SearchInput";
 import ThemeSelector from "./ThemeSelector";
 

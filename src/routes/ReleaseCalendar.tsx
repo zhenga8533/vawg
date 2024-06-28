@@ -1,4 +1,4 @@
-import ReleaseSelector from "../components/main/game/ReleaseSelector";
+import ReleaseSelector from "../components/main/games/ReleaseSelector";
 import Games, { GamesProps } from "./Games";
 
 const ReleaseCalendar = ({ gameQuery, setGameQuery }: GamesProps) => {
