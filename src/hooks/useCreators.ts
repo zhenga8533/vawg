@@ -1,30 +1,20 @@
 import { Browse } from "./useBrowses";
-import useData from "./useData";
+import useData, { Info } from "./useData";
 
 export interface Creator extends Browse {
   image: string;
-  positions: Position[];
+  positions: Info[];
 }
 
-interface Position {
-  id: number;
-  name: string;
-  slug: string;
-}
-
-interface CreatorQuery {
-  page: number;
-}
-
-const useCreators = (creatorQuery: CreatorQuery) =>
+const useCreators = (page: number) =>
   useData<Creator>(
     "/creators",
     {
       params: {
-        page: creatorQuery.page,
+        page: page,
       },
     },
-    [creatorQuery]
+    [page]
   );
 
 export default useCreators;

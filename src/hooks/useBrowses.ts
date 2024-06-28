@@ -1,34 +1,24 @@
-import useData from "./useData";
+import useData, { Info } from "./useData";
+import { Item } from "./useItems";
 
-export interface Browse {
-  id: number;
-  name: string;
-  slug: string;
+export interface Browse extends Item {
   games_count: number;
-  image_background: string;
   games: Game[];
 }
 
-interface Game {
-  id: number;
-  slug: string;
-  name: string;
+interface Game extends Info {
   added: number;
 }
 
-interface BrowseQuery {
-  page: number;
-}
-
-const useBrowses = (browseQuery: BrowseQuery, endpoint: string) =>
+const useBrowses = (page: number, endpoint: string) =>
   useData<Browse>(
     endpoint,
     {
       params: {
-        page: browseQuery.page,
+        page: page,
       },
     },
-    [browseQuery]
+    [page]
   );
 
 export default useBrowses;

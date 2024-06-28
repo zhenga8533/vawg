@@ -10,8 +10,8 @@ interface BrowsesProps {
 }
 
 const Browses = ({ endpoint, title }: BrowsesProps) => {
-  const [browseQuery, setBrowseQuery] = useState({ page: 1 });
-  const browseData = useBrowses(browseQuery, endpoint);
+  const [browsePage, setBrowsePage] = useState(1);
+  const browseData = useBrowses(browsePage, endpoint);
 
   return (
     <>
@@ -19,19 +19,11 @@ const Browses = ({ endpoint, title }: BrowsesProps) => {
         <Heading as="h1" fontSize="5xl" marginY={5}>
           {title}
         </Heading>
-        <Pagination
-          count={browseData.count}
-          onPageChange={(page) => setBrowseQuery({ ...browseQuery, page })}
-          page={browseQuery.page}
-        />
+        <Pagination count={browseData.count} onPageChange={(page) => setBrowsePage(page)} page={browsePage} />
       </HStack>
       <BrowseGrid browseData={browseData} />
       <HStack justifyContent="center" marginTop={5}>
-        <Pagination
-          count={browseData.count}
-          onPageChange={(page) => setBrowseQuery({ ...browseQuery, page })}
-          page={browseQuery.page}
-        />
+        <Pagination count={browseData.count} onPageChange={(page) => setBrowsePage(page)} page={browsePage} />
       </HStack>
     </>
   );

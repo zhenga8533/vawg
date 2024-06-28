@@ -14,6 +14,12 @@ export interface Data {
   results: any[];
 }
 
+export interface Info {
+  id: number;
+  name: string;
+  slug: string;
+}
+
 const useData = <T>(endpoint: string, requestConfig?: AxiosRequestConfig, deps?: any[]) => {
   const [count, setCount] = useState(0);
   const [error, setError] = useState("");

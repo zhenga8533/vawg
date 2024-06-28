@@ -3,12 +3,9 @@ import parents from "../json/parents.json";
 import platforms from "../json/platforms.json";
 import stores from "../json/stores.json";
 import tags from "../json/tags.json";
-import useData from "./useData";
+import useData, { Info } from "./useData";
 
-export interface Item {
-  id: number;
-  name: string;
-  slug: string;
+export interface Item extends Info {
   image_background: string;
 }
 
