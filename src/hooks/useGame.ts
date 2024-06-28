@@ -112,7 +112,7 @@ const useGame = (slug: string | undefined) => {
         setError(err.message);
         setLoading(false);
       });
-  });
+  }, []);
 
   return { data, error, loading };
 };
