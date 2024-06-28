@@ -18,7 +18,12 @@ const GameDetail = () => {
         templateAreas={{ base: '"left" "right"', md: '"left right"' }}
       >
         <GridItem area="left">
-          <GameHeading name={data.name} parent_platforms={data.parent_platforms} playtime={data.playtime} />
+          <GameHeading
+            name={data.name}
+            parent_platforms={data.parent_platforms}
+            playtime={data.playtime}
+            released={data.released}
+          />
 
           <GameAbout description={data.description_raw} />
         </GridItem>
