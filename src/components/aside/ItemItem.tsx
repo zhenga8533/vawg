@@ -25,10 +25,11 @@ const ItemItem = ({ item, image, name, onSelectItem, selectedItem }: ItemItemPro
         />
         <Button
           {...getStyle(item?.id, selectedItem?.id)}
+          maxWidth="70%"
           onClick={() => onSelectItem(item)}
           textAlign={"left"}
           variant="link"
-          whiteSpace={"normal"}
+          whiteSpace="normal"
         >
           {name}
         </Button>
