@@ -1,4 +1,4 @@
-import { Grid, GridItem, Text } from "@chakra-ui/react";
+import { Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import GameAbout from "../components/main/game/GameAbout";
 import GameHeading from "../components/main/game/GameHeading";
@@ -7,7 +7,7 @@ import useGame from "../hooks/useGame";
 
 const GameDetail = () => {
   const { slug } = useParams();
-  const { data, error, loading, trailers } = useGame(slug);
+  const { data, error, loading, screenshots, trailers } = useGame(slug);
 
   if (loading) return <Text>Loading...</Text>;
   return (
@@ -34,6 +34,13 @@ const GameDetail = () => {
               <source src={trailers[0].data["480"]} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+          )}
+          {screenshots.length > 0 && (
+            <Grid gap={4} marginTop={5} templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}>
+              {screenshots.map((screenshot) => (
+                <Image key={screenshot.id} src={screenshot.image} alt={screenshot.id.toString()} width="100%" />
+              ))}
+            </Grid>
           )}
         </GridItem>
       </Grid>

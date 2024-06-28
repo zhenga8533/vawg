@@ -127,6 +127,7 @@ const useGame = (slug: string | undefined) => {
   const [data, setData] = useState({} as GameData);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
+  const [screenshots, setScreenshots] = useState<Screenshot[]>([]);
   const [trailers, setTrailers] = useState<Trailer[]>([]);
 
   useEffect(() => {
@@ -145,10 +146,13 @@ const useGame = (slug: string | undefined) => {
         setLoading(false);
       });
 
+    apiClient
+      .get<{ results: Screenshot[] }>(`/games/${slug}/screenshots`)
+      .then((res) => setScreenshots(res.data.results));
     apiClient.get<{ results: Trailer[] }>(`/games/${slug}/movies`).then((res) => setTrailers(res.data.results));
   }, []);
 
-  return { data, error, loading, trailers };
+  return { data, error, loading, screenshots, trailers };
 };
 
 export default useGame;
