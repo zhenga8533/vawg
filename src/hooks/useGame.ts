@@ -1,18 +1,13 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
+import { Info } from "./useData";
 
-export interface Platform {
-  id: number;
-  name: string;
-  slug: string;
-}
-
-interface Screenshot {
+export interface Screenshot {
   id: number;
   image: string;
 }
 
-interface Trailer {
+export interface Trailer {
   id: number;
   name: string;
   preview: string;
@@ -27,7 +22,7 @@ export interface Game {
   name: string;
   slug: string;
   background_image: string;
-  parent_platforms: { platform: Platform }[];
+  parent_platforms: { platform: Info }[];
   metacritic: number;
   rating: number;
   rating_top: number;
@@ -45,7 +40,7 @@ export interface GameData {
   metacritic_platforms: {
     metascore: number;
     url: string;
-    platform: Platform;
+    platform: Info;
   }[];
   released: string;
   tba: boolean;
@@ -97,8 +92,8 @@ export interface GameData {
     name: string;
     slug: string;
   };
-  platforms: { platform: Platform }[];
-  parent_platforms: { platform: Platform }[];
+  platforms: { platform: Info }[];
+  parent_platforms: { platform: Info }[];
   developers: {
     id: number;
     name: string;
