@@ -1,6 +1,7 @@
 import { Box, Button, HStack, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
+import getStyle from "../../../services/select-style";
 
 interface ReleaseSelectorProps {
   onSelectDate: (date: string) => void;
@@ -23,7 +24,7 @@ const ReleaseSelector = ({ onSelectDate }: ReleaseSelectorProps) => {
 
   return (
     <HStack justifyContent="space-between">
-      <HStack>
+      <HStack display={{ base: "none", md: "flex" }}>
         {months.map((month, i) => (
           <Button
             isDisabled={i === selectedMonth}
@@ -39,6 +40,28 @@ const ReleaseSelector = ({ onSelectDate }: ReleaseSelectorProps) => {
           </Button>
         ))}
       </HStack>
+      <Box display={{ base: "block", md: "none" }}>
+        <Menu>
+          <MenuButton as={Button} rightIcon={<BsChevronDown />}>
+            <Box marginRight={3}>{months[selectedMonth]}</Box>
+          </MenuButton>
+          <MenuList>
+            {months.map((month, i) => (
+              <MenuItem
+                {...getStyle(i, selectedMonth)}
+                key={month}
+                onClick={() => {
+                  setSelectedMonth(i);
+                  onSelectDate(formatDate(selectedYear, i));
+                }}
+              >
+                {month}
+              </MenuItem>
+            ))}
+          </MenuList>
+        </Menu>
+      </Box>
+
       <Menu>
         <MenuButton as={Button} rightIcon={<BsChevronDown />}>
           <Box marginRight={3}>{selectedYear}</Box>
@@ -46,6 +69,7 @@ const ReleaseSelector = ({ onSelectDate }: ReleaseSelectorProps) => {
         <MenuList>
           {Array.from({ length: 11 }, (_, i) => currentYear + 1 - i).map((year) => (
             <MenuItem
+              {...getStyle(year, selectedYear)}
               key={year}
               onClick={() => {
                 setSelectedYear(year);
