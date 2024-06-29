@@ -7,13 +7,22 @@ import TopList from "./TopList";
 
 const Aside = ({ gameQuery, setGameQuery }: GameQueryProps) => {
   const location = useLocation();
+  const gameRoutes = new Set([
+    "/games",
+    "/games/best-of-the-year",
+    "/games/popular-last-year",
+    "/games/all-time",
+    "/games/last-month",
+    "/games/this-week",
+    "/games/next-week",
+  ]);
 
   return (
     <>
       <TopList />
       <ReleaseList />
       <BrowseList />
-      {location.pathname.startsWith("/games") && (
+      {gameRoutes.has(location.pathname) && (
         <>
           <ItemList
             endpoint="genres"
