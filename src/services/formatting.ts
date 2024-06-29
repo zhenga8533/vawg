@@ -22,3 +22,16 @@ export function formatDate(date: string): string {
     })
     .toUpperCase();
 }
+
+/**
+ * Formats a slug to a human-readable string.
+ *
+ * @param slug - The slug to format
+ * @returns - The formatted slug
+ */
+export function formatSlug(slug: string): string {
+  return slug
+    .split("-")
+    .map((word) => word[0].toUpperCase() + word.slice(1))
+    .join(" ");
+}

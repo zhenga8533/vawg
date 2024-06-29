@@ -7,7 +7,7 @@ import GameRating from "../../components/main/game/GameRating";
 import useData from "../../hooks/useData";
 import useGame, { Screenshot, Trailer } from "../../hooks/useGame";
 
-const GameDetail = () => {
+const Game = () => {
   const { slug } = useParams();
   if (!slug) return <Text>Error: No slug provided</Text>;
 
@@ -38,10 +38,12 @@ const GameDetail = () => {
           <GameAbout description={data.description_raw} />
           <GameRating rating={data.rating} />
         </GridItem>
-        <GridItem area="right">{<GameMedia screenshots={screenshots.results} trailers={trailers.results} />}</GridItem>
+        <GridItem area="right">
+          {<GameMedia limited={true} screenshots={screenshots.results} trailers={trailers.results} />}
+        </GridItem>
       </Grid>
     </>
   );
 };
 
-export default GameDetail;
+export default Game;

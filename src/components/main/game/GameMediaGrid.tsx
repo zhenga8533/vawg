@@ -4,20 +4,27 @@ import { useNavigate } from "react-router-dom";
 import { Screenshot, Trailer } from "../../../hooks/useGame";
 
 interface GameMediaGridProps {
+  limited: boolean;
   screenshots: Screenshot[];
   trailers: Trailer[];
 }
 
-const GameMediaGrid = ({ screenshots, trailers }: GameMediaGridProps) => {
+const GameMediaGrid = ({ limited, screenshots, trailers }: GameMediaGridProps) => {
   const [hovered, setHovered] = useState(false);
   const navgiate = useNavigate();
 
-  const images = screenshots.slice(0, 6).map((screenshot, index, array) => {
+  const videos = trailers.slice(1, limited ? 1 : trailers.length).map((trailer) => (
+    <video controls key={trailer.id} width="100%">
+      <source src={trailer.data["480"]} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  ));
+  const images = screenshots.slice(0, limited ? 4 : screenshots.length).map((screenshot, index, array) => {
     const isLast = index === array.length - 1;
     return (
       <Box key={screenshot.id} position="relative" width="100%">
         <Image src={screenshot.image} alt={screenshot.id.toString()} width="100%" />
-        {isLast && (
+        {isLast && limited && (
           <VStack
             position="absolute"
             top="0"
@@ -40,6 +47,7 @@ const GameMediaGrid = ({ screenshots, trailers }: GameMediaGridProps) => {
       </Box>
     );
   });
+  const media = [...videos, ...images];
 
   return (
     <>
@@ -49,11 +57,9 @@ const GameMediaGrid = ({ screenshots, trailers }: GameMediaGridProps) => {
           Your browser does not support the video tag.
         </video>
       )}
-      {screenshots.length > 0 && (
-        <Grid gap={4} marginTop={5} templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}>
-          {images}
-        </Grid>
-      )}
+      <Grid gap={4} marginTop={5} templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}>
+        {media}
+      </Grid>
     </>
   );
 };
