@@ -17,13 +17,15 @@ const GameHeading = ({ name, parent_platforms, playtime, released }: GameHeading
   return (
     <>
       <HStack spacing={5}>
-        <Box p="2" bg={bgColor} borderWidth="1px" borderRadius="lg">
+        <Box p="2" bg={bgColor} borderWidth="1px" borderRadius="lg" paddingY={0}>
           <Text>{formatDate(released)}</Text>
         </Box>
         <PlatformIcons platforms={parent_platforms?.map((p) => p.platform)} />
         <Text>AVERAGE PLAYTIME: {playtime} HOURS</Text>
       </HStack>
-      <Heading fontSize={50}>{name}</Heading>
+      <Heading fontSize={50} marginBottom={5}>
+        {name}
+      </Heading>
     </>
   );
 };

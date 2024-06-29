@@ -4,11 +4,11 @@ import { Navigate, Route, BrowserRouter as Router, Routes } from "react-router-d
 import Aside from "./components/aside/Aside";
 import Breadcrumbs from "./components/main/Breadcrumbs";
 import Navbar from "./components/nav/Navbar";
-import { Platform } from "./hooks/useGame";
 import { Item } from "./hooks/useItems";
 import Browses from "./routes/Browses";
 import Creators from "./routes/Creators";
-import GameDetail from "./routes/GameDetail";
+import Game from "./routes/GameDetail/Game";
+import GameMedia from "./routes/GameDetail/GameMedia";
 import Games from "./routes/Games";
 import ReleaseCalendar from "./routes/ReleaseCalendar";
 
@@ -16,7 +16,7 @@ export interface GameQuery {
   dates: string;
   genre: Item | null;
   page: number;
-  parentPlatform: Platform | null;
+  parentPlatform: Item | null;
   platform: Item | null;
   searchText: string;
   sortOrder: string;
@@ -112,7 +112,8 @@ function App() {
               path={`/games/release-calendar`}
               element={<ReleaseCalendar gameQuery={gameQuery} setGameQuery={setGameQuery} />}
             />
-            <Route path="/games/:slug" element={<GameDetail />} />
+            <Route path="/games/:slug" element={<Game />} />
+            <Route path="/games/:slug/media" element={<GameMedia />} />
             {/* Browse */}
             <Route path="/platforms" element={<Browses endpoint="/platforms" title="Platforms" key="platforms" />} />
             <Route path="/stores" element={<Browses endpoint="/stores" title="Storefronts" key="stores" />} />

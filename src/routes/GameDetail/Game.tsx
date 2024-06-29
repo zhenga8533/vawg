@@ -1,16 +1,17 @@
 import { Grid, GridItem, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
-import GameAbout from "../components/main/game/GameAbout";
-import GameHeading from "../components/main/game/GameHeading";
-import GameMedia from "../components/main/game/GameMedia";
-import GameRating from "../components/main/game/GameRating";
-import useGame from "../hooks/useGame";
+import GameAbout from "../../components/main/game/GameAbout";
+import GameHeading from "../../components/main/game/GameHeading";
+import GameMedia from "../../components/main/game/GameMediaGrid";
+import GameRating from "../../components/main/game/GameRating";
+import useGame from "../../hooks/useGame";
 
 const GameDetail = () => {
   const { slug } = useParams();
   const { data, error, loading, screenshots, trailers } = useGame(slug);
 
-  if (loading) return <Text>Loading...</Text>;
+  if (error) return <Text>Error: {error}</Text>;
+  else if (loading) return <Text>Loading...</Text>;
   return (
     <>
       <Grid
