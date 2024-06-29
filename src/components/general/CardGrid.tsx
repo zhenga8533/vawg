@@ -1,6 +1,7 @@
 import { Box, Button, Flex, HStack, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import noResults from "../../assets/no-results.webp";
 import CardContainer from "./CardContainer";
+import ErrorMessage from "./ErrorMessage";
 import SkeletonCard from "./SkeletonCard";
 
 interface CardGridProps {
@@ -16,12 +17,7 @@ const CardGrid = ({ cards, error, loading }: CardGridProps) => {
     </CardContainer>
   ));
 
-  if (error)
-    return (
-      <Text color="red" margin={5} textAlign="center">
-        {error}
-      </Text>
-    );
+  if (error) <ErrorMessage error={error} />;
   return (
     <Flex alignItems="center" justifyContent="center" width="100%">
       <SimpleGrid width="auto" columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing={5}>

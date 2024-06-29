@@ -1,5 +1,7 @@
 import { Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
+import ErrorMessage from "../../components/general/ErrorMessage";
+import LoadingWheel from "../../components/general/LoadingWheel";
 import GameDetailGrid from "../../components/main/game/GameDetailGrid";
 import GameHeading from "../../components/main/game/GameHeading";
 import GameMediaGrid from "../../components/main/game/GameMediaGrid";
@@ -16,6 +18,9 @@ const GameMedia = () => {
   const error = game.error || trailers.error || screenshots.error;
   const loading = game.loading || trailers.loading || screenshots.loading;
   const data = game.data;
+
+  if (error) return <ErrorMessage error={error} />;
+  else if (loading) return <LoadingWheel />;
 
   return (
     <>
