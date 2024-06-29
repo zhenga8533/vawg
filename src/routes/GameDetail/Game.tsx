@@ -4,11 +4,19 @@ import GameAbout from "../../components/main/game/GameAbout";
 import GameHeading from "../../components/main/game/GameHeading";
 import GameMedia from "../../components/main/game/GameMediaGrid";
 import GameRating from "../../components/main/game/GameRating";
-import useGame from "../../hooks/useGame";
+import useData from "../../hooks/useData";
+import useGame, { Screenshot, Trailer } from "../../hooks/useGame";
 
 const GameDetail = () => {
   const { slug } = useParams();
-  const { data, error, loading, screenshots, trailers } = useGame(slug);
+  if (!slug) return <Text>Error: No slug provided</Text>;
+
+  const game = useGame(slug);
+  const trailers = useData<Trailer>(`/games/${slug}/movies`);
+  const screenshots = useData<Screenshot>(`/games/${slug}/screenshots`);
+  const error = game.error || trailers.error || screenshots.error;
+  const loading = game.loading || trailers.loading || screenshots.loading;
+  const data = game.data;
 
   if (error) return <Text>Error: {error}</Text>;
   else if (loading) return <Text>Loading...</Text>;
@@ -30,7 +38,7 @@ const GameDetail = () => {
           <GameAbout description={data.description_raw} />
           <GameRating rating={data.rating} />
         </GridItem>
-        <GridItem area="right">{<GameMedia screenshots={screenshots} trailers={trailers} />}</GridItem>
+        <GridItem area="right">{<GameMedia screenshots={screenshots.results} trailers={trailers.results} />}</GridItem>
       </Grid>
     </>
   );
