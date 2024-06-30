@@ -1,5 +1,6 @@
 import { Grid, GridItem, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
+import LoadingWheel from "../components/general/LoadingWheel";
 import GameAbout from "../components/main/game/GameAbout";
 import GameDevelopers from "../components/main/game/GameDevelopers";
 import GameHeading from "../components/main/game/GameHeading";
@@ -22,7 +23,7 @@ const GameDetail = () => {
   const data = game.data;
 
   if (error) return <Text>Error: {error}</Text>;
-  else if (loading) return <Text>Loading...</Text>;
+  else if (loading) return <LoadingWheel />;
   return (
     <>
       <Grid

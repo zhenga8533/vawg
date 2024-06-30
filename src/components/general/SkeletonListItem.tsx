@@ -1,11 +1,15 @@
 import { HStack, ListItem, Skeleton, SkeletonText } from "@chakra-ui/react";
 
-const SkeletonListItem = () => {
+interface SkeletonListItemProps {
+  size?: string;
+}
+
+const SkeletonListItem = ({ size }: SkeletonListItemProps) => {
   return (
     <ListItem paddingY={2}>
       <HStack>
-        <Skeleton boxSize="32px" />
-        <SkeletonText noOfLines={2} width="100px" />
+        <Skeleton boxSize={size || "32px"} />
+        <SkeletonText noOfLines={2} width="100%" />
       </HStack>
     </ListItem>
   );
