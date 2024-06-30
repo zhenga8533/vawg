@@ -6,11 +6,11 @@ import { Creator } from "../../../hooks/useCreators";
 import useData from "../../../hooks/useData";
 import { capitalize } from "../../../services/formatting";
 
-interface GameContributorsProps {
+interface GameDevelopersProps {
   slug: string;
 }
 
-const GameContributors = ({ slug }: GameContributorsProps) => {
+const GameDevelopers = ({ slug }: GameDevelopersProps) => {
   const navgiate = useNavigate();
   const { results, error, loading } = useData<Creator>(`/games/${slug}/development-team`);
   const [showAll, setShowAll] = useState(false);
@@ -21,7 +21,7 @@ const GameContributors = ({ slug }: GameContributorsProps) => {
   return (
     <>
       <Heading size="md" marginBottom={3}>
-        Top Contributors
+        Top Developers
       </Heading>
       {results.slice(0, showAll ? results.length : 5).map((contributor) => (
         <Box key={contributor.id}>
@@ -61,4 +61,4 @@ const GameContributors = ({ slug }: GameContributorsProps) => {
   );
 };
 
-export default GameContributors;
+export default GameDevelopers;

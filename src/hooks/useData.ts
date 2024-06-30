@@ -20,6 +20,11 @@ export interface Info {
   slug: string;
 }
 
+export interface Item extends Info {
+  games_count: number;
+  image_background: string;
+}
+
 const useData = <T>(endpoint: string, requestConfig?: AxiosRequestConfig, deps?: any[]) => {
   const [count, setCount] = useState(0);
   const [error, setError] = useState("");

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
-import { Info } from "./useData";
+import { Info, Item } from "./useData";
 
 export interface Screenshot {
   id: number;
@@ -35,12 +35,15 @@ export interface GameData {
   name: string;
   name_original: string;
   description: string;
-  description_raw: string;
   metacrictic: number;
   metacritic_platforms: {
     metascore: number;
     url: string;
-    platform: Info;
+    platform: {
+      platform: number;
+      name: string;
+      slug: string;
+    };
   }[];
   released: string;
   tba: boolean;
@@ -87,42 +90,26 @@ export interface GameData {
   parents_count: number;
   additions_count: number;
   game_series_count: number;
-  esrb_rating: {
-    id: number;
-    name: string;
-    slug: string;
-  };
-  platforms: { platform: Info }[];
+  reviews_count: number;
+  saturated_color: string;
+  dominant_color: string;
   parent_platforms: { platform: Info }[];
-  developers: {
+  platforms: { platform: Info }[];
+  stores: {
     id: number;
-    name: string;
-    slug: string;
-    games_count: number;
-    image_background: string;
+    url: string;
+    store: Item & {
+      domain: string;
+    };
   }[];
-  genres: {
-    id: number;
-    name: string;
-    slug: string;
-    games_count: number;
-    image_background: string;
-  }[];
-  tags: {
-    id: number;
-    name: string;
-    slug: string;
+  developers: Item[];
+  genres: Item[];
+  tags: (Item & {
     language: string;
-    games_count: number;
-    image_background: string;
-  }[];
-  publishers: {
-    id: number;
-    name: string;
-    slug: string;
-    games_count: number;
-    image_background: string;
-  }[];
+  })[];
+  publishers: Item[];
+  esrb_rating: Info;
+  description_raw: string;
 }
 
 const useGame = (slug: string) => {
