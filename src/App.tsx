@@ -7,7 +7,7 @@ import Navbar from "./components/nav/Navbar";
 import { Item } from "./hooks/useItems";
 import Browses from "./routes/Browses";
 import Creators from "./routes/Creators";
-import GameDetail from "./routes/GameDetail/GameDetail";
+import GameDetail from "./routes/GameDetail";
 import Games from "./routes/Games";
 import ReleaseCalendar from "./routes/ReleaseCalendar";
 

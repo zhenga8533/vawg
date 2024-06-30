@@ -1,4 +1,4 @@
-import { Box, HStack, Icon, Text, Tooltip } from "@chakra-ui/react";
+import { Box, HStack, Heading, Icon, Text, Tooltip } from "@chakra-ui/react";
 import { IconType } from "react-icons";
 import { MdCancel, MdQuestionMark, MdRecommend, MdSentimentDissatisfied, MdStar } from "react-icons/md";
 import { GameData } from "../../../hooks/useGame";
@@ -29,7 +29,13 @@ const GameRating = ({ ratings }: GameRatingProps) => {
 
   return (
     <>
-      <Box display="flex" width="100%" height="48px" borderRadius="sm" mt={5} overflow="hidden">
+      <HStack mt={3} spacing={3}>
+        <Heading size="md">Ratings</Heading>
+        <Text color="gray" fontSize="md">
+          {commafy(ratings.reduce((acc, rating) => acc + rating.count, 0))}
+        </Text>
+      </HStack>
+      <Box display="flex" width="100%" height="48px" borderRadius="sm" mt={3} overflow="hidden">
         {sortedRatings.map((rating) => (
           <Tooltip label={`${rating.percent}%`} key={rating.id} hasArrow placement="top">
             <Box

@@ -1,13 +1,13 @@
 import { Grid, GridItem, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
-import GameAbout from "../../components/main/game/GameAbout";
-import GameDevelopers from "../../components/main/game/GameDevelopers";
-import GameHeading from "../../components/main/game/GameHeading";
-import GameInfo from "../../components/main/game/GameInfo";
-import GameMedia from "../../components/main/game/GameMediaGrid";
-import GameRating from "../../components/main/game/GameRating";
-import useData from "../../hooks/useData";
-import useGame, { Screenshot, Trailer } from "../../hooks/useGame";
+import GameAbout from "../components/main/game/GameAbout";
+import GameDevelopers from "../components/main/game/GameDevelopers";
+import GameHeading from "../components/main/game/GameHeading";
+import GameInfo from "../components/main/game/GameInfo";
+import GameMedia from "../components/main/game/GameMediaGrid";
+import GameRating from "../components/main/game/GameRating";
+import useData from "../hooks/useData";
+import useGame, { Screenshot, Trailer } from "../hooks/useGame";
 
 const GameDetail = () => {
   const { slug } = useParams();
