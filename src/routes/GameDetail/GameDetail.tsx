@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import GameAbout from "../../components/main/game/GameAbout";
 import GameContributors from "../../components/main/game/GameContributors";
 import GameHeading from "../../components/main/game/GameHeading";
+import GameInfo from "../../components/main/game/GameInfo";
 import GameMedia from "../../components/main/game/GameMediaGrid";
 import GameRating from "../../components/main/game/GameRating";
 import useData from "../../hooks/useData";
@@ -38,6 +39,7 @@ const GameDetail = () => {
           />
           <GameAbout description={data.description_raw} />
           <GameRating ratings={data.ratings} />
+          <GameInfo game={data} />
         </GridItem>
         <GridItem area="right">
           {<GameMedia limited={true} screenshots={screenshots.results} trailers={trailers.results} />}

@@ -115,7 +115,14 @@ export interface GameData {
     language: string;
     games_count: number;
     image_background: string;
-  };
+  }[];
+  publishers: {
+    id: number;
+    name: string;
+    slug: string;
+    games_count: number;
+    image_background: string;
+  }[];
 }
 
 const useGame = (slug: string) => {
