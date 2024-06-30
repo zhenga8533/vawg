@@ -24,9 +24,9 @@ const GameDetail = () => {
   return (
     <>
       <Grid
-        gap={4}
+        gap="5%"
         marginTop={5}
-        templateColumns={{ base: "1fr", md: "60% 40%" }}
+        templateColumns={{ base: "1fr", md: "55% 40%" }}
         templateAreas={{ base: '"left" "right"', md: '"left right"' }}
       >
         <GridItem area="left">
@@ -37,7 +37,7 @@ const GameDetail = () => {
             released={data.released}
           />
           <GameAbout description={data.description_raw} />
-          <GameRating data={data} />
+          <GameRating ratings={data.ratings} />
         </GridItem>
         <GridItem area="right">
           {<GameMedia limited={true} screenshots={screenshots.results} trailers={trailers.results} />}

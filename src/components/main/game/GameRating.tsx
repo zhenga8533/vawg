@@ -5,12 +5,10 @@ import { GameData } from "../../../hooks/useGame";
 import { capitalize, commafy } from "../../../services/formatting";
 
 interface GameRatingProps {
-  data: GameData;
+  ratings: GameData["ratings"];
 }
 
-const GameRating = ({ data }: GameRatingProps) => {
-  const ratings = data.ratings || [];
-
+const GameRating = ({ ratings }: GameRatingProps) => {
   const ratingColors: { [key: string]: string } = {
     exceptional: "green",
     recommended: "blue",
@@ -45,7 +43,7 @@ const GameRating = ({ data }: GameRatingProps) => {
           </Tooltip>
         ))}
       </Box>
-      <HStack mt={1} spacing={3}>
+      <HStack mt={1} spacing={3} wrap="wrap">
         {ratings.map((rating) => (
           <Box key={rating.id} display="flex" alignItems="center">
             <Icon as={ratingIcons[rating.title] ?? MdQuestionMark} color={ratingColors[rating.title] + ".400"} />
