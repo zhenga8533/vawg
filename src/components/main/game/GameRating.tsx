@@ -2,7 +2,7 @@ import { Box, HStack, Icon, Text } from "@chakra-ui/react";
 import { IconType } from "react-icons";
 import { MdCancel, MdQuestionMark, MdRecommend, MdSentimentDissatisfied, MdStar } from "react-icons/md";
 import { GameData } from "../../../hooks/useGame";
-import { commafy } from "../../../services/formatting";
+import { capitalize, commafy } from "../../../services/formatting";
 
 interface GameRatingProps {
   data: GameData;
@@ -31,12 +31,12 @@ const GameRating = ({ data }: GameRatingProps) => {
 
   return (
     <>
-      <Box display="flex" width="100%" height="48px" borderRadius="sm" overflow="hidden">
+      <Box display="flex" width="100%" height="48px" borderRadius="sm" mt={5} overflow="hidden">
         {sortedRatings.map((rating) => (
           <Box
             key={rating.id}
             flexBasis={`${rating.percent}%`}
-            bgGradient={`linear(to-b, ${ratingColors[rating.title]}.300, ${ratingColors[rating.title]}.700)`}
+            bgGradient={`linear(to-b, ${ratingColors[rating.title]}.400, ${ratingColors[rating.title]}.900)`}
             height="100%"
             position="relative"
           >
@@ -44,14 +44,14 @@ const GameRating = ({ data }: GameRatingProps) => {
           </Box>
         ))}
       </Box>
-      <HStack spacing={3}>
+      <HStack mt={1} spacing={3}>
         {ratings.map((rating) => (
           <Box key={rating.id} display="flex" alignItems="center">
             <Icon as={ratingIcons[rating.title] ?? MdQuestionMark} color={ratingColors[rating.title] + ".400"} />
-            <Text ml={1} mr={2}>
-              {rating.title}
+            <Text fontWeight="bold" ml={1} mr={2}>
+              {capitalize(rating.title)}
             </Text>
-            <Text>{commafy(rating.count)}</Text>
+            <Text color="gray">{commafy(rating.count)}</Text>
           </Box>
         ))}
       </HStack>

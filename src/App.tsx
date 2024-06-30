@@ -7,7 +7,7 @@ import Navbar from "./components/nav/Navbar";
 import { Item } from "./hooks/useItems";
 import Browses from "./routes/Browses";
 import Creators from "./routes/Creators";
-import Game from "./routes/GameDetail/Game";
+import GameDetail from "./routes/GameDetail/GameDetail";
 import GameMedia from "./routes/GameDetail/GameMedia";
 import Games from "./routes/Games";
 import ReleaseCalendar from "./routes/ReleaseCalendar";
@@ -112,7 +112,7 @@ function App() {
               path={`/games/release-calendar`}
               element={<ReleaseCalendar gameQuery={gameQuery} setGameQuery={setGameQuery} />}
             />
-            <Route path="/games/:slug" element={<Game />} />
+            <Route path="/games/:slug" element={<GameDetail />} />
             <Route path="/games/:slug/media" element={<GameMedia />} />
             {/* Browse */}
             <Route path="/platforms" element={<Browses endpoint="/platforms" title="Platforms" key="platforms" />} />

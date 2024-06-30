@@ -1,9 +1,10 @@
-import { Button, HStack, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Button, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { Creator } from "../../../hooks/useCreators";
 import useData from "../../../hooks/useData";
+import { capitalize } from "../../../services/formatting";
 
 interface GameContributorsProps {
   slug: string;
@@ -11,18 +12,20 @@ interface GameContributorsProps {
 
 const GameContributors = ({ slug }: GameContributorsProps) => {
   const navgiate = useNavigate();
-  const { results, loading } = useData<Creator>(`/games/${slug}/development-team`);
+  const { results, error, loading } = useData<Creator>(`/games/${slug}/development-team`);
   const [showAll, setShowAll] = useState(false);
 
-  if (loading) return <Text>Loading...</Text>;
+  if (error) return <></>;
+  else if (loading) return <Text>Loading...</Text>;
+
   return (
     <>
       <Heading size="md" marginBottom={3}>
         Top Contributors
       </Heading>
       {results.slice(0, showAll ? results.length : 5).map((contributor) => (
-        <>
-          <HStack justifyContent="space-between" key={contributor.id} spacing={3}>
+        <Box key={contributor.id}>
+          <HStack justifyContent="space-between" spacing={3}>
             <HStack>
               <Image
                 src={contributor.image || contributor.image_background}
@@ -37,13 +40,11 @@ const GameContributors = ({ slug }: GameContributorsProps) => {
               </Button>
             </HStack>
             <Text whiteSpace="nowrap" overflow="hidden" textOverflow="ellipsis">
-              {contributor.positions
-                .map((position) => position.name.charAt(0).toUpperCase() + position.name.slice(1))
-                .join(", ")}
+              {contributor.positions.map((position) => capitalize(position.name)).join(", ")}
             </Text>
           </HStack>
           <hr />
-        </>
+        </Box>
       ))}
       {results.length > 5 && (
         <Button

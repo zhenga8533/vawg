@@ -1,7 +1,17 @@
 /**
+ * Capitalizes the first letter of a string.
+ *
+ * @param str - The string to capitalize.
+ * @returns - The capitalized string.
+ */
+export function capitalize(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+/**
  * Converts a number to a string and formats it with commas.
- * @param {number} num - The number to format.
- * @return {string} The formatted string.
+ * @param num - The number to format.
+ * @return - The formatted string.
  */
 export function commafy(num: number): string {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -32,6 +42,6 @@ export function formatDate(date: string): string {
 export function formatSlug(slug: string): string {
   return slug
     .split("-")
-    .map((word) => word[0].toUpperCase() + word.slice(1))
+    .map((word) => capitalize(word))
     .join(" ");
 }

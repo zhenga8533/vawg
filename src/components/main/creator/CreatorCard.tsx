@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { IoPersonOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { Creator } from "../../../hooks/useCreators";
-import { commafy } from "../../../services/formatting";
+import { capitalize, commafy } from "../../../services/formatting";
 import cropImageURL from "../../../services/image-url";
 
 interface CreatorCardProps {
@@ -49,9 +49,7 @@ const CreatorCard = ({ creator }: CreatorCardProps) => {
         <Box marginBottom={3} textAlign="center">
           <Heading fontSize="2xl">{creator.name}</Heading>
           <Text color="gray.300" fontSize="small">
-            {creator.positions
-              .map((position) => position.name.charAt(0).toUpperCase() + position.name.slice(1))
-              .join(", ")}
+            {creator.positions.map((position) => capitalize(position.name)).join(", ")}
           </Text>
         </Box>
         <Box>

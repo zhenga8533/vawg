@@ -1,5 +1,6 @@
 import { Button, HStack } from "@chakra-ui/react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { capitalize } from "../../services/formatting";
 
 const Breadcrumbs = () => {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ const Breadcrumbs = () => {
     if (slug === "") return "Home";
     return slug
       .split("-")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .map((word) => capitalize(word))
       .join(" ");
   };
 
