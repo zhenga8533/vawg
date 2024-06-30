@@ -6,6 +6,7 @@ import GameHeading from "../components/main/game/GameHeading";
 import GameInfo from "../components/main/game/GameInfo";
 import GameMedia from "../components/main/game/GameMediaGrid";
 import GameRating from "../components/main/game/GameRating";
+import GameStores from "../components/main/game/GameStores";
 import useData from "../hooks/useData";
 import useGame, { Screenshot, Trailer } from "../hooks/useGame";
 
@@ -43,7 +44,7 @@ const GameDetail = () => {
         </GridItem>
         <GridItem area="right">
           {<GameMedia limited={true} screenshots={screenshots.results} trailers={trailers.results} />}
-          <br />
+          {<GameStores stores={data.stores} />}
           {<GameDevelopers slug={slug} />}
         </GridItem>
       </Grid>
