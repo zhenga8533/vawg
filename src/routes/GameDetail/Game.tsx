@@ -1,6 +1,7 @@
 import { Grid, GridItem, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import GameAbout from "../../components/main/game/GameAbout";
+import GameContributors from "../../components/main/game/GameContributors";
 import GameHeading from "../../components/main/game/GameHeading";
 import GameMedia from "../../components/main/game/GameMediaGrid";
 import GameRating from "../../components/main/game/GameRating";
@@ -40,6 +41,8 @@ const Game = () => {
         </GridItem>
         <GridItem area="right">
           {<GameMedia limited={true} screenshots={screenshots.results} trailers={trailers.results} />}
+          <br />
+          {<GameContributors slug={slug} />}
         </GridItem>
       </Grid>
     </>
