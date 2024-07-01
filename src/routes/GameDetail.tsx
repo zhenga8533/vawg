@@ -2,6 +2,7 @@ import { Grid, GridItem, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import LoadingWheel from "../components/general/LoadingWheel";
 import GameAbout from "../components/main/game/GameAbout";
+import GameAchievements from "../components/main/game/GameAchievements";
 import GameDevelopers from "../components/main/game/GameDevelopers";
 import GameHeading from "../components/main/game/GameHeading";
 import GameInfo from "../components/main/game/GameInfo";
@@ -58,6 +59,7 @@ const GameDetail = () => {
           {<GameDevelopers slug={slug} />}
         </GridItem>
       </Grid>
+      <GameAchievements slug={slug} />
     </>
   );
 };
