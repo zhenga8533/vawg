@@ -48,7 +48,7 @@ const GameInfo = ({ game }: GameInfoProps) => {
         </Box>
         <Box>
           <Text color="gray">Age Rating</Text>
-          <Text>{game.esrb_rating.name}</Text>
+          <Text>{game.esrb_rating?.name ?? "Not Rated"}</Text>
         </Box>
       </Grid>
 
