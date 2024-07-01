@@ -25,7 +25,7 @@ const ReleaseList = () => {
               description={release.description}
               highlight={window.location.pathname.includes(release.slug)}
               icon={release.icon}
-              onClick={() => navigate(`/vawg/games/${release.slug}`)}
+              onClick={() => navigate(`/games/${release.slug}`)}
             />
           </ListItem>
         ))}

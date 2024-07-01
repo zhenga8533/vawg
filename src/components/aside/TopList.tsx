@@ -24,7 +24,7 @@ const TopList = () => {
               description={top.description}
               highlight={window.location.pathname.includes(top.slug)}
               icon={top.icon}
-              onClick={() => navigate(`/vawg/games/${top.slug}`)}
+              onClick={() => navigate(`/games/${top.slug}`)}
             />
           </ListItem>
         ))}

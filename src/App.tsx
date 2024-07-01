@@ -101,32 +101,29 @@ function App() {
             {Object.keys(gameRoutes).map((route) => (
               <Route
                 key={route}
-                path={`/vawg/games${route}`}
+                path={`/games${route}`}
                 element={
                   <Games gameQuery={gameQuery} key={route} onLoad={gameRoutes[route]} setGameQuery={setGameQuery} />
                 }
               />
             ))}
             <Route
-              path={`/vawg/games/release-calendar`}
+              path={`/games/release-calendar`}
               element={<ReleaseCalendar gameQuery={gameQuery} setGameQuery={setGameQuery} />}
             />
-            <Route path="/vawg/games/:slug" element={<GameDetail />} />
+            <Route path="/games/:slug" element={<GameDetail />} />
             {/* Browse */}
+            <Route path="/platforms" element={<Browses endpoint="/platforms" title="Platforms" key="platforms" />} />
+            <Route path="/stores" element={<Browses endpoint="/stores" title="Storefronts" key="stores" />} />
+            <Route path="/genres" element={<Browses endpoint="/genres" title="Genres" key="genres" />} />
+            <Route path="/creators" element={<Creators />} />
+            <Route path="/tags" element={<Browses endpoint="/tags" title="Tags" key="tags" />} />
             <Route
-              path="/vawg/platforms"
-              element={<Browses endpoint="/platforms" title="Platforms" key="platforms" />}
-            />
-            <Route path="/vawg/stores" element={<Browses endpoint="/stores" title="Storefronts" key="stores" />} />
-            <Route path="/vawg/genres" element={<Browses endpoint="/genres" title="Genres" key="genres" />} />
-            <Route path="/vawg/creators" element={<Creators />} />
-            <Route path="/vawg/tags" element={<Browses endpoint="/tags" title="Tags" key="tags" />} />
-            <Route
-              path="/vawg/developers"
+              path="/developers"
               element={<Browses endpoint="/developers" title="Developers" key="developers" />}
             />
             <Route
-              path="/vawg/publishers"
+              path="/publishers"
               element={<Browses endpoint="/publishers" title="Publishers" key="publishers" />}
             />
           </Routes>

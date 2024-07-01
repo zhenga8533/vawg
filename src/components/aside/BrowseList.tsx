@@ -32,7 +32,7 @@ const BrowseList = () => {
               description={browse.description}
               highlight={window.location.pathname.includes(browse.slug)}
               icon={browse.icon}
-              onClick={() => navigate(`/vawg/${browse.slug}`)}
+              onClick={() => navigate(`/${browse.slug}`)}
             />
           </ListItem>
         ))}

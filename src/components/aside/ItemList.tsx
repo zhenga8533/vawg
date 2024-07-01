@@ -47,7 +47,7 @@ const ItemList = ({ endpoint, name, selectedItem, onSelectItem }: ItemListProps)
             key={item.id}
             onSelectItem={() => {
               onSelectItem(item);
-              if (!location.pathname.startsWith("/vawg/games")) navigate("/vawg/games");
+              if (!location.pathname.startsWith("/vawg/games")) navigate("/games");
             }}
             selectedItem={selectedItem}
           />
