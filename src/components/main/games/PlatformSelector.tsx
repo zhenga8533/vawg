@@ -1,12 +1,12 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
-import { Platform } from "../../../hooks/useGame";
+import { Info } from "../../../hooks/useData";
 import useItems, { Item } from "../../../hooks/useItems";
 import getStyle from "../../../services/select-style";
 
 export interface PlatformSelectorProps {
-  selectedPlatform: Platform | null;
-  onSelectPlatform: (platform: Platform | null) => void;
+  selectedPlatform: Info | null;
+  onSelectPlatform: (platform: Info | null) => void;
 }
 
 const PlatformSelector = ({ selectedPlatform, onSelectPlatform }: PlatformSelectorProps) => {

@@ -4,6 +4,7 @@ import { Navigate, Route, BrowserRouter as Router, Routes } from "react-router-d
 import Aside from "./components/aside/Aside";
 import Breadcrumbs from "./components/main/Breadcrumbs";
 import Navbar from "./components/nav/Navbar";
+import { Info } from "./hooks/useData";
 import { Item } from "./hooks/useItems";
 import Browses from "./routes/Browses";
 import Creators from "./routes/Creators";
@@ -15,7 +16,7 @@ export interface GameQuery {
   dates: string;
   genre: Item | null;
   page: number;
-  parentPlatform: Item | null;
+  parentPlatform: Info | null;
   platform: Item | null;
   searchText: string;
   sortOrder: string;
