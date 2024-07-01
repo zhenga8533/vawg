@@ -31,7 +31,7 @@ const Navbar = ({
         fontWeight={1000}
         letterSpacing={5}
         onClick={() => {
-          if (!location.pathname.endsWith("/games")) navigate("/games");
+          if (!location.pathname.endsWith("/vawg/games")) navigate("/games");
           else window.location.reload();
         }}
       >

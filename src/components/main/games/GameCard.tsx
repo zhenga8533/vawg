@@ -58,7 +58,7 @@ const GameCard = ({ game }: GameCardProps) => {
           <PlatformIcons platforms={game.parent_platforms?.map((p) => p.platform)} />
           <CriticScore score={game.metacritic} />
         </HStack>
-        <Button fontSize="2xl" onClick={() => navigate(`/games/${game.slug}`)} variant="link" whiteSpace="normal">
+        <Button fontSize="2xl" onClick={() => navigate(`/vawg/games/${game.slug}`)} variant="link" whiteSpace="normal">
           {game.name}
         </Button>
         <HStack justifyContent="space-between">

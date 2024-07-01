@@ -16,7 +16,7 @@ const SearchInput = ({ onSearch }: SearchInputProps) => {
       onSubmit={(e) => {
         e.preventDefault();
         if (ref.current) {
-          navigate("/");
+          navigate("/vawg");
           onSearch(ref.current.value);
         }
       }}

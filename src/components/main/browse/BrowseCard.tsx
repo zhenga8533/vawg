@@ -29,7 +29,7 @@ const BrowseCard = ({ browse }: BrowseCardProps) => {
           <hr />
           {browse.games.map((game) => (
             <HStack justifyContent="space-between" key={game.id}>
-              <Button onClick={() => navigate(`/games/${game.slug}`)} variant="link">
+              <Button onClick={() => navigate(`/vawg/games/${game.slug}`)} variant="link">
                 <Box textOverflow="ellipsis" overflow="hidden" whiteSpace="nowrap">
                   {game.name}
                 </Box>
