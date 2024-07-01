@@ -8,7 +8,7 @@ import { Info } from "./hooks/useData";
 import { Item } from "./hooks/useItems";
 import Browses from "./routes/Browses";
 import Creators from "./routes/Creators";
-import GameDetail from "./routes/GameDetail";
+import { GameDetailWrapper } from "./routes/GameDetail";
 import Games from "./routes/Games";
 import ReleaseCalendar from "./routes/ReleaseCalendar";
 
@@ -111,7 +111,7 @@ function App() {
               path={`/games/release-calendar`}
               element={<ReleaseCalendar gameQuery={gameQuery} setGameQuery={setGameQuery} />}
             />
-            <Route path="/games/:slug" element={<GameDetail />} />
+            <Route path="/games/:slug" element={<GameDetailWrapper />} />
             {/* Browse */}
             <Route path="/platforms" element={<Browses endpoint="/platforms" title="Platforms" key="platforms" />} />
             <Route path="/stores" element={<Browses endpoint="/stores" title="Storefronts" key="stores" />} />
