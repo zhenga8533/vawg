@@ -1,6 +1,6 @@
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import { useState } from "react";
-import { Navigate, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Aside from "./components/aside/Aside";
 import Breadcrumbs from "./components/main/Breadcrumbs";
 import Navbar from "./components/nav/Navbar";
@@ -98,33 +98,35 @@ function App() {
           <Breadcrumbs />
           <Routes>
             {/* Games */}
-            <Route path="/" element={<Navigate to="/games" replace />} />
             {Object.keys(gameRoutes).map((route) => (
               <Route
                 key={route}
-                path={`/games${route}`}
+                path={`/vawg/games${route}`}
                 element={
                   <Games gameQuery={gameQuery} key={route} onLoad={gameRoutes[route]} setGameQuery={setGameQuery} />
                 }
               />
             ))}
             <Route
-              path={`/games/release-calendar`}
+              path={`/vawg/games/release-calendar`}
               element={<ReleaseCalendar gameQuery={gameQuery} setGameQuery={setGameQuery} />}
             />
-            <Route path="/games/:slug" element={<GameDetail />} />
+            <Route path="/vawg/games/:slug" element={<GameDetail />} />
             {/* Browse */}
-            <Route path="/platforms" element={<Browses endpoint="/platforms" title="Platforms" key="platforms" />} />
-            <Route path="/stores" element={<Browses endpoint="/stores" title="Storefronts" key="stores" />} />
-            <Route path="/genres" element={<Browses endpoint="/genres" title="Genres" key="genres" />} />
-            <Route path="/creators" element={<Creators />} />
-            <Route path="/tags" element={<Browses endpoint="/tags" title="Tags" key="tags" />} />
             <Route
-              path="/developers"
+              path="/vawg/platforms"
+              element={<Browses endpoint="/platforms" title="Platforms" key="platforms" />}
+            />
+            <Route path="/vawg/stores" element={<Browses endpoint="/stores" title="Storefronts" key="stores" />} />
+            <Route path="/vawg/genres" element={<Browses endpoint="/genres" title="Genres" key="genres" />} />
+            <Route path="/vawg/creators" element={<Creators />} />
+            <Route path="/vawg/tags" element={<Browses endpoint="/tags" title="Tags" key="tags" />} />
+            <Route
+              path="/vawg/developers"
               element={<Browses endpoint="/developers" title="Developers" key="developers" />}
             />
             <Route
-              path="/publishers"
+              path="/vawg/publishers"
               element={<Browses endpoint="/publishers" title="Publishers" key="publishers" />}
             />
           </Routes>
