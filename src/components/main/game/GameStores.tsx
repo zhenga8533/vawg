@@ -26,7 +26,7 @@ const GameStores = ({ stores }: GameStoresProps) => {
       <Heading size="md" mt={5}>
         Where to buy
       </Heading>
-      <Grid gap={4} marginTop={5} templateColumns="repeat(2, 1fr)">
+      <Grid gap={4} mt={5} templateColumns="repeat(2, 1fr)">
         {stores.map((store) => (
           <GridItem key={store.id}>
             <Button

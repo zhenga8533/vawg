@@ -77,7 +77,7 @@ const GameMediaGrid = ({ screenshots, trailers }: GameMediaGridProps) => {
           Your browser does not support the video tag.
         </video>
       )}
-      <Grid gap={4} marginTop={5} templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}>
+      <Grid gap={4} mt={5} templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}>
         {screenshotGrid}
       </Grid>
       <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} size="4xl">

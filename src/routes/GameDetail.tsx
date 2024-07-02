@@ -36,7 +36,7 @@ const GameDetail = () => {
     <>
       <Grid
         gap="5%"
-        marginTop={5}
+        mt={5}
         templateColumns={{ base: "1fr", md: "55% 40%" }}
         templateAreas={{ base: '"left" "right"', md: '"left right"' }}
       >

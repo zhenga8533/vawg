@@ -46,7 +46,7 @@ const CreatorCard = ({ creator }: CreatorCardProps) => {
         />
       </Box>
       <CardBody display="flex" flexDirection="column" justifyContent="space-between">
-        <Box marginBottom={3} textAlign="center">
+        <Box mb={3} textAlign="center">
           <Heading fontSize="2xl">{creator.name}</Heading>
           <Text color="gray.300" fontSize="small">
             {creator.positions.map((position) => capitalize(position.name)).join(", ")}

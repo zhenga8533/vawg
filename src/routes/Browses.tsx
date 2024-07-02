@@ -16,13 +16,13 @@ const Browses = ({ endpoint, title }: BrowsesProps) => {
   return (
     <>
       <HStack justifyContent="space-between">
-        <Heading as="h1" fontSize="5xl" marginY={5}>
+        <Heading as="h1" fontSize="5xl" my={5}>
           {title}
         </Heading>
         <Pagination count={browseData.count} onPageChange={(page) => setBrowsePage(page)} page={browsePage} />
       </HStack>
       <BrowseGrid browseData={browseData} />
-      <HStack justifyContent="center" marginTop={5}>
+      <HStack justifyContent="center" mt={5}>
         <Pagination count={browseData.count} onPageChange={(page) => setBrowsePage(page)} page={browsePage} />
       </HStack>
     </>

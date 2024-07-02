@@ -16,7 +16,7 @@ const GameStars = ({ rating }: GameStarsProps) => {
     return stars;
   };
 
-  return <HStack marginTop={3}>{renderStars(rating)}</HStack>;
+  return <HStack mt={3}>{renderStars(rating)}</HStack>;
 };
 
 export default GameStars;

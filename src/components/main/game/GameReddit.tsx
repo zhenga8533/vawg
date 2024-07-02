@@ -33,7 +33,7 @@ const GameReddit = ({ slug }: GameRedditProps) => {
       {loading && <List>{skeletons}</List>}
       <List>
         {results.slice(0, showAll ? results.length : 5).map((achievement) => (
-          <ListItem key={achievement.id} marginY={1}>
+          <ListItem key={achievement.id} my={1}>
             <HStack>
               <Image src={achievement.image} alt={achievement.name} boxSize="32px" />
               <Text fontWeight="bold">{achievement.name}:</Text>

@@ -53,7 +53,7 @@ const ItemList = ({ endpoint, name, selectedItem, onSelectItem }: ItemListProps)
           />
         ))}
         {results.length > 2 && (
-          <ListItem marginTop={1}>
+          <ListItem mt={1}>
             <ShowButton showAll={showAll} setShowAll={setShowAll} />
           </ListItem>
         )}

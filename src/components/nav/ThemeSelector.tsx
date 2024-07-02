@@ -21,7 +21,7 @@ const ThemeSelector = () => {
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        <Box marginRight={3}>{currentTheme}</Box>
+        <Box mr={3}>{currentTheme}</Box>
       </MenuButton>
       <MenuList>
         {themes.map((theme) => (

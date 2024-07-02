@@ -14,7 +14,7 @@ const TopList = () => {
 
   return (
     <>
-      <Heading className="list-heading" fontSize="3xl" marginTop={0}>
+      <Heading className="list-heading" fontSize="3xl" mt={0}>
         Top
       </Heading>
       <List>

@@ -24,7 +24,7 @@ const GameHeading = ({ name, parent_platforms, playtime, released, tba }: GameHe
         <PlatformIcons platforms={parent_platforms?.map((p) => p.platform)} />
         <Text>AVERAGE PLAYTIME: {playtime} HOURS</Text>
       </HStack>
-      <Heading fontSize={50} marginBottom={5}>
+      <Heading fontSize={50} mb={5}>
         {name}
       </Heading>
     </>

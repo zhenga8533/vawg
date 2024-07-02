@@ -16,7 +16,7 @@ const BrowseCard = ({ browse }: BrowseCardProps) => {
     <Card>
       <Image src={cropImageURL(browse.image_background)} alt={browse.name} />
       <CardBody display="flex" flexDirection="column" justifyContent="space-between">
-        <Box marginBottom={3} textAlign="center">
+        <Box mb={3} textAlign="center">
           <Button color="white" fontSize="2xl" onClick={() => navigate(browse.slug)} variant="link" whiteSpace="normal">
             {browse.name}
           </Button>

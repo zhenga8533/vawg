@@ -12,7 +12,7 @@ const GameInfo = ({ game }: GameInfoProps) => {
 
   return (
     <>
-      <Grid gap={4} marginTop={5} templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}>
+      <Grid gap={4} mt={5} templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}>
         <Box>
           <Text color="gray">Platforms</Text>
           <HStack wrap="wrap">

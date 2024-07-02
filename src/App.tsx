@@ -65,7 +65,7 @@ function App() {
   return (
     <Router>
       <Grid
-        margin={10}
+        m={10}
         templateAreas={{
           base: `"nav" "main"`,
           lg: `"nav nav" "aside main"`,
@@ -75,7 +75,7 @@ function App() {
           lg: "200px 1fr",
         }}
       >
-        <GridItem area="nav" marginBottom={4}>
+        <GridItem area="nav" mb={4}>
           <Navbar
             onSearch={(searchText) => {
               setGameQuery({ ...gameQuery, searchText });

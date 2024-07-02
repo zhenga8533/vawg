@@ -11,13 +11,13 @@ const Creators = () => {
   return (
     <>
       <HStack justifyContent="space-between">
-        <Heading as="h1" fontSize="5xl" marginY={5}>
+        <Heading as="h1" fontSize="5xl" my={5}>
           Creators
         </Heading>
         <Pagination count={creatorData.count} onPageChange={(page) => setCreatorPage(page)} page={creatorPage} />
       </HStack>
       <CreatorGrid creatorData={creatorData} />
-      <HStack justifyContent="center" marginTop={5}>
+      <HStack justifyContent="center" mt={5}>
         <Pagination count={creatorData.count} onPageChange={(page) => setCreatorPage(page)} page={creatorPage} />
       </HStack>
     </>

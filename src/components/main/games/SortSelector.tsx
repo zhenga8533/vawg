@@ -48,7 +48,7 @@ const SortSelector = ({ onReverseOrder, onSelectOrder, sortOrder }: SortSelector
           </MenuItem>
         ))}
         <MenuDivider />
-        <Checkbox isChecked={reverse} marginLeft={2} onChange={() => reverseOrder()}>
+        <Checkbox isChecked={reverse} ml={2} onChange={() => reverseOrder()}>
           Reverse
         </Checkbox>
       </MenuList>

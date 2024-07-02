@@ -51,7 +51,7 @@ const Navbar = ({
             <hr />
             <ThemeSelector />
             <hr />
-            <Box display={{ base: "block", md: "none" }} marginBottom={3}>
+            <Box display={{ base: "block", md: "none" }} mb={3}>
               {location.pathname.startsWith("/games") && (
                 <>
                   <PlatformSelector onSelectPlatform={onSelectPlatform} selectedPlatform={selectedPlatform} />

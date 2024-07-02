@@ -25,7 +25,7 @@ const CardGrid = ({ cards, error, loading }: CardGridProps) => {
         {cards}
       </SimpleGrid>
       {cards.length === 0 && !loading && (
-        <Box marginRight="5%">
+        <Box mr="5%">
           <Image alt="No results found" boxSize="244px" src={noResults} />
           <HStack>
             <Text>No results found.</Text>

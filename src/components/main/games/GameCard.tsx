@@ -47,14 +47,14 @@ const GameCard = ({ game }: GameCardProps) => {
                   width={`${100 / screenshotCount}%`}
                   height="3px"
                   backgroundColor={ssIndex === index ? "blue.500" : "gray.300"}
-                  marginX="1px"
+                  mx="1px"
                 />
               ))}
           </HStack>
         )}
       </Box>
       <CardBody display="flex" flexDirection="column" justifyContent="space-between">
-        <HStack justifyContent="space-between" marginBottom={3}>
+        <HStack justifyContent="space-between" mb={3}>
           <PlatformIcons platforms={game.parent_platforms?.map((p) => p.platform)} />
           <CriticScore score={game.metacritic} />
         </HStack>

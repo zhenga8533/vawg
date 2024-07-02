@@ -37,7 +37,7 @@ const BrowseList = () => {
           </ListItem>
         ))}
         {browses.length > 3 && (
-          <ListItem marginTop={1}>
+          <ListItem mt={1}>
             <ShowButton showAll={showAll} setShowAll={setShowAll} />
           </ListItem>
         )}

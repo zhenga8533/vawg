@@ -6,7 +6,7 @@ interface ErrorMessageProps {
 
 const ErrorMessage = ({ error }: ErrorMessageProps) => {
   return (
-    <Text color="red" margin={5} textAlign="center">
+    <Text color="red" m={5} textAlign="center">
       {error}
     </Text>
   );

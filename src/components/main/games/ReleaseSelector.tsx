@@ -43,7 +43,7 @@ const ReleaseSelector = ({ onSelectDate }: ReleaseSelectorProps) => {
       <Box display={{ base: "block", md: "none" }}>
         <Menu>
           <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-            <Box marginRight={3}>{months[selectedMonth]}</Box>
+            <Box mr={3}>{months[selectedMonth]}</Box>
           </MenuButton>
           <MenuList>
             {months.map((month, i) => (
@@ -64,7 +64,7 @@ const ReleaseSelector = ({ onSelectDate }: ReleaseSelectorProps) => {
 
       <Menu>
         <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-          <Box marginRight={3}>{selectedYear}</Box>
+          <Box mr={3}>{selectedYear}</Box>
         </MenuButton>
         <MenuList>
           {Array.from({ length: 11 }, (_, i) => currentYear + 1 - i).map((year) => (
