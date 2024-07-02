@@ -1,4 +1,4 @@
-import { Button, HStack, Heading } from "@chakra-ui/react";
+import { Button, HStack, Heading, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import useData, { Info } from "../../../hooks/useData";
 
@@ -16,11 +16,14 @@ const GameSeries = ({ slug }: GameSeriesProps) => {
       <Heading mt={5} size="md">
         Games in the Series
       </Heading>
-      <HStack wrap="wrap">
-        {results.map((item) => (
-          <Button key={item.id} onClick={() => navigate(`/games/${item.slug}`)} variant="link">
-            {item.name}
-          </Button>
+      <HStack mt={3} wrap="wrap">
+        {results.map((item, index) => (
+          <HStack key={item.id} spacing={0}>
+            <Button onClick={() => navigate(`/games/${item.slug}`)} variant="link">
+              {item.name}
+            </Button>
+            <Text>{index < results.length - 1 ? ", " : ""}</Text>
+          </HStack>
         ))}
       </HStack>
     </>
