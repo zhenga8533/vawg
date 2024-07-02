@@ -29,7 +29,13 @@ const GameStores = ({ stores }: GameStoresProps) => {
       <Grid gap={4} marginTop={5} templateColumns="repeat(2, 1fr)">
         {stores.map((store) => (
           <GridItem key={store.id}>
-            <Button as="a" href={`https://${store.store.domain}`} rightIcon={storeIcons[store.store.slug]} width="100%">
+            <Button
+              as="a"
+              href={`https://${store.store.domain}`}
+              rightIcon={storeIcons[store.store.slug]}
+              target="_blank"
+              width="100%"
+            >
               {store.store.name}{" "}
             </Button>
           </GridItem>
