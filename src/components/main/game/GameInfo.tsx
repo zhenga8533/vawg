@@ -34,7 +34,7 @@ const GameInfo = ({ game }: GameInfoProps) => {
                 <Button onClick={() => navigate(`/genres/${genre.slug}`)} variant="link">
                   {genre.name}
                 </Button>
-                {index < game.genres.length - 1 ? ", " : ""}
+                <Text>{index < game.genres.length - 1 ? ", " : ""}</Text>
               </HStack>
             ))}
           </HStack>

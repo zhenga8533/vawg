@@ -1,6 +1,7 @@
 import {
   Box,
   Grid,
+  Heading,
   Image,
   Modal,
   ModalBody,
@@ -71,6 +72,9 @@ const GameMediaGrid = ({ screenshots, trailers }: GameMediaGridProps) => {
 
   return (
     <>
+      <Heading size="md" mt={5}>
+        Media
+      </Heading>
       {trailers && trailers.length > 0 && (
         <video controls width="100%" autoPlay muted>
           <source src={trailers[0].data["480"]} type="video/mp4" />
