@@ -48,7 +48,7 @@ const GameDetail = () => {
             released={data.released}
             tba={data.tba}
           />
-          <GameAbout description={data.description_raw} />
+          <GameAbout description={data.description} />
           <GameRating ratings={data.ratings} />
           <GameInfo game={data} />
           <GameSeries slug={slug} />

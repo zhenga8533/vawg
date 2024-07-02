@@ -15,7 +15,7 @@ const About = ({ description }: AboutProps) => {
   return (
     <>
       <Heading size="md">About</Heading>
-      <Text>{displayDescription}</Text>
+      <Text dangerouslySetInnerHTML={{ __html: displayDescription }} />
       {tooLong && <Button onClick={() => setIsExpanded(!isExpanded)}>{isExpanded ? "Read Less" : "Read More"}</Button>}
     </>
   );
