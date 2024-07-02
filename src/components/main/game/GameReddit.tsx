@@ -1,7 +1,7 @@
-import { Button, HStack, Heading, Image, List, ListItem, Text } from "@chakra-ui/react";
+import { HStack, Heading, Image, List, ListItem, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import useData from "../../../hooks/useData";
+import ShowButton from "../../general/ShowButton";
 import SkeletonListItem from "../../general/SkeletonListItem";
 
 interface GameRedditProps {
@@ -41,15 +41,7 @@ const GameReddit = ({ slug }: GameRedditProps) => {
           </ListItem>
         ))}
       </List>
-      <Button
-        color="gray"
-        leftIcon={showAll ? <BsChevronUp /> : <BsChevronDown />}
-        onClick={() => setShowAll(!showAll)}
-        padding={0}
-        variant="link"
-      >
-        {showAll ? "Hide" : "Show all"}
-      </Button>
+      {results.length > 5 && <ShowButton showAll={showAll} setShowAll={setShowAll} />}
     </>
   );
 };

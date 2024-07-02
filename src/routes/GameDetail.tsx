@@ -9,7 +9,6 @@ import GameInfo from "../components/main/game/GameInfo";
 import GameMedia from "../components/main/game/GameMediaGrid";
 import GameParents from "../components/main/game/GameParents";
 import GameRating from "../components/main/game/GameRating";
-import GameReddit from "../components/main/game/GameReddit";
 import GameSeries from "../components/main/game/GameSeries";
 import GameStores from "../components/main/game/GameStores";
 import useData from "../hooks/useData";
@@ -61,7 +60,7 @@ const GameDetail = () => {
         </GridItem>
       </Grid>
       <GameAchievements slug={slug} />
-      <GameReddit slug={slug} />
+      {/* <GameReddit slug={slug} /> */}
     </>
   );
 };

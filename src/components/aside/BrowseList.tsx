@@ -1,11 +1,11 @@
-import { Button, Heading, List, ListItem } from "@chakra-ui/react";
+import { Heading, List, ListItem } from "@chakra-ui/react";
 import { useState } from "react";
-import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { FaGhost, FaHashtag } from "react-icons/fa";
 import { IoMdDownload } from "react-icons/io";
 import { IoCloudUpload, IoCodeSlash, IoGameController, IoPerson } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import IconButton from "../general/IconButton";
+import ShowButton from "../general/ShowButton";
 
 const BrowseList = () => {
   const browses = [
@@ -36,17 +36,11 @@ const BrowseList = () => {
             />
           </ListItem>
         ))}
-        <ListItem marginTop={1}>
-          <Button
-            color="gray"
-            leftIcon={showAll ? <BsChevronUp /> : <BsChevronDown />}
-            onClick={() => setShowAll(!showAll)}
-            padding={0}
-            variant="link"
-          >
-            {showAll ? "Hide" : "Show all"}
-          </Button>
-        </ListItem>
+        {browses.length > 3 && (
+          <ListItem marginTop={1}>
+            <ShowButton showAll={showAll} setShowAll={setShowAll} />
+          </ListItem>
+        )}
       </List>
     </>
   );

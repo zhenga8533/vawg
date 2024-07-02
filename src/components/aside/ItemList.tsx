@@ -1,10 +1,10 @@
-import { Button, Heading, List, ListItem } from "@chakra-ui/react";
+import { Heading, List, ListItem } from "@chakra-ui/react";
 import { useState } from "react";
-import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { useLocation, useNavigate } from "react-router-dom";
 import anyItem from "../../assets/any-item.webp";
 import useItems, { Item } from "../../hooks/useItems";
 import cropImageURL from "../../services/image-url";
+import ShowButton from "../general/ShowButton";
 import SkeletonListItem from "../general/SkeletonListItem";
 import ItemItem from "./ItemItem";
 
@@ -52,17 +52,11 @@ const ItemList = ({ endpoint, name, selectedItem, onSelectItem }: ItemListProps)
             selectedItem={selectedItem}
           />
         ))}
-        <ListItem marginTop={1}>
-          <Button
-            color="gray"
-            leftIcon={showAll ? <BsChevronUp /> : <BsChevronDown />}
-            onClick={() => setShowAll(!showAll)}
-            padding={0}
-            variant="link"
-          >
-            {showAll ? "Hide" : "Show all"}
-          </Button>
-        </ListItem>
+        {results.length > 2 && (
+          <ListItem marginTop={1}>
+            <ShowButton showAll={showAll} setShowAll={setShowAll} />
+          </ListItem>
+        )}
       </List>
     </>
   );

@@ -1,10 +1,10 @@
 import { Box, Button, HStack, Heading, Image, List, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { Creator } from "../../../hooks/useCreators";
 import useData from "../../../hooks/useData";
 import { capitalize } from "../../../services/formatting";
+import ShowButton from "../../general/ShowButton";
 import SkeletonListItem from "../../general/SkeletonListItem";
 
 interface GameDevelopersProps {
@@ -48,17 +48,7 @@ const GameDevelopers = ({ slug }: GameDevelopersProps) => {
             <hr />
           </Box>
         ))}
-      {results.length > 5 && (
-        <Button
-          color="gray"
-          leftIcon={showAll ? <BsChevronUp /> : <BsChevronDown />}
-          onClick={() => setShowAll(!showAll)}
-          padding={0}
-          variant="link"
-        >
-          {showAll ? "Hide" : "Show all"}
-        </Button>
-      )}
+      {results.length > 5 && <ShowButton showAll={showAll} setShowAll={setShowAll} />}
     </>
   );
 };
