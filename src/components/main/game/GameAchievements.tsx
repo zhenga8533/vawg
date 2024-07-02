@@ -21,7 +21,7 @@ const GameAchievements = ({ slug }: GameAchievementsProps) => {
   const { results, error, loading } = useData<Achievement>(`/games/${slug}/achievements`);
   const [showAll, setShowAll] = useState(false);
 
-  if (error) return null;
+  if (error || results.length === 0) return null;
   return (
     <>
       <Heading size="md" mt={5}>
