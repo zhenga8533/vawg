@@ -6,7 +6,7 @@ import GameAchievements from "../components/main/game/GameAchievements";
 import GameDevelopers from "../components/main/game/GameDevelopers";
 import GameHeading from "../components/main/game/GameHeading";
 import GameInfo from "../components/main/game/GameInfo";
-import GameMedia from "../components/main/game/GameMediaGrid";
+import GameMediaGrid from "../components/main/game/GameMediaGrid";
 import GameParents from "../components/main/game/GameParents";
 import GameRating from "../components/main/game/GameRating";
 import GameSeries from "../components/main/game/GameSeries";
@@ -54,7 +54,7 @@ const GameDetail = () => {
           <GameParents slug={slug} />
         </GridItem>
         <GridItem area="right">
-          {<GameMedia limited={true} screenshots={screenshots.results} trailers={trailers.results} />}
+          {<GameMediaGrid screenshots={screenshots.results} trailers={trailers.results} />}
           {<GameStores stores={data.stores} />}
           {<GameDevelopers slug={slug} />}
         </GridItem>
