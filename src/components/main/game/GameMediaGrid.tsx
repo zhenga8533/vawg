@@ -7,7 +7,6 @@ import {
   ModalCloseButton,
   ModalContent,
   ModalHeader,
-  ModalOverlay,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -24,7 +23,7 @@ const GameMediaGrid = ({ screenshots, trailers }: GameMediaGridProps) => {
   const [modalOpen, setModalOpen] = useState(false);
   const screenshotGrid: JSX.Element[] = [];
 
-  const videos = trailers.map((trailer) => (
+  const videos = trailers.slice(1, trailers.length).map((trailer) => (
     <video controls key={trailer.id} width="100%">
       <source src={trailer.data["480"]} type="video/mp4" />
       Your browser does not support the video tag.
@@ -80,12 +79,11 @@ const GameMediaGrid = ({ screenshots, trailers }: GameMediaGridProps) => {
         {screenshotGrid}
       </Grid>
       <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} size="4xl">
-        <ModalOverlay />
         <ModalContent>
           <ModalHeader>Media</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Grid gap={4} templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}>
+            <Grid gap={4} templateColumns={{ base: "1fr" }}>
               {media}
             </Grid>
           </ModalBody>
