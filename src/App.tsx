@@ -1,4 +1,4 @@
-import { Grid, GridItem, Show } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Show } from "@chakra-ui/react";
 import { useState } from "react";
 import { Route, HashRouter as Router, Routes } from "react-router-dom";
 import Aside from "./components/aside/Aside";
@@ -30,6 +30,7 @@ export interface GameQueryProps {
 }
 
 function App() {
+  const [bgImage, setBgImage] = useState<string>("");
   const [gameQuery, setGameQuery] = useState<GameQuery>({
     dates: "",
     genre: null,
@@ -64,71 +65,85 @@ function App() {
 
   return (
     <Router>
-      <Grid
-        m={10}
-        templateAreas={{
-          base: `"nav" "main"`,
-          lg: `"nav nav" "aside main"`,
-        }}
-        templateColumns={{
-          base: "1fr",
-          lg: "200px 1fr",
-        }}
-      >
-        <GridItem area="nav" mb={4}>
-          <Navbar
-            onSearch={(searchText) => {
-              setGameQuery({ ...gameQuery, searchText });
-            }}
-            gameQuery={gameQuery}
-            setGameQuery={setGameQuery}
-            onSelectPlatform={(parentPlatform) => setGameQuery({ ...gameQuery, parentPlatform })}
-            selectedPlatform={gameQuery.parentPlatform}
-            onReverseOrder={(order) => setGameQuery({ ...gameQuery, sortOrder: order })}
-            onSelectOrder={(order) => setGameQuery({ ...gameQuery, sortOrder: order })}
-            sortOrder={gameQuery.sortOrder}
-          />
-        </GridItem>
-        <Show above="lg">
-          <GridItem area="aside">
-            <Aside gameQuery={gameQuery} setGameQuery={setGameQuery} />
+      <Box position="relative">
+        <Box
+          position="absolute"
+          top={-10}
+          left="0"
+          width="100%"
+          height="72vh"
+          zIndex={-1}
+          backgroundImage={`linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url('${bgImage}')`}
+          backgroundRepeat="no-repeat"
+          backgroundSize="cover"
+          opacity={0.36}
+        />
+        <Grid
+          m={10}
+          templateAreas={{
+            base: `"nav" "main"`,
+            lg: `"nav nav" "aside main"`,
+          }}
+          templateColumns={{
+            base: "1fr",
+            lg: "200px 1fr",
+          }}
+        >
+          <GridItem area="nav" mb={4}>
+            <Navbar
+              onSearch={(searchText) => {
+                setGameQuery({ ...gameQuery, searchText });
+              }}
+              gameQuery={gameQuery}
+              setGameQuery={setGameQuery}
+              onSelectPlatform={(parentPlatform) => setGameQuery({ ...gameQuery, parentPlatform })}
+              selectedPlatform={gameQuery.parentPlatform}
+              onReverseOrder={(order) => setGameQuery({ ...gameQuery, sortOrder: order })}
+              onSelectOrder={(order) => setGameQuery({ ...gameQuery, sortOrder: order })}
+              sortOrder={gameQuery.sortOrder}
+            />
           </GridItem>
-        </Show>
-        <GridItem about="main">
-          <Breadcrumbs />
-          <Routes>
-            {/* Games */}
-            {Object.keys(gameRoutes).map((route) => (
+          <Show above="lg">
+            <GridItem area="aside">
+              <Aside gameQuery={gameQuery} setGameQuery={setGameQuery} />
+            </GridItem>
+          </Show>
+          <GridItem about="main">
+            <Breadcrumbs />
+            <Routes>
+              {/* Games */}
+              {Object.keys(gameRoutes).map((route) => (
+                <Route
+                  key={route}
+                  path={`/games${route}`}
+                  element={
+                    <Games gameQuery={gameQuery} key={route} onLoad={gameRoutes[route]} setGameQuery={setGameQuery} />
+                  }
+                />
+              ))}
               <Route
-                key={route}
-                path={`/games${route}`}
-                element={
-                  <Games gameQuery={gameQuery} key={route} onLoad={gameRoutes[route]} setGameQuery={setGameQuery} />
-                }
+                path={`/games/release-calendar`}
+                element={<ReleaseCalendar gameQuery={gameQuery} setGameQuery={setGameQuery} />}
               />
-            ))}
-            <Route
-              path={`/games/release-calendar`}
-              element={<ReleaseCalendar gameQuery={gameQuery} setGameQuery={setGameQuery} />}
-            />
-            <Route path="/games/:slug" element={<GameDetailWrapper />} />
-            {/* Browse */}
-            <Route path="/platforms" element={<Browses endpoint="/platforms" title="Platforms" key="platforms" />} />
-            <Route path="/stores" element={<Browses endpoint="/stores" title="Storefronts" key="stores" />} />
-            <Route path="/genres" element={<Browses endpoint="/genres" title="Genres" key="genres" />} />
-            <Route path="/creators" element={<Creators />} />
-            <Route path="/tags" element={<Browses endpoint="/tags" title="Tags" key="tags" />} />
-            <Route
-              path="/developers"
-              element={<Browses endpoint="/developers" title="Developers" key="developers" />}
-            />
-            <Route
-              path="/publishers"
-              element={<Browses endpoint="/publishers" title="Publishers" key="publishers" />}
-            />
-          </Routes>
-        </GridItem>
-      </Grid>
+              <Route path="/games/:slug" element={<GameDetailWrapper setBgImage={setBgImage} />} />
+              {/* Browse */}
+              <Route path="/platforms" element={<Browses endpoint="/platforms" title="Platforms" key="platforms" />} />
+              <Route path="/stores" element={<Browses endpoint="/stores" title="Storefronts" key="stores" />} />
+              <Route path="/genres" element={<Browses endpoint="/genres" title="Genres" key="genres" />} />
+              <Route path="/creators" element={<Creators />} />
+              <Route path="/tags" element={<Browses endpoint="/tags" title="Tags" key="tags" />} />
+              <Route
+                path="/developers"
+                element={<Browses endpoint="/developers" title="Developers" key="developers" />}
+              />
+              <Route
+                path="/publishers"
+                element={<Browses endpoint="/publishers" title="Publishers" key="publishers" />}
+              />
+            </Routes>
+          </GridItem>
+        </Grid>
+      </Box>
     </Router>
   );
 }

@@ -1,4 +1,5 @@
 import { Grid, GridItem, Text } from "@chakra-ui/react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import LoadingWheel from "../components/general/LoadingWheel";
 import GameAbout from "../components/main/game/GameAbout";
@@ -14,12 +15,16 @@ import GameStores from "../components/main/game/GameStores";
 import useData from "../hooks/useData";
 import useGame, { Screenshot, Trailer } from "../hooks/useGame";
 
-export function GameDetailWrapper() {
-  const { slug } = useParams();
-  return <GameDetail key={slug} />;
+interface GameDetailProps {
+  setBgImage: (bgImage: string) => void;
 }
 
-const GameDetail = () => {
+export function GameDetailWrapper({ setBgImage }: GameDetailProps) {
+  const { slug } = useParams();
+  return <GameDetail setBgImage={setBgImage} key={slug} />;
+}
+
+const GameDetail = ({ setBgImage }: GameDetailProps) => {
   const { slug } = useParams();
   if (!slug) return <Text>Error: No slug provided</Text>;
 
@@ -29,6 +34,16 @@ const GameDetail = () => {
   const error = game.error || trailers.error || screenshots.error;
   const loading = game.loading || trailers.loading || screenshots.loading;
   const data = game.data;
+
+  useEffect(() => {
+    if (data && data.background_image) {
+      setBgImage(data.background_image);
+    }
+
+    return () => {
+      setBgImage("");
+    };
+  }, [data]);
 
   if (error) return <Text>Error: {error}</Text>;
   else if (loading) return <LoadingWheel />;
