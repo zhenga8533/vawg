@@ -46,6 +46,7 @@ const GameDetail = () => {
             parent_platforms={data.parent_platforms}
             playtime={data.playtime}
             released={data.released}
+            tba={data.tba}
           />
           <GameAbout description={data.description_raw} />
           <GameRating ratings={data.ratings} />
