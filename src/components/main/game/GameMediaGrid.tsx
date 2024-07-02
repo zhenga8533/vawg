@@ -61,7 +61,9 @@ const GameMediaGrid = ({ screenshots, trailers }: GameMediaGridProps) => {
 
     return (
       <Box key={screenshot.id} position="relative" width="100%">
-        <Image src={screenshot.image} alt={screenshot.id.toString()} width="100%" />
+        <a href={screenshot.image} target="_blank" rel="noopener noreferrer">
+          <Image src={screenshot.image} alt={screenshot.id.toString()} width="100%" />
+        </a>
       </Box>
     );
   });
