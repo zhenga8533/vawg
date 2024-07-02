@@ -2,7 +2,11 @@ import { Box, Button, Menu, MenuButton, MenuItem, MenuList, useColorMode } from 
 import { useEffect, useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
 
-const ThemeSelector = () => {
+export interface ThemeSelectorProps {
+  onSelectTheme: (theme: string) => void;
+}
+
+const ThemeSelector = ({ onSelectTheme }: ThemeSelectorProps) => {
   const { setColorMode } = useColorMode();
   const themes = [
     { name: "Light", value: "light" },
@@ -13,6 +17,7 @@ const ThemeSelector = () => {
 
   useEffect(() => {
     setColorMode(theme);
+    onSelectTheme(theme);
     localStorage.setItem("theme", theme);
   }, [theme, setColorMode]);
 

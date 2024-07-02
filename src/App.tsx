@@ -30,7 +30,16 @@ export interface GameQueryProps {
 }
 
 function App() {
+  // Background image and theme state
   const [bgImage, setBgImage] = useState<string>("");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const gradient: { [key: string]: string } = {
+    dark: "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))",
+    light: "linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))",
+    sakura: "linear-gradient(rgba(255, 238, 251, 0), rgba(255, 238, 251, 1))",
+  };
+
+  // Game query state
   const [gameQuery, setGameQuery] = useState<GameQuery>({
     dates: "",
     genre: null,
@@ -73,7 +82,7 @@ function App() {
           width="100%"
           height="72vh"
           zIndex={-1}
-          backgroundImage={`linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url('${bgImage}')`}
+          backgroundImage={`${gradient[theme]}, url('${bgImage}')`}
           backgroundRepeat="no-repeat"
           backgroundSize="cover"
           opacity={0.36}
@@ -100,6 +109,7 @@ function App() {
               selectedPlatform={gameQuery.parentPlatform}
               onReverseOrder={(order) => setGameQuery({ ...gameQuery, sortOrder: order })}
               onSelectOrder={(order) => setGameQuery({ ...gameQuery, sortOrder: order })}
+              onSelectTheme={(theme) => setTheme(theme)}
               sortOrder={gameQuery.sortOrder}
             />
           </GridItem>

@@ -6,9 +6,14 @@ import Aside from "../aside/Aside";
 import PlatformSelector, { PlatformSelectorProps } from "../main/games/PlatformSelector";
 import SortSelector, { SortSelectorProps } from "../main/games/SortSelector";
 import SearchInput, { SearchInputProps } from "./SearchInput";
-import ThemeSelector from "./ThemeSelector";
+import ThemeSelector, { ThemeSelectorProps } from "./ThemeSelector";
 
-interface NavbarProps extends GameQueryProps, PlatformSelectorProps, SearchInputProps, SortSelectorProps {}
+interface NavbarProps
+  extends GameQueryProps,
+    PlatformSelectorProps,
+    SearchInputProps,
+    SortSelectorProps,
+    ThemeSelectorProps {}
 
 const Navbar = ({
   onSearch,
@@ -18,6 +23,7 @@ const Navbar = ({
   selectedPlatform,
   onReverseOrder,
   onSelectOrder,
+  onSelectTheme,
   sortOrder,
 }: NavbarProps) => {
   const location = useLocation();
@@ -40,7 +46,7 @@ const Navbar = ({
       <SearchInput onSearch={onSearch} />
 
       <Box display={{ base: "none", lg: "block" }}>
-        <ThemeSelector />
+        <ThemeSelector onSelectTheme={onSelectTheme} />
       </Box>
 
       <Box display={{ base: "block", lg: "none" }} position="relative">
@@ -49,7 +55,7 @@ const Navbar = ({
           <MenuList paddingX={2} position="absolute" right={-16} maxHeight="85vh" overflowX="hidden" overflowY="auto">
             <Heading fontSize="3xl">Filter</Heading>
             <hr />
-            <ThemeSelector />
+            <ThemeSelector onSelectTheme={onSelectTheme} />
             <hr />
             <Box display={{ base: "block", md: "none" }} mb={3}>
               {location.pathname.startsWith("/games") && (
