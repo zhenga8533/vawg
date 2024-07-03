@@ -40,7 +40,9 @@ const AsideMenu = ({
               </>
             )}
           </Box>
-          <Button onClick={() => setGameQuery({ ...BaseQuery })}>Clear</Button>
+          <Button colorScheme="red" onClick={() => setGameQuery({ ...BaseQuery })}>
+            Clear
+          </Button>
           <hr />
           <Aside gameQuery={gameQuery} setGameQuery={setGameQuery} />
         </MenuList>

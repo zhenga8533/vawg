@@ -25,7 +25,9 @@ const GameSelector = ({ gameData, gameQuery, setGameQuery }: GameSelectorProps) 
             onSelectOrder={(sortOrder) => setGameQuery({ ...gameQuery, sortOrder })}
             sortOrder={gameQuery.sortOrder}
           />
-          <Button onClick={() => setGameQuery({ ...BaseQuery })}>Clear</Button>
+          <Button colorScheme="red" onClick={() => setGameQuery({ ...BaseQuery })}>
+            Clear
+          </Button>
         </HStack>
         <Box display={{ base: "none", xl: "flex" }}>
           <Pagination
