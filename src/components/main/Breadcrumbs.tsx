@@ -21,6 +21,7 @@ const Breadcrumbs = () => {
           isDisabled={index === locations.length - 1}
           key={location}
           color="gray"
+          minWidth={0}
           onClick={() => navigate(locations.slice(0, index + 1).join("/"))}
           variant="link"
         >

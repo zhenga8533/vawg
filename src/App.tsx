@@ -14,16 +14,34 @@ import Home from "./routes/Home";
 import ReleaseCalendar from "./routes/ReleaseCalendar";
 
 export interface GameQuery {
+  creator: Item | null;
   dates: string;
+  developer: Item | null;
   genre: Item | null;
   page: number;
   parentPlatform: Info | null;
   platform: Item | null;
+  publisher: Item | null;
   searchText: string;
   sortOrder: string;
   store: Item | null;
   tag: Item | null;
 }
+
+export const BaseQuery: GameQuery = {
+  creator: null,
+  dates: "",
+  developer: null,
+  genre: null,
+  page: 1,
+  parentPlatform: null,
+  platform: null,
+  publisher: null,
+  searchText: "",
+  sortOrder: "",
+  store: null,
+  tag: null,
+};
 
 export interface GameQueryProps {
   gameQuery: GameQuery;
@@ -41,17 +59,7 @@ function App() {
   };
 
   // Game query state
-  const [gameQuery, setGameQuery] = useState<GameQuery>({
-    dates: "",
-    genre: null,
-    page: 1,
-    parentPlatform: null,
-    platform: null,
-    searchText: "",
-    sortOrder: "",
-    store: null,
-    tag: null,
-  });
+  const [gameQuery, setGameQuery] = useState<GameQuery>(BaseQuery);
 
   const parseDate = (date: Date) => date.toISOString().slice(0, 10);
   const parseDateFrame = (days: number) => {
@@ -159,7 +167,14 @@ function App() {
                   <Route
                     key={`${route.endpoint}/:slug`}
                     path={`/${route.endpoint}/:slug`}
-                    element={<BrowseDetail endpoint={route.endpoint} setBgImage={setBgImage} />}
+                    element={
+                      <BrowseDetail
+                        endpoint={route.endpoint}
+                        gameQuery={gameQuery}
+                        setBgImage={setBgImage}
+                        setGameQuery={setGameQuery}
+                      />
+                    }
                   />
                 </Fragment>
               ))}
