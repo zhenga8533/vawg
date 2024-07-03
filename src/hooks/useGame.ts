@@ -94,7 +94,14 @@ export interface GameData {
   saturated_color: string;
   dominant_color: string;
   parent_platforms: { platform: Info }[];
-  platforms: { platform: Info }[];
+  platforms: {
+    platform: Info;
+    released_at: string;
+    requirements: {
+      minimum: string;
+      recommended: string;
+    };
+  }[];
   stores: {
     id: number;
     url: string;

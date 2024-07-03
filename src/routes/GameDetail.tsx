@@ -11,6 +11,7 @@ import GameInfo from "../components/main/game/GameInfo";
 import GameMediaGrid from "../components/main/game/GameMediaGrid";
 import GameRating from "../components/main/game/GameRating";
 import GameRelations from "../components/main/game/GameRelations";
+import GameRequirements from "../components/main/game/GameRequirements";
 import GameStores from "../components/main/game/GameStores";
 import useData from "../hooks/useData";
 import useGame, { Screenshot, Trailer } from "../hooks/useGame";
@@ -81,6 +82,7 @@ const GameDetail = ({ setBgImage }: GameDetailProps) => {
           {<GameDevelopers slug={slug} />}
         </GridItem>
       </Grid>
+      <GameRequirements platforms={data.platforms} />
       <GameAchievements slug={slug} />
       {/* <GameReddit slug={slug} /> */}
     </>
