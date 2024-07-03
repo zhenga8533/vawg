@@ -10,6 +10,7 @@ import Browses from "./routes/Browses";
 import Creators from "./routes/Creators";
 import { GameDetailWrapper } from "./routes/GameDetail";
 import Games from "./routes/Games";
+import Home from "./routes/Home";
 import ReleaseCalendar from "./routes/ReleaseCalendar";
 
 export interface GameQuery {
@@ -122,6 +123,7 @@ function App() {
             <Breadcrumbs />
             <Routes>
               {/* Games */}
+              <Route path="/" element={<Home />} />
               {Object.keys(gameRoutes).map((route) => (
                 <Route
                   key={route}
