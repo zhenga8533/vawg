@@ -5,14 +5,12 @@ import ErrorMessage from "../components/general/ErrorMessage";
 import LoadingWheel from "../components/general/LoadingWheel";
 import GameAbout from "../components/main/game/GameAbout";
 import GameAchievements from "../components/main/game/GameAchievements";
-import GameAdditions from "../components/main/game/GameAdditions";
 import GameDevelopers from "../components/main/game/GameDevelopers";
 import GameHeading from "../components/main/game/GameHeading";
 import GameInfo from "../components/main/game/GameInfo";
 import GameMediaGrid from "../components/main/game/GameMediaGrid";
-import GameParents from "../components/main/game/GameParents";
 import GameRating from "../components/main/game/GameRating";
-import GameSeries from "../components/main/game/GameSeries";
+import GameRelations from "../components/main/game/GameRelations";
 import GameStores from "../components/main/game/GameStores";
 import useData from "../hooks/useData";
 import useGame, { Screenshot, Trailer } from "../hooks/useGame";
@@ -73,9 +71,9 @@ const GameDetail = ({ setBgImage }: GameDetailProps) => {
           <GameAbout description={data.description} />
           <GameRating ratings={data.ratings} />
           <GameInfo game={data} />
-          <GameParents slug={slug} />
-          <GameAdditions slug={slug} />
-          <GameSeries slug={slug} />
+          <GameRelations endpoint="parent-games" heading="Parent Games" slug={slug} />
+          <GameRelations endpoint="additions" heading="DLC's and Editions" slug={slug} />
+          <GameRelations endpoint="game-series" heading="Games in the Series" slug={slug} />
         </GridItem>
         <GridItem area="right">
           {<GameMediaGrid screenshots={screenshots.results} trailers={trailers.results} />}
