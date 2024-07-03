@@ -1,6 +1,7 @@
 import { Grid, GridItem, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import ErrorMessage from "../components/general/ErrorMessage";
 import LoadingWheel from "../components/general/LoadingWheel";
 import GameAbout from "../components/main/game/GameAbout";
 import GameAchievements from "../components/main/game/GameAchievements";
@@ -45,7 +46,7 @@ const GameDetail = ({ setBgImage }: GameDetailProps) => {
     };
   }, [data]);
 
-  if (error) return <Text>Error: {error}</Text>;
+  if (error) return <ErrorMessage error={error} />;
   else if (loading) return <LoadingWheel />;
   return (
     <>
@@ -66,8 +67,6 @@ const GameDetail = ({ setBgImage }: GameDetailProps) => {
           <GameAbout description={data.description} />
           <GameRating ratings={data.ratings} />
           <GameInfo game={data} />
-          <GameSeries slug={slug} />
-          <GameParents slug={slug} />
         </GridItem>
         <GridItem area="right">
           {<GameMediaGrid screenshots={screenshots.results} trailers={trailers.results} />}
@@ -75,6 +74,8 @@ const GameDetail = ({ setBgImage }: GameDetailProps) => {
           {<GameDevelopers slug={slug} />}
         </GridItem>
       </Grid>
+      <GameSeries slug={slug} />
+      <GameParents slug={slug} />
       <GameAchievements slug={slug} />
       {/* <GameReddit slug={slug} /> */}
     </>
