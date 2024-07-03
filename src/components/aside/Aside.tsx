@@ -16,13 +16,15 @@ const Aside = ({ gameQuery, setGameQuery }: GameQueryProps) => {
     "/games/this-week",
     "/games/next-week",
   ]);
+  const browseRoutes = new Set(["platforms", "stores", "genres", "creators", "tags", "developers", "publishers"]);
+  const paths = location.pathname.split("/");
 
   return (
     <>
       <TopList />
       <ReleaseList />
       <BrowseList />
-      {gameRoutes.has(location.pathname) && (
+      {(gameRoutes.has(location.pathname) || (browseRoutes.has(paths[1]) && paths.length > 2)) && (
         <>
           <ItemList
             endpoint="genres"
