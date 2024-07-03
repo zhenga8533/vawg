@@ -35,7 +35,7 @@ const GameSelector = ({ gameData, gameQuery, setGameQuery }: GameSelectorProps) 
           />
         </Box>
       </HStack>
-      <HStack display={{ base: "flex", xl: "none" }} justifyContent="center" mt={5}>
+      <HStack display={{ base: "flex", xl: "none" }} justifyContent="center" mt={3}>
         <Pagination
           count={gameData.count}
           onPageChange={(page) => setGameQuery({ ...gameQuery, page })}
