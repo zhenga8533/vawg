@@ -15,7 +15,7 @@ const Home = () => {
         </Button>
         <Text>
           Credits to the{" "}
-          <Link color="teal" href="https://rawg.io/" isExternal>
+          <Link color="teal" href="https://rawg.io/apidocs" isExternal>
             RAWG API
           </Link>
           .
