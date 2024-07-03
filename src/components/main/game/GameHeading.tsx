@@ -29,9 +29,7 @@ const GameHeading = ({ name, parent_platforms, playtime, released, score, tba }:
         </HStack>
         <CriticScore score={score} />
       </HStack>
-      <Heading fontSize={50} mb={5}>
-        {name}
-      </Heading>
+      <Heading fontSize={50}>{name}</Heading>
     </>
   );
 };

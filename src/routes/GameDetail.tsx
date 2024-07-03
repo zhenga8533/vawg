@@ -15,6 +15,7 @@ import GameSeries from "../components/main/game/GameSeries";
 import GameStores from "../components/main/game/GameStores";
 import useData from "../hooks/useData";
 import useGame, { Screenshot, Trailer } from "../hooks/useGame";
+import { formatDate } from "../services/formatting";
 
 interface GameDetailProps {
   setBgImage: (bgImage: string) => void;
@@ -65,6 +66,9 @@ const GameDetail = ({ setBgImage }: GameDetailProps) => {
             score={data.metacritic}
             tba={data.tba}
           />
+          <Text color="gray" mb={3}>
+            Last Modified: {data.updated ? formatDate(data.updated) : "Unknown"}
+          </Text>
           <GameAbout description={data.description} />
           <GameRating ratings={data.ratings} />
           <GameInfo game={data} />
