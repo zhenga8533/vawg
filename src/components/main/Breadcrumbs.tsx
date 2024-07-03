@@ -4,10 +4,10 @@ import { capitalize } from "../../services/formatting";
 
 const Breadcrumbs = () => {
   const navigate = useNavigate();
-  const locations = useLocation().pathname.split("/").slice(1);
+  const locations = useLocation().pathname.replace(/\/$/, "").split("/");
 
   const slugToTitle = (slug: string) => {
-    if (slug.toLowerCase() === "vawg") return "Home";
+    if (slug === "") return "Home";
     return slug
       .split("-")
       .map((word) => capitalize(word))
