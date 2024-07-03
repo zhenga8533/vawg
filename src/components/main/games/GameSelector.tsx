@@ -1,6 +1,7 @@
 import { Box, Button, HStack } from "@chakra-ui/react";
 import { BaseQuery, GameQuery } from "../../../App";
 import { Data } from "../../../hooks/useData";
+import { compareObjects } from "../../../services/compare";
 import Pagination from "../../general/Pagination";
 import PlatformSelector from "./PlatformSelector";
 import SortSelector from "./SortSelector";
@@ -25,9 +26,11 @@ const GameSelector = ({ gameData, gameQuery, setGameQuery }: GameSelectorProps) 
             onSelectOrder={(sortOrder) => setGameQuery({ ...gameQuery, sortOrder })}
             sortOrder={gameQuery.sortOrder}
           />
-          <Button colorScheme="red" onClick={() => setGameQuery({ ...BaseQuery })}>
-            Clear
-          </Button>
+          {compareObjects(gameQuery, BaseQuery) && (
+            <Button colorScheme="red" onClick={() => setGameQuery({ ...BaseQuery })}>
+              Clear
+            </Button>
+          )}
         </HStack>
         <Box display={{ base: "none", xl: "flex" }}>
           <Pagination

@@ -2,6 +2,7 @@ import { Box, Button, Heading, IconButton, Menu, MenuButton, MenuList } from "@c
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useLocation } from "react-router-dom";
 import { BaseQuery, GameQueryProps } from "../../App";
+import { compareObjects } from "../../services/compare";
 import Aside from "../aside/Aside";
 import PlatformSelector, { PlatformSelectorProps } from "../main/games/PlatformSelector";
 import SortSelector, { SortSelectorProps } from "../main/games/SortSelector";
@@ -40,10 +41,14 @@ const AsideMenu = ({
               </>
             )}
           </Box>
-          <Button colorScheme="red" onClick={() => setGameQuery({ ...BaseQuery })}>
-            Clear
-          </Button>
-          <hr />
+          {compareObjects(gameQuery, BaseQuery) && (
+            <>
+              <Button colorScheme="red" onClick={() => setGameQuery({ ...BaseQuery })}>
+                Clear
+              </Button>
+              <hr />
+            </>
+          )}
           <Aside gameQuery={gameQuery} setGameQuery={setGameQuery} />
         </MenuList>
       </Menu>
