@@ -5,6 +5,7 @@ import ErrorMessage from "../components/general/ErrorMessage";
 import LoadingWheel from "../components/general/LoadingWheel";
 import GameAbout from "../components/main/game/GameAbout";
 import GameAchievements from "../components/main/game/GameAchievements";
+import GameAdditions from "../components/main/game/GameAdditions";
 import GameDevelopers from "../components/main/game/GameDevelopers";
 import GameHeading from "../components/main/game/GameHeading";
 import GameInfo from "../components/main/game/GameInfo";
@@ -73,6 +74,8 @@ const GameDetail = ({ setBgImage }: GameDetailProps) => {
           <GameRating ratings={data.ratings} />
           <GameInfo game={data} />
           <GameParents slug={slug} />
+          <GameAdditions slug={slug} />
+          <GameSeries slug={slug} />
         </GridItem>
         <GridItem area="right">
           {<GameMediaGrid screenshots={screenshots.results} trailers={trailers.results} />}
@@ -80,7 +83,6 @@ const GameDetail = ({ setBgImage }: GameDetailProps) => {
           {<GameDevelopers slug={slug} />}
         </GridItem>
       </Grid>
-      <GameSeries slug={slug} />
       <GameAchievements slug={slug} />
       {/* <GameReddit slug={slug} /> */}
     </>
