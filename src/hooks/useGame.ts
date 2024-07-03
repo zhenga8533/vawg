@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 import { Info, Item } from "./useData";
 
@@ -125,17 +125,19 @@ const useGame = (slug: string) => {
   const [loading, setLoading] = useState(true);
 
   if (slug) {
-    apiClient
-      .get<GameData>(`/games/${slug}`)
-      .then((res) => {
-        setData(res.data);
-        setError("");
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
+    useEffect(() => {
+      apiClient
+        .get<GameData>(`/games/${slug}`)
+        .then((res) => {
+          setData(res.data);
+          setError("");
+          setLoading(false);
+        })
+        .catch((err) => {
+          setError(err.message);
+          setLoading(false);
+        });
+    }, []);
   }
 
   return { data, error, loading };

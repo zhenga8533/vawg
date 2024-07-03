@@ -1,13 +1,13 @@
 import { Box, Grid, GridItem, Show } from "@chakra-ui/react";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Route, HashRouter as Router, Routes } from "react-router-dom";
 import Aside from "./components/aside/Aside";
 import Breadcrumbs from "./components/main/Breadcrumbs";
 import Navbar from "./components/nav/Navbar";
 import { Info } from "./hooks/useData";
 import { Item } from "./hooks/useItems";
+import BrowseDetail from "./routes/BrowseDetail";
 import Browses from "./routes/Browses";
-import Creators from "./routes/Creators";
 import { GameDetailWrapper } from "./routes/GameDetail";
 import Games from "./routes/Games";
 import Home from "./routes/Home";
@@ -72,6 +72,16 @@ function App() {
     "/this-week": () => setGameQuery({ ...gameQuery, dates: parseDateFrame(-7), page: 1 }),
     "/next-week": () => setGameQuery({ ...gameQuery, dates: parseDateFrame(7), page: 1 }),
   };
+
+  const browseRoutes: { endpoint: string; title: string }[] = [
+    { endpoint: "platforms", title: "Platforms" },
+    { endpoint: "stores", title: "Storefronts" },
+    { endpoint: "genres", title: "Genres" },
+    { endpoint: "creators", title: "Creators" },
+    { endpoint: "tags", title: "Tags" },
+    { endpoint: "developers", title: "Developers" },
+    { endpoint: "publishers", title: "Publishers" },
+  ];
 
   return (
     <Router>
@@ -139,19 +149,20 @@ function App() {
               />
               <Route path="/games/:slug" element={<GameDetailWrapper setBgImage={setBgImage} />} />
               {/* Browse */}
-              <Route path="/platforms" element={<Browses endpoint="/platforms" title="Platforms" key="platforms" />} />
-              <Route path="/stores" element={<Browses endpoint="/stores" title="Storefronts" key="stores" />} />
-              <Route path="/genres" element={<Browses endpoint="/genres" title="Genres" key="genres" />} />
-              <Route path="/creators" element={<Creators />} />
-              <Route path="/tags" element={<Browses endpoint="/tags" title="Tags" key="tags" />} />
-              <Route
-                path="/developers"
-                element={<Browses endpoint="/developers" title="Developers" key="developers" />}
-              />
-              <Route
-                path="/publishers"
-                element={<Browses endpoint="/publishers" title="Publishers" key="publishers" />}
-              />
+              {browseRoutes.map((route) => (
+                <Fragment key={route.endpoint}>
+                  <Route
+                    key={route.endpoint}
+                    path={`/${route.endpoint}`}
+                    element={<Browses endpoint={`/${route.endpoint}`} title={route.title} key={route.endpoint} />}
+                  />
+                  <Route
+                    key={`${route.endpoint}/:slug`}
+                    path={`/${route.endpoint}/:slug`}
+                    element={<BrowseDetail endpoint={route.endpoint} setBgImage={setBgImage} />}
+                  />
+                </Fragment>
+              ))}
             </Routes>
           </GridItem>
         </Grid>
