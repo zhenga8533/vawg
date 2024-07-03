@@ -1,7 +1,7 @@
-import { Box, HStack, Heading, IconButton, Menu, MenuButton, MenuList, Text } from "@chakra-ui/react";
+import { Box, Button, HStack, Heading, IconButton, Menu, MenuButton, MenuList, Text } from "@chakra-ui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useLocation, useNavigate } from "react-router-dom";
-import { GameQueryProps } from "../../App";
+import { BaseQuery, GameQueryProps } from "../../App";
 import Aside from "../aside/Aside";
 import PlatformSelector, { PlatformSelectorProps } from "../main/games/PlatformSelector";
 import SortSelector, { SortSelectorProps } from "../main/games/SortSelector";
@@ -66,6 +66,8 @@ const Navbar = ({
                 </>
               )}
             </Box>
+            <Button onClick={() => setGameQuery({ ...BaseQuery })}>Clear</Button>
+            <hr />
             <Aside gameQuery={gameQuery} setGameQuery={setGameQuery} />
           </MenuList>
         </Menu>
