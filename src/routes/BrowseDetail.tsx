@@ -1,8 +1,9 @@
-import { Heading, Text } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { BaseQuery } from "../App";
 import ErrorMessage from "../components/general/ErrorMessage";
+import ExpandableText from "../components/general/ExpandableText";
 import LoadingWheel from "../components/general/LoadingWheel";
 import useBrowse from "../hooks/useBrowse";
 import { capitalize } from "../services/formatting";
@@ -37,7 +38,7 @@ const BrowseDetail = ({ endpoint, gameQuery, setBgImage, setGameQuery }: BrowseD
   return (
     <>
       <Heading size="2xl">{capitalize(endpoint) + ": " + data.name}</Heading>
-      <Text dangerouslySetInnerHTML={{ __html: data.description }} />
+      <ExpandableText cutoff={500} text={data.description} />
       <Games gameQuery={gameQuery} setGameQuery={setGameQuery} />
     </>
   );
