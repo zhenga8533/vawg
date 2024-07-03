@@ -40,7 +40,7 @@ const GameRating = ({ ratings }: GameRatingProps) => {
           <Tooltip label={`${rating.percent}%`} key={rating.id} hasArrow placement="top">
             <Box
               flexBasis={`${rating.percent}%`}
-              bgGradient={`linear(to-b, ${ratingColors[rating.title]}.400, ${ratingColors[rating.title]}.900)`}
+              bgGradient={`linear(to-b, ${ratingColors[rating.title]}.300, ${ratingColors[rating.title]}.600)`}
               height="100%"
               position="relative"
             >
