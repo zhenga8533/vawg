@@ -62,11 +62,13 @@ const GameDetail = ({ setBgImage }: GameDetailProps) => {
             parent_platforms={data.parent_platforms}
             playtime={data.playtime}
             released={data.released}
+            score={data.metacritic}
             tba={data.tba}
           />
           <GameAbout description={data.description} />
           <GameRating ratings={data.ratings} />
           <GameInfo game={data} />
+          <GameParents slug={slug} />
         </GridItem>
         <GridItem area="right">
           {<GameMediaGrid screenshots={screenshots.results} trailers={trailers.results} />}
@@ -75,7 +77,6 @@ const GameDetail = ({ setBgImage }: GameDetailProps) => {
         </GridItem>
       </Grid>
       <GameSeries slug={slug} />
-      <GameParents slug={slug} />
       <GameAchievements slug={slug} />
       {/* <GameReddit slug={slug} /> */}
     </>

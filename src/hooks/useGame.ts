@@ -35,7 +35,7 @@ export interface GameData {
   name: string;
   name_original: string;
   description: string;
-  metacrictic: number;
+  metacritic: number;
   metacritic_platforms: {
     metascore: number;
     url: string;
