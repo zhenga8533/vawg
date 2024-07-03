@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import apiClient from "../services/api-client";
 import { Info, Item } from "./useData";
 
@@ -124,10 +124,7 @@ const useGame = (slug: string) => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    if (!slug) return;
-
-    setLoading(true);
+  if (slug) {
     apiClient
       .get<GameData>(`/games/${slug}`)
       .then((res) => {
@@ -139,7 +136,7 @@ const useGame = (slug: string) => {
         setError(err.message);
         setLoading(false);
       });
-  }, []);
+  }
 
   return { data, error, loading };
 };

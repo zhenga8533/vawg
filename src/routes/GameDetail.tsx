@@ -28,7 +28,7 @@ export function GameDetailWrapper({ setBgImage }: GameDetailProps) {
 
 const GameDetail = ({ setBgImage }: GameDetailProps) => {
   const { slug } = useParams();
-  if (!slug) return <Text>Error: No slug provided</Text>;
+  if (!slug) return <ErrorMessage error="No slug provided" />;
 
   const game = useGame(slug);
   const trailers = useData<Trailer>(`/games/${slug}/movies`);
