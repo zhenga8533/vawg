@@ -19,7 +19,6 @@ const BrowseDetail = ({ endpoint, gameQuery, setBgImage, setGameQuery }: BrowseD
   if (!slug) return <ErrorMessage error="No slug provided" />;
 
   const { data, error, loading } = useBrowse(endpoint, slug);
-
   useEffect(() => {
     if (data && data.image_background) {
       setBgImage(data.image_background);

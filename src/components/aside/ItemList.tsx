@@ -1,6 +1,5 @@
 import { Heading, List, ListItem } from "@chakra-ui/react";
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import anyItem from "../../assets/any-item.webp";
 import useItems, { Item } from "../../hooks/useItems";
 import cropImageURL from "../../services/image-url";
@@ -17,8 +16,6 @@ interface ItemListProps {
 
 const ItemList = ({ endpoint, name, selectedItem, onSelectItem }: ItemListProps) => {
   const { results, loading } = useItems(endpoint);
-  const navigate = useNavigate();
-  const location = useLocation();
   const [showAll, setShowAll] = useState(false);
   const skeletons = Array.from({ length: 3 }, (_, i) => <SkeletonListItem key={i} />);
 
@@ -47,7 +44,6 @@ const ItemList = ({ endpoint, name, selectedItem, onSelectItem }: ItemListProps)
             key={item.id}
             onSelectItem={() => {
               onSelectItem(item);
-              if (!location.pathname.startsWith("/vawg/games")) navigate("/games");
             }}
             selectedItem={selectedItem}
           />
