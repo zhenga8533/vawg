@@ -41,7 +41,7 @@ const AsideMenu = ({
               </>
             )}
           </Box>
-          {compareObjects(gameQuery, BaseQuery) && (
+          {useLocation().pathname === "/games" && compareObjects(gameQuery, BaseQuery) && (
             <>
               <Button colorScheme="red" onClick={() => setGameQuery({ ...BaseQuery })}>
                 Clear
