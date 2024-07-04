@@ -53,7 +53,7 @@ function App() {
   const [bgImage, setBgImage] = useState<string>("");
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const gradient: { [key: string]: string } = {
-    dark: "linear-gradient(rgba(24, 20, 20, 0), rgba(24, 20, 20, 1))",
+    dark: "linear-gradient(rgba(18, 18, 18, 0), rgba(18, 18, 18, 1))",
     light: "linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))",
     sakura: "linear-gradient(rgba(255, 238, 251, 0), rgba(255, 238, 251, 1))",
   };
