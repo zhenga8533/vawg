@@ -1,4 +1,4 @@
-import { HStack, Heading } from "@chakra-ui/react";
+import { Box, HStack, Heading } from "@chakra-ui/react";
 import { useState } from "react";
 import Pagination from "../components/general/Pagination";
 import BrowseGrid from "../components/main/browse/BrowseGrid";
@@ -16,9 +16,14 @@ const Browses = ({ endpoint, title }: BrowsesProps) => {
   return (
     <>
       <HStack justifyContent="space-between">
-        <Heading as="h1" fontSize="5xl" my={5}>
+        <Heading as="h1" fontSize="5xl">
           {title}
         </Heading>
+        <Box display={{ base: "none", md: "flex" }}>
+          <Pagination count={browseData.count} onPageChange={(page) => setBrowsePage(page)} page={browsePage} />
+        </Box>
+      </HStack>
+      <HStack display={{ base: "flex", md: "none" }} justifyContent="center" mb={3}>
         <Pagination count={browseData.count} onPageChange={(page) => setBrowsePage(page)} page={browsePage} />
       </HStack>
       <BrowseGrid browseData={browseData} />
