@@ -6,6 +6,7 @@ import Breadcrumbs from "./components/main/Breadcrumbs";
 import Navbar from "./components/nav/Navbar";
 import { Info } from "./hooks/useData";
 import { Item } from "./hooks/useItems";
+import BadRoute from "./routes/BadRoute";
 import BrowseDetail from "./routes/BrowseDetail";
 import Browses from "./routes/Browses";
 import { GameDetailWrapper } from "./routes/GameDetail";
@@ -178,6 +179,7 @@ function App() {
                   />
                 </Fragment>
               ))}
+              <Route path="*" element={<BadRoute />} />
             </Routes>
           </GridItem>
         </Grid>
