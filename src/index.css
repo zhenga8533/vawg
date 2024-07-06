@@ -9,3 +9,13 @@ form {
 hr {
   margin: 0.5rem 0;
 }
+
+.link {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.5s ease;
+}
+
+.link:hover {
+  color: #505050;
+}

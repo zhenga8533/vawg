@@ -34,7 +34,7 @@ const GameMediaGrid = ({ screenshots, trailers }: GameMediaGridProps) => {
     if (index < 4)
       screenshotGrid.push(
         <Box key={screenshot.id} position="relative" width="100%">
-          <Image src={screenshot.image} alt={screenshot.id.toString()} width="100%" />
+          <Image src={screenshot.image} alt={screenshot.id.toString()} />
           {index === 3 && (
             <VStack
               position="absolute"

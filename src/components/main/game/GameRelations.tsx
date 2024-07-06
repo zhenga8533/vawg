@@ -1,5 +1,5 @@
-import { Button, HStack, Heading, Text } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
+import { HStack, Heading, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import useData, { Info } from "../../../hooks/useData";
 
 interface GameRelationsProps {
@@ -9,7 +9,6 @@ interface GameRelationsProps {
 }
 
 const GameRelations = ({ endpoint, heading, slug }: GameRelationsProps) => {
-  const navigate = useNavigate();
   const { results, error, loading } = useData<Info>(`/games/${slug}/${endpoint}`);
 
   if (error || loading || results.length === 0) return null;
@@ -21,9 +20,9 @@ const GameRelations = ({ endpoint, heading, slug }: GameRelationsProps) => {
       <HStack mt={3} wrap="wrap">
         {results.map((item, index) => (
           <HStack key={item.id} spacing={0}>
-            <Button onClick={() => navigate(`/games/${item.slug}`)} variant="link">
+            <Link className="link" to={`/games/${item.slug}`}>
               {item.name}
-            </Button>
+            </Link>
             <Text>{index < results.length - 1 ? ", " : ""}</Text>
           </HStack>
         ))}
