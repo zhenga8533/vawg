@@ -34,9 +34,11 @@ const GameAchievements = ({ slug }: GameAchievementsProps) => {
             <HStack>
               <Image src={achievement.image} alt={achievement.name} boxSize="32px" />
               <Text fontWeight="bold">{achievement.name}:</Text>
-              <Text>{achievement.description}</Text>
               <Text color="gray">({achievement.percent}%)</Text>
             </HStack>
+            <Text fontSize="sm" mb={2}>
+              {achievement.description}
+            </Text>
           </ListItem>
         ))}
       </List>
