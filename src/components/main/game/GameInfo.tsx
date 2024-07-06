@@ -1,5 +1,5 @@
 import { Box, Button, Grid, HStack, Text } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { GameData } from "../../../hooks/useGame";
 import { formatDate } from "../../../services/formatting";
 
@@ -8,8 +8,6 @@ interface GameInfoProps {
 }
 
 const GameInfo = ({ game }: GameInfoProps) => {
-  const navigate = useNavigate();
-
   return (
     <>
       <Grid gap={4} mt={5} templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}>
@@ -18,9 +16,9 @@ const GameInfo = ({ game }: GameInfoProps) => {
           <HStack wrap="wrap">
             {game.platforms.map((platform, index) => (
               <HStack key={platform.platform.id} spacing={0}>
-                <Button onClick={() => navigate(`/platforms/${platform.platform.slug}`)} variant="link">
+                <Link className="link" to={`/platforms/${platform.platform.slug}`}>
                   {platform.platform.name}
-                </Button>
+                </Link>
                 <Text>{index < game.platforms.length - 1 ? ", " : ""}</Text>
               </HStack>
             ))}
@@ -31,9 +29,9 @@ const GameInfo = ({ game }: GameInfoProps) => {
           <HStack wrap="wrap">
             {game.genres.map((genre, index) => (
               <HStack key={genre.id} spacing={0}>
-                <Button onClick={() => navigate(`/genres/${genre.slug}`)} variant="link">
+                <Link className="link" to={`/genres/${genre.slug}`}>
                   {genre.name}
-                </Button>
+                </Link>
                 <Text>{index < game.genres.length - 1 ? ", " : ""}</Text>
               </HStack>
             ))}
@@ -48,9 +46,9 @@ const GameInfo = ({ game }: GameInfoProps) => {
           <HStack wrap="wrap">
             {game.developers.map((developer, index) => (
               <HStack key={developer.id} spacing={0}>
-                <Button onClick={() => navigate(`/developers/${developer.slug}`)} variant="link">
+                <Link className="link" to={`/developers/${developer.slug}`}>
                   {developer.name}
-                </Button>
+                </Link>
                 <Text>{index < game.developers.length - 1 ? ", " : ""}</Text>
               </HStack>
             ))}
@@ -61,9 +59,9 @@ const GameInfo = ({ game }: GameInfoProps) => {
           <HStack wrap="wrap">
             {game.publishers.map((publisher, index) => (
               <HStack key={publisher.id} spacing={0}>
-                <Button onClick={() => navigate(`/publishers/${publisher.slug}`)} variant="link">
+                <Link className="link" to={`/publishers/${publisher.slug}`}>
                   {publisher.name}
-                </Button>
+                </Link>
                 <Text>{index < game.publishers.length - 1 ? ", " : ""}</Text>
               </HStack>
             ))}
@@ -80,9 +78,9 @@ const GameInfo = ({ game }: GameInfoProps) => {
         <HStack wrap="wrap">
           {game.tags.map((tag, index) => (
             <HStack key={tag.id} spacing={0}>
-              <Button key={tag.id} onClick={() => navigate(`/tags/${tag.slug}`)} variant="link">
+              <Link className="link" to={`/tags/${tag.slug}`}>
                 {tag.name}
-              </Button>
+              </Link>
               <Text>{index < game.tags.length - 1 ? ", " : ""}</Text>
             </HStack>
           ))}
@@ -91,7 +89,7 @@ const GameInfo = ({ game }: GameInfoProps) => {
 
       <Box mt={4}>
         <Text color="gray">Website</Text>
-        <Button as="a" href={game.website} target="_blank" variant="link">
+        <Button as="a" className="link" href={game.website} target="_blank" variant="link">
           {game.website}
         </Button>
       </Box>
